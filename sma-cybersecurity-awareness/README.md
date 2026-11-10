@@ -33,8 +33,8 @@ something to reveal. The timer highlights when you are behind the plan.
 
 | # | Gallery | Slide | Exhibit | Min |
 | --- | --- | --- | --- | --- |
-| 1 | Welcome | We guard more than artefacts | Cover | 0.5 |
-| 2 | Welcome | The collection you can't see | Why it matters, with the 98% figure | 1 |
+| 1 | Welcome | Security starts with you | Cover | 0.5 |
+| 2 | Welcome | Why cybersecurity matters | Why it matters, with the 98% figure | 1 |
 | 3 | Threat gallery | Six exhibits you never want to meet | Six threats, one placard each | 1.5 |
 | 4 | Phishing | A forgery is made to look right | Loupe over four look-alike addresses | 1 |
 | 5 | Phishing | Spot the forgery | Find six red flags in an email | 2 |

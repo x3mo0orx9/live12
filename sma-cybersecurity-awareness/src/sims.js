@@ -907,7 +907,7 @@
     };
     const finish = () => {
       pips.forEach((p) => p.classList.remove('now'));
-      const rank = score === QUIZ.length ? [['Master guardian', 'حارس خبير'], ['A perfect round. The collection is in safe hands.', 'جولة كاملة بلا خطأ. المقتنيات في أيدٍ أمينة.']]
+      const rank = score === QUIZ.length ? [['Master guardian', 'حارس خبير'], ['A perfect round. SMA is in safe hands.', 'جولة كاملة بلا خطأ. الهيئة في أيدٍ أمينة.']]
         : score >= 4 ? [['Guardian', 'حارس'], ['Strong instincts. Revisit the galleries where you hesitated.', 'حدس قوي. عودوا إلى القاعات التي تردّدتم فيها.']]
           : [['Apprentice guardian', 'حارس متدرّب'], ['A good start. Walk the exhibition once more and try again.', 'بداية جيدة. تجوّلوا في المعرض مرة أخرى وأعيدوا المحاولة.']];
       body.innerHTML = `<div class="quiz-end"><span class="quiz-score" dir="ltr">${score}/${QUIZ.length}</span>
