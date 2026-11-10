@@ -37,9 +37,12 @@
     ['Finale', 'الختام'],
   ];
 
+  const GALLERY_ICONS = ['landmark', 'eye', 'fishing-hook', 'drama', 'file-lock', 'key-round', 'scan-face', 'shield-check', 'megaphone', 'award'];
+
   const stage = $('#stage');
   const slides = $$('.slide');
   const door = $('#door');
+  const doorTitle = $('#doorTitle');
   const floorEl = $('.floor');
   const bottomEl = $('.bottom');
   const drawer = $('#drawer');
@@ -116,6 +119,7 @@
 
     if (from.dataset.gallery !== to.dataset.gallery) {
       // walk through the arch into the next painted room
+      const g = +to.dataset.gallery;
       from.classList.add('is-leaving');
       door.style.setProperty('--door', WALLS[to.dataset.wall]);
       door.style.visibility = 'visible';
@@ -123,11 +127,26 @@
       bottomEl.dataset.wall = to.dataset.wall;
       const grow = door.animate(
         [{ transform: 'translateX(-50%) scale(0)' }, { transform: 'translateX(-50%) scale(1)' }],
-        { duration: 950, easing: 'cubic-bezier(.6,0,.2,1)', fill: 'forwards' },
+        { duration: fwd ? 950 : 700, easing: 'cubic-bezier(.6,0,.2,1)', fill: 'forwards' },
       );
-      grow.onfinish = () => {
+      // going forward, the room's sign appears on the new wall before its first exhibit
+      let sign = null;
+      if (fwd) {
+        doorTitle.dataset.wall = to.dataset.wall;
+        doorTitle.innerHTML = `<span class="picto">${icon(GALLERY_ICONS[g])}</span><strong class="display">${B(GALLERIES[g][0], GALLERIES[g][1])}</strong>`;
+        doorTitle.style.visibility = 'visible';
+        sign = doorTitle.animate(
+          [{ opacity: 0, translate: '0 46px' }, { opacity: 1, translate: '0 0' }],
+          { duration: 650, delay: 430, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards' },
+        );
+      }
+      const arrive = () => {
         root.classList.add('no-trans');
         swap();
+        if (sign) {
+          const leave = doorTitle.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300, fill: 'forwards' });
+          leave.onfinish = () => { doorTitle.style.visibility = 'hidden'; sign.cancel(); leave.cancel(); };
+        }
         requestAnimationFrame(() => requestAnimationFrame(() => {
           door.style.visibility = 'hidden';
           grow.cancel();
@@ -135,6 +154,7 @@
           state.busy = false;
         }));
       };
+      grow.onfinish = () => { if (sign) setTimeout(arrive, 700); else arrive(); };
     } else {
       const dx = (fwd ? 1 : -1) * (root.dir === 'rtl' ? -1 : 1) * 70;
       const out = from.animate(
