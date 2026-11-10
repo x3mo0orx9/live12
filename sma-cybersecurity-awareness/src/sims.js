@@ -907,9 +907,9 @@
     };
     const finish = () => {
       pips.forEach((p) => p.classList.remove('now'));
-      const rank = score === QUIZ.length ? [['Master guardian', 'حارس خبير'], ['A perfect round. SMA is in safe hands.', 'جولة كاملة بلا خطأ. الهيئة في أيدٍ أمينة.']]
-        : score >= 4 ? [['Guardian', 'حارس'], ['Strong instincts. Revisit the galleries where you hesitated.', 'حدس قوي. عودوا إلى القاعات التي تردّدتم فيها.']]
-          : [['Apprentice guardian', 'حارس متدرّب'], ['A good start. Walk the exhibition once more and try again.', 'بداية جيدة. تجوّلوا في المعرض مرة أخرى وأعيدوا المحاولة.']];
+      const rank = score === QUIZ.length ? [['Excellent', 'ممتاز'], ['A perfect round. SMA is in safe hands.', 'جولة كاملة بلا خطأ. الهيئة في أيدٍ أمينة.']]
+        : score >= 4 ? [['Well done', 'أحسنتم'], ['Strong instincts. Revisit the topics where you hesitated.', 'حدس قوي. راجعوا المواضيع التي تردّدتم فيها.']]
+          : [['A good start', 'بداية جيدة'], ['Go through the slides once more and try again.', 'راجعوا الشرائح مرة أخرى وأعيدوا المحاولة.']];
       body.innerHTML = `<div class="quiz-end"><span class="quiz-score" dir="ltr">${score}/${QUIZ.length}</span>
         <div><h3>${B(rank[0][0], rank[0][1])}</h3><p>${B(rank[1][0], rank[1][1])}</p>
         <div class="row"><button class="btn btn-hi" data-act="next">${B('Take the pledge', 'أداء التعهّد')}${icon('arrow-right', 'flip')}</button>

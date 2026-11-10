@@ -20,7 +20,7 @@ Use a current version of Chrome or Edge, and press **F** for full screen.
 | `→` `↓` `Space` `Page Down` | Next step or slide (clickers work) |
 | `←` `↑` `Page Up` | Back |
 | `L` | Switch Arabic / English at any point, without losing your place |
-| `G` | Gallery map: jump to any slide |
+| `G` | Slide list: jump to any slide |
 | `N` | Presenter notes for the current slide |
 | `T` | Pause or resume the timer (double-click the timer to reset) |
 | `F` | Full screen |
@@ -35,7 +35,7 @@ something to reveal. The timer highlights when you are behind the plan.
 | --- | --- | --- | --- | --- |
 | 1 | Welcome | Security starts with you | Cover | 0.5 |
 | 2 | Welcome | Why cybersecurity matters | Why it matters, with the 98% figure | 1 |
-| 3 | Threat gallery | Six exhibits you never want to meet | Six threats, one placard each | 1.5 |
+| 3 | Common threats | Six common cyber threats | Six threats, one placard each | 1.5 |
 | 4 | Phishing | A forgery is made to look right | Loupe over four look-alike addresses | 1 |
 | 5 | Phishing | Spot the forgery | Find six red flags in an email | 2 |
 | 6 | Phishing | Authentic or forgery? | Six-message triage game | 1.5 |
@@ -46,13 +46,13 @@ something to reveal. The timer highlights when you are behind the plan.
 | 11 | Passwords | The second lock | MFA prompt-bombing simulation | 1 |
 | 12 | AI-powered threats | The perfect copy | Deepfake video-call decision | 1.5 |
 | 13 | AI-powered threats | AI rewrote the rules | Four old instincts, four new rules | 1 |
-| 14 | The guardian's code | The guardian's code | Seven habits | 1 |
+| 14 | Good habits | Seven safe habits | Seven habits | 1 |
 | 15 | Recognise and report | I clicked. Now what? | First five minutes, what to report, who to call | 1 |
-| 16 | Finale | The guardian's trial | Six-question quiz | 2 |
-| 17 | Finale | Pause. Verify. Report. | Press-and-hold pledge | 0.5 |
-| 18 | Finale | Thank you | Official references | 0.5 |
+| 16 | Quiz and close | Quick quiz | Six-question quiz | 2 |
+| 17 | Quiz and close | Pause. Verify. Report. | Press-and-hold pledge | 0.5 |
+| 18 | Quiz and close | Thank you | Official references | 0.5 |
 
-**For a 20-minute session** skip slides 6 and 8 (use the gallery map, `G`).
+**For a 20-minute session** skip slides 6 and 8 (use the slide list, `G`).
 
 ## Before the first session
 

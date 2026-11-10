@@ -27,15 +27,15 @@
   const WALLS = { charcoal: LIGHT, blue: LIGHT, yellow: LIGHT, green: LIGHT, red: LIGHT, stone: LIGHT, copper: LIGHT };
   const GALLERIES = [
     ['Welcome', 'الترحيب'],
-    ['The threat gallery', 'قاعة التهديدات'],
+    ['Common threats', 'التهديدات الشائعة'],
     ['Phishing', 'التصيّد الاحتيالي'],
     ['Social engineering', 'الهندسة الاجتماعية'],
     ['Malware and ransomware', 'البرمجيات الخبيثة والفدية'],
     ['Passwords and the second lock', 'كلمات المرور والقفل الثاني'],
     ['AI-powered threats', 'تهديدات الذكاء الاصطناعي'],
-    ['The guardian’s code', 'ميثاق الحارس'],
+    ['Good habits', 'العادات الآمنة'],
     ['Recognise and report', 'الرصد والإبلاغ'],
-    ['Finale', 'الختام'],
+    ['Quiz and close', 'الاختبار والختام'],
   ];
 
   const GALLERY_ICONS = ['landmark', 'eye', 'fishing-hook', 'drama', 'file-lock', 'key-round', 'scan-face', 'shield-check', 'megaphone', 'award'];
@@ -52,6 +52,7 @@
   const nextBtn = $('.bottom [data-act="next"]');
 
   const state = { i: 0, step: 0, lang: 'en', scale: 1, busy: false };
+  let unlock = null;
 
   const store = {
     get(k) { try { return localStorage.getItem('sma-cs-' + k); } catch (e) { return null; } },
@@ -112,11 +113,14 @@
       applyStep(to, state.step);
       to.dispatchEvent(new CustomEvent('enter'));
       chrome();
-      if (!opts.keepHash) history.replaceState(null, '', '#' + (i + 1));
+      if (!opts.keepHash) { try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) { /* embedded preview */ } }
     };
 
     if (opts.instant || reduced()) { swap(); return; }
     state.busy = true;
+    // safety net: whatever happens during a transition, navigation unlocks again
+    clearTimeout(unlock);
+    unlock = setTimeout(() => { state.busy = false; }, 2600);
 
     if (from.dataset.gallery !== to.dataset.gallery) {
       // walk through the arch into the next painted room

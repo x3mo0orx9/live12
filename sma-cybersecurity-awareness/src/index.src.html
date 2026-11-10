@@ -28,7 +28,7 @@
       </button>
       <button class="tool tool-wide" data-act="timer" title="Timer · المؤقّت (T)"><svg class="ic"><use href="#i-timer"/></svg><span id="clock">00:00</span></button>
       <button class="tool" data-act="notes" title="Presenter notes · ملاحظات المقدّم (N)" aria-label="Presenter notes"><svg class="ic"><use href="#i-notebook-pen"/></svg></button>
-      <button class="tool" data-act="map" title="Gallery map · خريطة القاعات (G)" aria-label="Gallery map"><svg class="ic"><use href="#i-layout-grid"/></svg></button>
+      <button class="tool" data-act="map" title="Slide list · قائمة الشرائح (G)" aria-label="Slide list"><svg class="ic"><use href="#i-layout-grid"/></svg></button>
       <button class="tool" data-act="full" title="Full screen · ملء الشاشة (F)" aria-label="Full screen"><svg class="ic"><use href="#i-maximize"/></svg></button>
     </div>
   </header>
@@ -41,8 +41,8 @@
         <h1 class="display rise">{{Security<br>starts<br>with you.||الأمن<br>يبدأ<br>بكم.}}</h1>
         <p class="lead rise" style="--d:2">{{A cybersecurity awareness experience for everyone at Sharjah Museums Authority.||تجربة توعوية في الأمن السيبراني لكل فرد في هيئة الشارقة للمتاحف.}}</p>
         <div class="cover-cta rise" style="--d:3">
-          <button class="btn btn-hi" data-act="next">{{Enter the exhibition||ادخلوا المعرض}}<svg class="ic flip"><use href="#i-arrow-right"/></svg></button>
-          <span class="caps hint">{{10 galleries · 20–25 minutes||10 قاعات · 20–25 دقيقة}}</span>
+          <button class="btn btn-hi" data-act="next">{{Start||ابدأ}}<svg class="ic flip"><use href="#i-arrow-right"/></svg></button>
+          <span class="caps hint">{{10 sections · 20–25 minutes||10 أقسام · 20–25 دقيقة}}</span>
         </div>
       </div>
       <div class="enfilade" aria-hidden="true">
@@ -96,8 +96,8 @@
     </section>
 
     <!-- 3 · THREAT GALLERY -->
-    <section class="slide s-threats" data-wall="charcoal" data-gallery="1" data-min="1.5" data-sim="threats" data-steps="5" data-title="Six exhibits you never want to meet||ستة معروضات لا تودّون مواجهتها">
-      <h2 class="title rise">{{Six exhibits you<br>never want to meet||ستة معروضات<br>لا تودّون مواجهتها}}</h2>
+    <section class="slide s-threats" data-wall="charcoal" data-gallery="1" data-min="1.5" data-sim="threats" data-steps="5" data-title="Six common cyber threats||ستة تهديدات سيبرانية شائعة">
+      <h2 class="title rise">{{Six common<br>cyber threats||ستة تهديدات<br>سيبرانية شائعة}}</h2>
       <div class="threat-wall">
         <div class="niches rise" style="--d:1" role="tablist"></div>
         <article class="placard paper rise" style="--d:2" aria-live="polite">
@@ -378,8 +378,8 @@
     </section>
 
     <!-- 14 · THE GUARDIAN'S CODE -->
-    <section class="slide s-code" data-wall="charcoal" data-gallery="7" data-min="1" data-steps="7" data-title="The guardian's code||ميثاق الحارس">
-      <h2 class="title rise">{{The guardian's code||ميثاق الحارس}}</h2>
+    <section class="slide s-code" data-wall="charcoal" data-gallery="7" data-min="1" data-steps="7" data-title="Seven safe habits||سبع عادات آمنة">
+      <h2 class="title rise">{{Seven safe habits||سبع عادات آمنة}}</h2>
       <ol class="habits">
         <li data-at="1" style="--c:#2B2B2B;--t:#fff;--h:520px"><span class="picto"><svg class="ic"><use href="#i-hand"/></svg></span><b>{{Pause before you click||تمهّلوا قبل النقر}}</b><span>{{Urgency is a warning sign, not a reason.||الاستعجال إشارة تحذير لا مبرّر للتصرف.}}</span></li>
         <li data-at="2" style="--c:#141414;--t:#fff;--h:580px"><span class="picto"><svg class="ic"><use href="#i-key-round"/></svg></span><b>{{Long passphrase, second lock||عبارة مرور طويلة وقفل ثانٍ}}</b><span>{{Never approve what you did not start.||لا توافقوا على طلب لم تبدؤوه.}}</span></li>
@@ -429,9 +429,9 @@
     </section>
 
     <!-- 16 · QUIZ -->
-    <section class="slide s-quiz" data-wall="charcoal" data-gallery="9" data-min="2" data-sim="quiz" data-title="The guardian's trial||اختبار الحارس">
+    <section class="slide s-quiz" data-wall="charcoal" data-gallery="9" data-min="2" data-sim="quiz" data-title="Quick quiz||اختبار سريع">
       <div class="quiz-head">
-        <h2 class="title rise">{{The guardian's trial||اختبار الحارس}}</h2>
+        <h2 class="title rise">{{Quick quiz||اختبار سريع}}</h2>
         <div class="quiz-meter rise" style="--d:1" aria-hidden="true"></div>
       </div>
       <div class="quiz-body" aria-live="polite"></div>
@@ -442,7 +442,7 @@
     <section class="slide s-pledge" data-wall="charcoal" data-gallery="9" data-min="0.5" data-sim="pledge" data-title="Pause. Verify. Report.||تمهّل. تحقّق. أبلِغ.">
       <div class="pledge-text">
         <h2 class="display display-sm rise">{{Pause.<br>Verify.<br>Report.||تمهّل.<br>تحقّق.<br>أبلِغ.}}</h2>
-        <p class="lead rise" style="--d:2">{{Three words that stop almost every attack in this exhibition.||ثلاث كلمات توقف معظم الهجمات التي رأيناها في هذا المعرض.}}</p>
+        <p class="lead rise" style="--d:2">{{Three words that stop almost every attack we covered today.||ثلاث كلمات توقف معظم الهجمات التي تناولناها اليوم.}}</p>
         <div class="pledge-cta rise" style="--d:3">
           <button class="btn btn-hi hold" data-do="hold"><svg class="ic"><use href="#i-fingerprint"/></svg><span class="hold-label">{{Press and hold to take the pledge||اضغطوا مطوّلاً لأداء التعهّد}}</span></button>
           <span class="caps pledge-done" hidden>{{Pledge taken||تمّ التعهّد}} · <bdi class="pledge-date" dir="ltr"></bdi></span>
@@ -458,7 +458,7 @@
     <!-- 18 · CLOSE -->
     <section class="slide s-close" data-wall="charcoal" data-gallery="9" data-min="0.5" data-title="Thank you||شكراً لكم">
       <div class="close-main">
-        <h2 class="display display-sm rise">{{Thank you,<br>guardians.||شكراً لكم<br>أيها الحرّاس.}}</h2>
+        <h2 class="display display-sm rise">{{Thank you.||شكراً لكم.}}</h2>
         <p class="lead rise" style="--d:1">{{SMA is safer than it was twenty minutes ago.||الهيئة اليوم أكثر أماناً مما كانت عليه قبل عشرين دقيقة.}}</p>
         <button class="btn btn-ghost rise" style="--d:2" data-act="restart"><svg class="ic"><use href="#i-rotate-ccw"/></svg>{{Start again||البدء من جديد}}</button>
       </div>
@@ -495,7 +495,7 @@
   <!-- gallery map -->
   <div class="map" id="map" hidden>
     <div class="map-head">
-      <h2 class="title title-sm">{{Gallery map||خريطة القاعات}}</h2>
+      <h2 class="title title-sm">{{Slide list||قائمة الشرائح}}</h2>
       <button class="tool" data-act="map" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
     </div>
     <div class="map-grid" id="mapGrid"></div>
