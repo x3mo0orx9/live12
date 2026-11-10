@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-wall="charcoal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>SMA · Cybersecurity Awareness · التوعية بالأمن السيبراني</title>
+<!--@css-->
+</head>
+<body>
+<!--@icons-->
+<div class="floor" aria-hidden="true"></div>
+
+<div class="stage" id="stage">
+
+  <header class="top">
+    <div class="logo" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></div>
+    <div class="tools">
+      <button class="tool tool-wide" data-act="lang" title="Language · اللغة (L)">
+        <svg class="ic"><use href="#i-languages"/></svg><span class="when-en">العربية</span><span class="when-ar">English</span>
+      </button>
+      <button class="tool tool-wide" data-act="timer" title="Timer · المؤقّت (T)"><svg class="ic"><use href="#i-timer"/></svg><span id="clock">00:00</span></button>
+      <button class="tool" data-act="notes" title="Presenter notes · ملاحظات المقدّم (N)" aria-label="Presenter notes"><svg class="ic"><use href="#i-notebook-pen"/></svg></button>
+      <button class="tool" data-act="map" title="Gallery map · خريطة القاعات (G)" aria-label="Gallery map"><svg class="ic"><use href="#i-layout-grid"/></svg></button>
+      <button class="tool" data-act="full" title="Full screen · ملء الشاشة (F)" aria-label="Full screen"><svg class="ic"><use href="#i-maximize"/></svg></button>
+    </div>
+  </header>
+
+  <main class="slides" id="slides">
+
+    <!-- 1 · COVER -->
+    <section class="slide s-cover" data-wall="charcoal" data-gallery="0" data-min="0.5" data-sim="cover" data-title="We guard more than artefacts||نحرس أكثر من المقتنيات">
+      <div class="cover-text">
+        <h1 class="display rise">{{We guard<br>more than<br>artefacts.||نحرسُ<br>أكثر من<br>المقتنيات.}}</h1>
+        <p class="lead rise" style="--d:2">{{A cybersecurity awareness experience for everyone at Sharjah Museums Authority.||تجربة توعوية في الأمن السيبراني لكل فرد في هيئة الشارقة للمتاحف.}}</p>
+        <div class="cover-cta rise" style="--d:3">
+          <button class="btn btn-hi" data-act="next">{{Enter the exhibition||ادخلوا المعرض}}<svg class="ic flip"><use href="#i-arrow-right"/></svg></button>
+          <span class="caps hint">{{10 galleries · 20–25 minutes||10 قاعات · 20–25 دقيقة}}</span>
+        </div>
+      </div>
+      <div class="enfilade" aria-hidden="true">
+        <i class="arch" style="--c:var(--blue);--w:700px;--h:800px;--z:1"></i>
+        <i class="arch" style="--c:var(--yellow);--w:560px;--h:690px;--z:2"></i>
+        <i class="arch" style="--c:var(--green);--w:430px;--h:585px;--z:3"></i>
+        <i class="arch" style="--c:var(--copper);--w:310px;--h:485px;--z:4"></i>
+        <i class="arch" style="--c:var(--stone);--w:200px;--h:390px;--z:5"></i>
+        <i class="arch" style="--c:#141414;--w:104px;--h:300px;--z:6"></i>
+      </div>
+      <aside class="notes">{{Welcome everyone. The idea of the session: we already protect priceless things; today is about the collection nobody can see. Press L at any time to switch language.||رحّبوا بالحضور. فكرة الجلسة: نحن نحمي كنوزاً لا تُقدّر بثمن، واليوم نتحدث عن المقتنيات التي لا يراها أحد. اضغطوا L في أي وقت لتبديل اللغة.}}</aside>
+    </section>
+
+    <!-- 2 · WHY IT MATTERS -->
+    <section class="slide s-unseen" data-wall="charcoal" data-gallery="0" data-min="1" data-steps="6" data-title="The collection you can't see||المقتنيات التي لا تُرى">
+      <div class="unseen-head">
+        <div>
+          <h2 class="title rise">{{The collection<br>you can't see||المقتنيات<br>التي لا تُرى}}</h2>
+          <p class="lead rise" style="--d:1">{{Behind every gallery sits a second collection. It has no glass case, and its thieves never need to enter the building.||خلف كل قاعة عرض مجموعة ثانية بلا واجهات زجاجية، ولصوصها لا يحتاجون إلى دخول المبنى.}}</p>
+        </div>
+        <p class="stat" data-at="6">
+          <span class="caps stat-pre">{{Nearly||نحو}}</span>
+          <b class="stat-num" dir="ltr">{{98%||%98}}</b>
+          <span class="stat-text">{{of cyberattacks use social engineering. They target people, not machines.||من الهجمات السيبرانية تعتمد الهندسة الاجتماعية: تستهدف الإنسان لا الآلة.}}</span>
+          <cite>{{UAE Cyber Security Council · Cyber Pulse campaign||مجلس الأمن السيبراني لحكومة دولة الإمارات · حملة «النبض السيبراني»}}</cite>
+        </p>
+      </div>
+      <ul class="plinths">
+        <li data-at="1" style="--c:var(--blue);--t:#fff;--h:236px">
+          <span class="vitrine"><svg class="ic"><use href="#i-ticket"/></svg></span>
+          <div class="plinth"><strong>{{Visitors &amp; members||الزوار والأعضاء}}</strong><span>{{Bookings, memberships, school visits||الحجوزات والعضويات والزيارات المدرسية}}</span></div>
+        </li>
+        <li data-at="2" style="--c:var(--yellow);--t:#1b1b1b;--h:300px">
+          <span class="vitrine"><svg class="ic"><use href="#i-amphora"/></svg></span>
+          <div class="plinth"><strong>{{Collection records||سجلات المقتنيات}}</strong><span>{{Provenance, valuations, storage locations||المصدر والتقييمات ومواقع الحفظ}}</span></div>
+        </li>
+        <li data-at="3" style="--c:var(--green);--t:#fff;--h:210px">
+          <span class="vitrine"><svg class="ic"><use href="#i-scroll-text"/></svg></span>
+          <div class="plinth"><strong>{{Loans &amp; contracts||الإعارات والعقود}}</strong><span>{{Lenders, insurers, shippers||المُعيرون وشركات التأمين والشحن}}</span></div>
+        </li>
+        <li data-at="4" style="--c:var(--copper);--t:#161616;--h:272px">
+          <span class="vitrine"><svg class="ic"><use href="#i-id-card-lanyard"/></svg></span>
+          <div class="plinth"><strong>{{Our people||فريق العمل}}</strong><span>{{HR files, payroll, identity documents||ملفات الموارد البشرية والرواتب والهويات}}</span></div>
+        </li>
+        <li data-at="5" style="--c:var(--stone);--t:#1b1b1b;--h:228px">
+          <span class="vitrine"><svg class="ic"><use href="#i-cctv"/></svg></span>
+          <div class="plinth"><strong>{{Building systems||أنظمة المبنى}}</strong><span>{{Cameras, doors, the climate control that protects the objects||الكاميرات والأبواب وأنظمة المناخ التي تحمي المعروضات}}</span></div>
+        </li>
+      </ul>
+      <aside class="notes">{{Reveal the five plinths one at a time and ask the room: which of these do you touch every day? Land the point with the 98% figure: attackers go through people, so people are the defence.||اكشفوا القواعد الخمس واحدة تلو الأخرى واسألوا الحضور: أيّ منها تتعاملون معه يومياً؟ ثم اختموا بنسبة 98%: المهاجم يمرّ عبر الإنسان، فالإنسان هو خط الدفاع.}}</aside>
+    </section>
+
+    <!-- 3 · THREAT GALLERY -->
+    <section class="slide s-threats" data-wall="blue" data-gallery="1" data-min="1.5" data-sim="threats" data-steps="5" data-title="Six exhibits you never want to meet||ستة معروضات لا تودّون مواجهتها">
+      <h2 class="title rise">{{Six exhibits you<br>never want to meet||ستة معروضات<br>لا تودّون مواجهتها}}</h2>
+      <div class="threat-wall">
+        <div class="niches rise" style="--d:1" role="tablist"></div>
+        <article class="placard paper rise" style="--d:2" aria-live="polite">
+          <h3 class="placard-title"></h3>
+          <p class="placard-what"></p>
+          <dl>
+            <dt class="caps">{{Reaches you by||يصلكم عبر}}</dt><dd class="placard-via"></dd>
+            <dt class="caps">{{Tell-tale sign||العلامة الفارقة}}</dt><dd class="placard-tell"></dd>
+          </dl>
+        </article>
+      </div>
+      <aside class="notes">{{A quick tour, about fifteen seconds per exhibit. Click an arch or just press Next. The detail comes in the galleries that follow.||جولة سريعة، نحو خمس عشرة ثانية لكل معروض. انقروا على القوس أو اضغطوا «التالي». التفاصيل تأتي في القاعات القادمة.}}</aside>
+    </section>
+
+    <!-- 4 · LOUPE -->
+    <section class="slide s-loupe" data-wall="yellow" data-gallery="2" data-min="1" data-sim="loupe" data-title="A forgery is made to look right||التزوير يُصنع ليبدو صحيحاً">
+      <div class="loupe-head">
+        <h2 class="title rise">{{A forgery is made<br>to look right||التزوير يُصنع<br>ليبدو صحيحاً}}</h2>
+        <p class="lead rise" style="--d:1">{{Only one of these addresses belongs to SMA. Pass the loupe over them, then choose.||عنوان واحد فقط يعود للهيئة. مرّروا العدسة فوق العناوين ثم اختاروا.}}</p>
+      </div>
+      <div class="specimens rise" style="--d:2">
+        <button class="spec paper" data-ok="0">
+          <span class="spec-url" dir="ltr"><svg class="ic"><use href="#i-lock"/></svg><span>https://sma<mark>-</mark>gov.ae/staff</span></span>
+          <span class="spec-why">{{A hyphen where the dot should be.||شرطة في موضع النقطة.}}</span>
+        </button>
+        <button class="spec paper" data-ok="0">
+          <span class="spec-url" dir="ltr"><svg class="ic"><use href="#i-lock"/></svg><span>https://s<mark>rn</mark>a.gov.ae/staff</span></span>
+          <span class="spec-why">{{The letters r and n, dressed up as an m.||حرفا r و n متنكّران في هيئة m.}}</span>
+        </button>
+        <button class="spec paper" data-ok="1">
+          <span class="spec-url" dir="ltr"><svg class="ic"><use href="#i-lock"/></svg><span>https://sma.gov.ae/staff</span></span>
+          <span class="spec-why">{{Genuine. Nothing between “sma” and “.gov.ae”.||أصلي. لا شيء بين «sma» و«‎.gov.ae».}}</span>
+        </button>
+        <button class="spec paper" data-ok="0">
+          <span class="spec-url" dir="ltr"><svg class="ic"><use href="#i-lock"/></svg><span>https://sma.gov.ae.<mark>signin-portal.com</mark>/staff</span></span>
+          <span class="spec-why">{{Read from the right: the real owner is signin-portal.com.||اقرؤوا من اليمين: المالك الحقيقي هو signin-portal.com.}}</span>
+        </button>
+      </div>
+      <div class="loupe-foot rise" style="--d:3">
+        <button class="btn btn-ghost" data-do="reveal">{{Reveal the forgeries||اكشفوا المزيّف}}</button>
+        <p class="loupe-moral">{{A padlock only means the connection is private. It says nothing about who you are talking to.||القفل يعني أن الاتصال مشفّر فقط، ولا يقول شيئاً عن هوية الطرف الآخر.}}</p>
+      </div>
+      <div class="lens" aria-hidden="true"><div class="lens-in"></div></div>
+      <aside class="notes">{{Let the room guess before you reveal. Curators authenticate objects with a loupe; we authenticate addresses the same way: slowly, and from the right-hand side.||دعوا الحضور يخمّنون قبل الكشف. أمناء المتاحف يتحققون من القطع بالعدسة، ونحن نتحقق من العناوين بالطريقة نفسها: بتأنٍّ، ومن جهة اليمين.}}</aside>
+    </section>
+
+    <!-- 5 · INSPECT THE EMAIL -->
+    <section class="slide s-inspect" data-wall="yellow" data-gallery="2" data-min="2" data-sim="inspect" data-steps="6" data-title="Spot the forgery||اكشفوا التزوير">
+      <div class="mail paper rise">
+        <div class="mail-bar"><i></i><i></i><i></i><span class="caps">{{Inbox||البريد الوارد}}</span></div>
+        <div class="mail-head">
+          <span class="mail-avatar">IT</span>
+          <div class="mail-meta">
+            <div class="mail-from"><b>{{SMA IT Service Desk||مكتب خدمات تقنية المعلومات}}</b>
+              <span class="clue" role="button" tabindex="0" data-clue="1" dir="ltr">&lt;it-support@srna-gov.ae&gt;</span></div>
+            <div class="mail-to">{{To: you||إلى: أنت}}</div>
+          </div>
+          <time class="decoy" dir="ltr">09:12</time>
+        </div>
+        <h3 class="mail-subject"><span class="clue" role="button" tabindex="0" data-clue="2">{{URGENT: your mailbox will be suspended today||عاجل: سيتم إيقاف بريدك الإلكتروني اليوم}}</span></h3>
+        <div class="mail-body">
+          <p><span class="clue" role="button" tabindex="0" data-clue="3">{{Dear user,||عزيزي المستخدم،}}</span></p>
+          <p class="decoy">{{Your mailbox has reached its storage limit. To keep receiving email, confirm your account within <b>2 hours</b>.||بلغ بريدك الإلكتروني الحد الأقصى للتخزين. لمواصلة استلام الرسائل، يجب تأكيد حسابك خلال <b>ساعتين</b>.}}</p>
+          <p><span class="clue mail-cta" role="button" tabindex="0" data-clue="4" data-url="http://sma-gov.ae.mail-verify.co/login">{{Confirm my account||تأكيد حسابي}}</span></p>
+          <p><span class="clue" role="button" tabindex="0" data-clue="5">{{You will be asked for your password and the verification code sent to your phone.||سيُطلب منك إدخال كلمة المرور ورمز التحقق المرسل إلى هاتفك.}}</span></p>
+          <p><span class="clue mail-file" role="button" tabindex="0" data-clue="6"><svg class="ic"><use href="#i-paperclip"/></svg><bdi dir="ltr">Mailbox_Report.html</bdi><small dir="ltr">4 KB</small></span></p>
+          <p class="mail-sign decoy">{{IT Service Desk<br>Sharjah Museums Authority||مكتب خدمات تقنية المعلومات<br>هيئة الشارقة للمتاحف}}</p>
+        </div>
+        <div class="mail-status" dir="ltr" aria-live="polite"></div>
+      </div>
+      <div class="inspect-side">
+        <h2 class="title title-sm rise">{{Find the six signs of forgery||ابحثوا عن علامات التزوير الست}}</h2>
+        <p class="inspect-count rise" style="--d:1"><b id="clueCount" dir="ltr">0/6</b><span>{{Click anything in the email that looks wrong.||انقروا على كل ما يبدو مريباً في الرسالة.}}</span></p>
+        <ol class="clues">
+          <li data-clue="1">{{<b>The sender.</b> srna-gov.ae is not sma.gov.ae. A display name can say anything.||<b>المرسل.</b> ‏srna-gov.ae ليس sma.gov.ae. اسم العرض يمكن أن يكون أي شيء.}}</li>
+          <li data-clue="2">{{<b>Urgency and threat.</b> Forgers rush you so that you stop thinking.||<b>استعجال وتهديد.</b> المزوّر يستعجلكم كي تتوقفوا عن التفكير.}}</li>
+          <li data-clue="3">{{<b>Generic greeting.</b> Your IT team knows your name.||<b>تحية عامة.</b> فريق تقنية المعلومات يعرف أسماءكم.}}</li>
+          <li data-clue="4">{{<b>The link lies.</b> Hover first: it leads to mail-verify.co.||<b>الرابط يخدع.</b> مرّروا المؤشر أولاً: يقود إلى mail-verify.co.}}</li>
+          <li data-clue="5">{{<b>Password and code.</b> IT will never ask you for either.||<b>كلمة المرور والرمز.</b> تقنية المعلومات لا تطلبهما أبداً.}}</li>
+          <li data-clue="6">{{<b>Surprise attachment.</b> An .html file can be a fake sign-in page.||<b>مرفق غير متوقع.</b> ملف ‎.html قد يكون صفحة دخول مزيّفة.}}</li>
+        </ol>
+        <div class="inspect-verdict" hidden>
+          <p class="caps">{{Six out of six. What do you do with it?||ستّ من ستّ. فماذا تفعلون بالرسالة؟}}</p>
+          <div class="verdict-row">
+            <button class="btn" data-v="report">{{Report it||الإبلاغ عنها}}</button>
+            <button class="btn btn-ghost" data-v="delete">{{Delete it||حذفها}}</button>
+            <button class="btn btn-ghost" data-v="click">{{Click to check||النقر للتأكد}}</button>
+          </div>
+          <p class="verdict-out" aria-live="polite"></p>
+        </div>
+      </div>
+      <aside class="notes">{{Ask the room to call out what looks wrong and click as they shout. Next reveals the clues one by one if the room goes quiet. Finish on the action: report, do not just delete.||اطلبوا من الحضور أن يذكروا ما يبدو مريباً وانقروا مع إجاباتهم. زر «التالي» يكشف العلامات واحدة تلو الأخرى إن ساد الصمت. واختموا بالتصرف الصحيح: الإبلاغ لا الحذف فقط.}}</aside>
+    </section>
+
+    <!-- 6 · TRIAGE -->
+    <section class="slide s-triage" data-wall="yellow" data-gallery="2" data-min="1.5" data-sim="triage" data-title="Authentic or forgery?||أصلية أم مزيّفة؟">
+      <div class="triage-head">
+        <h2 class="title rise">{{Authentic<br>or forgery?||أصلية<br>أم مزيّفة؟}}</h2>
+        <p class="lead rise" style="--d:1">{{Six messages land in one morning. Not all of them are fake.||ست رسائل تصل في صباح واحد، وليست كلها مزيّفة.}}</p>
+        <div class="triage-dots rise" style="--d:2" aria-hidden="true"></div>
+      </div>
+      <div class="triage-desk">
+        <article class="msg paper" aria-live="polite"></article>
+        <div class="triage-actions">
+          <button class="btn btn-safe" data-a="1"><svg class="ic"><use href="#i-badge-check"/></svg>{{Authentic||أصلية}}</button>
+          <button class="btn btn-danger" data-a="0"><svg class="ic"><use href="#i-triangle-alert"/></svg>{{Forgery||مزيّفة}}</button>
+        </div>
+        <div class="triage-why" hidden></div>
+      </div>
+      <aside class="notes">{{Take a show of hands before each answer. Two of the six are genuine: the lesson is judgement, not suspicion of everything. Skip this slide for a 20-minute session.||اطلبوا رفع الأيدي قبل كل إجابة. رسالتان من الست أصليتان: الدرس هو حسن التقدير لا الشك في كل شيء. يمكن تجاوز هذه الشريحة في جلسة من 20 دقيقة.}}</aside>
+    </section>
+
+    <!-- 7 · SOCIAL ENGINEERING CHAT -->
+    <section class="slide s-con" data-wall="green" data-gallery="3" data-min="2" data-sim="con" data-title="Both sides of the glass||على جانبَي الزجاج">
+      <div class="con-you">
+        <h2 class="title rise">{{Both sides<br>of the glass||على جانبَي<br>الزجاج}}</h2>
+        <p class="lead rise" style="--d:1">{{You answer the message. On the far side, watch what the sender is really doing.||أنتم تردّون على الرسالة، وعلى الجانب الآخر شاهدوا ما يفعله المرسل حقاً.}}</p>
+        <div class="replies" aria-live="polite"></div>
+      </div>
+      <div class="phone rise" style="--d:1">
+        <div class="phone-top"><span class="phone-avatar"><svg class="ic"><use href="#i-user-round"/></svg></span>
+          <div><b>{{Director's Office||مكتب المدير}}</b><small dir="ltr">+971 5X XXX 4471</small></div></div>
+        <div class="chat"></div>
+      </div>
+      <aside class="playbook rise" style="--d:2">
+        <h3 class="caps">{{The sender's playbook||خطة المرسل}}</h3>
+        <ul class="levers">
+          <li data-lever="authority"><span class="picto"><svg class="ic"><use href="#i-landmark"/></svg></span><div><b>{{Authority||السلطة}}</b><span>{{A title you will not question.||منصب لن تجادلوه.}}</span></div></li>
+          <li data-lever="urgency"><span class="picto"><svg class="ic"><use href="#i-hourglass"/></svg></span><div><b>{{Urgency||الاستعجال}}</b><span>{{No time to think or check.||لا وقت للتفكير أو التحقق.}}</span></div></li>
+          <li data-lever="secrecy"><span class="picto"><svg class="ic"><use href="#i-eye"/></svg></span><div><b>{{Secrecy||السرّية}}</b><span>{{Cuts you off from help.||تعزلكم عمّن يساعدكم.}}</span></div></li>
+          <li data-lever="pressure"><span class="picto"><svg class="ic"><use href="#i-triangle-alert"/></svg></span><div><b>{{Pressure||الضغط}}</b><span>{{Makes refusing feel like failing.||تجعل الرفض يبدو تقصيراً.}}</span></div></li>
+        </ul>
+        <p class="playbook-out" aria-live="polite"></p>
+      </aside>
+      <aside class="notes">{{Read the messages aloud and let the room choose the reply. Point at the playbook each time a lever lights up. The defence never changes: pause, verify on a channel you already trust, report.||اقرؤوا الرسائل بصوت مسموع ودعوا الحضور يختارون الرد. أشيروا إلى الخطة كلما أضاء أحد عناصرها. الدفاع لا يتغيّر: تمهّلوا، تحققوا عبر قناة تثقون بها أصلاً، ثم أبلغوا.}}</aside>
+    </section>
+
+    <!-- 8 · A DAY AT THE MUSEUM -->
+    <section class="slide s-day" data-wall="green" data-gallery="3" data-min="2" data-sim="day" data-title="A day at the museum||يوم في المتحف">
+      <div class="day-plan">
+        <h2 class="title rise">{{A day at the museum||يوم في المتحف}}</h2>
+        <div class="plan rise" style="--d:1"></div>
+      </div>
+      <article class="scene paper rise" style="--d:2" aria-live="polite"></article>
+      <aside class="notes">{{Five short situations around the building. Pick the pins the room cares about; two or three are enough. Skip this slide for a 20-minute session.||خمسة مواقف قصيرة في أرجاء المبنى. اختاروا ما يهمّ الحضور؛ موقفان أو ثلاثة تكفي. يمكن تجاوز هذه الشريحة في جلسة من 20 دقيقة.}}</aside>
+    </section>
+
+    <!-- 9 · RANSOMWARE -->
+    <section class="slide s-ransom" data-wall="stone" data-gallery="4" data-min="2" data-sim="ransom" data-title="One click. Lights out.||نقرة واحدة… وتنطفئ الأضواء.">
+      <div class="ransom-cols">
+        <div class="ransom-left">
+          <h2 class="title rise">{{One click.<br>Lights out.||نقرة واحدة…<br>وتنطفئ الأضواء.}}</h2>
+          <div class="doc paper rise" style="--d:1">
+            <div class="doc-bar"><svg class="ic"><use href="#i-file-spreadsheet"/></svg><bdi dir="ltr">Invoice_SH-2291.xlsm</bdi></div>
+            <div class="doc-warn"><svg class="ic"><use href="#i-shield-alert"/></svg><span>{{<b>Security warning.</b> Macros have been disabled.||<b>تحذير أمني.</b> تم تعطيل وحدات الماكرو.}}</span></div>
+            <p>{{This document is protected. Click “Enable content” to view the invoice.||هذا المستند محمي. انقروا «تمكين المحتوى» لعرض الفاتورة.}}</p>
+          </div>
+          <div class="ransom-choice rise" style="--d:2">
+            <button class="btn" data-do="enable">{{Enable content||تمكين المحتوى}}</button>
+            <button class="btn btn-ghost" data-do="refuse">{{Close and report||إغلاق وإبلاغ}}</button>
+          </div>
+          <p class="ransom-msg" aria-live="polite"></p>
+        </div>
+        <div class="drive paper rise" style="--d:1">
+          <div class="drive-bar"><svg class="ic"><use href="#i-hard-drive"/></svg><b>{{Collections · shared drive||المقتنيات · المجلد المشترك}}</b><span class="drive-count" dir="ltr"></span></div>
+          <ul class="files" dir="ltr"></ul>
+          <div class="ransom-note" hidden>
+            <span class="caps sim-tag">{{Simulation||محاكاة}}</span>
+            <strong>{{Your files are encrypted.||تم تشفير ملفاتكم.}}</strong>
+            <p>{{Pay within <b class="ransom-clock" dir="ltr">71:59:59</b> or the collection records are gone for good.||ادفعوا خلال <b class="ransom-clock" dir="ltr">71:59:59</b> وإلا فُقدت سجلات المقتنيات نهائياً.}}</p>
+            <button class="btn btn-hi" data-do="rewind"><svg class="ic"><use href="#i-rotate-ccw"/></svg>{{Rewind the attack||أعيدوا الهجوم إلى الوراء}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="rewind" hidden>
+        <ol class="stages"></ol>
+        <p class="stage-tip" aria-live="polite"></p>
+      </div>
+      <aside class="notes">{{Ask who would click “Enable content”. Then click it. Let the silence work while the files lock, then rewind: there were three chances to stop it, and all three belonged to a person.||اسألوا: من كان سينقر «تمكين المحتوى»؟ ثم انقروا. دعوا الصمت يؤدي دوره أثناء قفل الملفات، ثم أعيدوا المشهد إلى الوراء: كانت هناك ثلاث فرص لإيقاف الهجوم، وكلها بيد إنسان.}}</aside>
+    </section>
+
+    <!-- 10 · PASSWORD LAB -->
+    <section class="slide s-pass" data-wall="blue" data-gallery="5" data-min="1.5" data-sim="pass" data-title="Long beats clever||الطول يغلب التعقيد">
+      <div class="pass-main">
+        <h2 class="title rise">{{Long beats clever||الطول يغلب التعقيد}}</h2>
+        <p class="lead rise" style="--d:1">{{Try a password. Not your real one.||جرّبوا كلمة مرور، على ألّا تكون الحقيقية.}}</p>
+        <label class="pass-field paper rise" style="--d:2">
+          <svg class="ic"><use href="#i-key-round"/></svg>
+          <input id="pw" type="text" dir="ltr" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="48" placeholder="…">
+        </label>
+        <div class="pass-presets rise" style="--d:3" dir="ltr"></div>
+        <div class="pass-result rise" style="--d:4">
+          <div class="gates" aria-hidden="true"></div>
+          <div class="pass-time"><span class="caps">{{Time to crack||الزمن اللازم للاختراق}}</span><strong id="pwTime" aria-live="polite">—</strong></div>
+        </div>
+        <ul class="pass-findings" aria-live="polite"></ul>
+        <small class="fine">{{Illustrative estimate for a fast offline attack. Nothing you type leaves this page.||تقدير توضيحي لهجوم سريع دون اتصال. ما تكتبونه لا يغادر هذه الصفحة.}}</small>
+      </div>
+      <aside class="placard paper rules rise" style="--d:2">
+        <h3 class="placard-title">{{Three rules for every key||ثلاث قواعد لكل مفتاح}}</h3>
+        <ol>
+          <li><b>{{Make it a passphrase.||اجعلوها عبارة مرور.}}</b>{{Four unrelated words beat eight clever characters.||أربع كلمات غير مترابطة أقوى من ثمانية رموز معقّدة.}}</li>
+          <li><b>{{One account, one passphrase.||لكل حساب عبارته.}}</b>{{A leak elsewhere must not open your SMA account.||تسريب في موقع آخر يجب ألّا يفتح حسابكم في الهيئة.}}</li>
+          <li><b>{{Never share it.||لا تشاركوها أبداً.}}</b>{{Not with IT, not with your manager, not on a sticky note.||لا مع تقنية المعلومات ولا مع المدير ولا على ورقة ملاحظات.}}</li>
+        </ol>
+      </aside>
+      <aside class="notes">{{Type the room's suggestions or use the presets. Sharjah2026 falls instantly; four random words last for centuries. Length and uniqueness, not symbols.||اكتبوا اقتراحات الحضور أو استخدموا الأمثلة الجاهزة. ‏Sharjah2026 تسقط فوراً، وأربع كلمات عشوائية تصمد قروناً. المهم الطول والتفرّد لا الرموز.}}</aside>
+    </section>
+
+    <!-- 11 · MFA -->
+    <section class="slide s-mfa" data-wall="blue" data-gallery="5" data-min="1" data-sim="mfa" data-title="The second lock||القفل الثاني">
+      <div class="con-you">
+        <h2 class="title rise">{{The second lock||القفل الثاني}}</h2>
+        <p class="lead rise" style="--d:1">{{It is 3:12 in the morning. Someone has your password. Your phone lights up.||الساعة 3:12 فجراً. أحدهم يملك كلمة مروركم. وهاتفكم يضيء.}}</p>
+        <div class="replies" aria-live="polite"></div>
+      </div>
+      <div class="phone phone-lock rise" style="--d:1">
+        <div class="lock-time" dir="ltr">03:12</div>
+        <div class="pushes"></div>
+      </div>
+      <aside class="playbook rise" style="--d:2">
+        <h3 class="caps">{{The intruder's screen||شاشة المتسلّل}}</h3>
+        <ol class="intruder">
+          <li class="ok"><svg class="ic"><use href="#i-check"/></svg><div><b>{{Password||كلمة المرور}}</b><span>{{Reused on a shopping site that was breached.||استُخدمت نفسها في موقع تسوّق تعرّض للاختراق.}}</span></div></li>
+          <li class="wait" data-mfa><svg class="ic"><use href="#i-hourglass"/></svg><div><b>{{Second factor||العامل الثاني}}</b><span class="mfa-state"></span></div></li>
+        </ol>
+        <p class="playbook-out" aria-live="polite"></p>
+      </aside>
+      <aside class="notes">{{Multi-factor authentication stops a stolen password from being enough, unless we approve the prompt ourselves. One rule: a request you did not start is an attack in progress. The same goes for UAE PASS requests and one-time codes.||المصادقة متعددة العوامل تمنع كلمة المرور المسروقة من أن تكفي وحدها، ما لم نوافق نحن على الطلب. القاعدة: كل طلب لم تبدؤوه هو هجوم جارٍ. وينطبق ذلك على طلبات الهوية الرقمية UAE PASS ورموز التحقق.}}</aside>
+    </section>
+
+    <!-- 12 · DEEPFAKE CALL -->
+    <section class="slide s-fake" data-wall="copper" data-gallery="6" data-min="1.5" data-sim="fake" data-title="The perfect copy||النسخة المتقنة">
+      <div class="call rise">
+        <div class="call-bar"><span class="call-live"></span><b>{{Finance Director · video call||المدير المالي · مكالمة مرئية}}</b><span class="call-clock" dir="ltr">00:00</span></div>
+        <div class="call-view">
+          <div class="call-face" aria-hidden="true"><i class="face-head"></i><i class="face-body"></i><i class="face-scan"></i></div>
+          <div class="call-wave" aria-hidden="true"></div>
+          <div class="call-stamp" hidden><span class="caps">{{Synthetic||مُولَّد آلياً}}</span></div>
+        </div>
+        <p class="call-caption" aria-live="polite"></p>
+      </div>
+      <div class="fake-side">
+        <h2 class="title rise">{{The perfect copy||النسخة المتقنة}}</h2>
+        <div class="replies" aria-live="polite"></div>
+        <ul class="fake-tells" hidden>
+          <li><svg class="ic"><use href="#i-scan-face"/></svg>{{The face: generated live from public video.||الوجه: مُولَّد لحظياً من مقاطع منشورة.}}</li>
+          <li><svg class="ic"><use href="#i-audio-lines"/></svg>{{The voice: cloned from a short clip.||الصوت: مُستنسخ من مقطع قصير.}}</li>
+          <li><svg class="ic"><use href="#i-phone-call"/></svg>{{What cannot be copied: your call back on a number you already hold.||ما لا يمكن تقليده: اتصالكم أنتم برقم معروف لديكم مسبقاً.}}</li>
+        </ul>
+      </div>
+      <aside class="notes">{{Artificial intelligence removes the old warning signs. Do not ask the room to spot the fake; ask what process would have caught it. Answer: a call back on a known number.||الذكاء الاصطناعي يُلغي علامات التحذير القديمة. لا تطلبوا من الحضور اكتشاف التزييف، بل اسألوهم: ما الإجراء الذي كان سيكشفه؟ الجواب: معاودة الاتصال برقم معروف.}}</aside>
+    </section>
+
+    <!-- 13 · AI REWROTE THE RULES -->
+    <section class="slide s-rules" data-wall="copper" data-gallery="6" data-min="1" data-steps="4" data-title="AI rewrote the rules||الذكاء الاصطناعي غيّر القواعد">
+      <h2 class="title rise">{{AI rewrote the rules||الذكاء الاصطناعي غيّر القواعد}}</h2>
+      <ul class="rewrites">
+        <li data-at="1">
+          <p class="old"><svg class="ic"><use href="#i-pen-line"/></svg>{{“Look for spelling mistakes.”||«ابحثوا عن الأخطاء الإملائية.»}}</p>
+          <p class="new">{{AI writes flawless Arabic and English. <b>Judge the request, not the writing.</b>||الذكاء الاصطناعي يكتب بعربية وإنجليزية سليمتين. <b>احكموا على الطلب لا على الصياغة.</b>}}</p>
+        </li>
+        <li data-at="2">
+          <p class="old"><svg class="ic"><use href="#i-audio-lines"/></svg>{{“I would know that voice.”||«أعرف هذا الصوت جيداً.»}}</p>
+          <p class="new">{{A voice can be cloned from a short clip. <b>Call back on a number you know.</b>||يمكن استنساخ الصوت من مقطع قصير. <b>عاودوا الاتصال برقم تعرفونه.</b>}}</p>
+        </li>
+        <li data-at="3">
+          <p class="old"><svg class="ic"><use href="#i-video"/></svg>{{“I saw them on camera.”||«رأيته بعيني على الكاميرا.»}}</p>
+          <p class="new">{{Faces are generated live. <b>Verify on a second channel.</b>||الوجوه تُولَّد لحظياً. <b>تحققوا عبر قناة ثانية.</b>}}</p>
+        </li>
+        <li data-at="4">
+          <p class="old"><svg class="ic"><use href="#i-bot"/></svg>{{“It is only a handy AI tool.”||«مجرد أداة ذكاء اصطناعي مفيدة.»}}</p>
+          <p class="new">{{What you paste may leave SMA. <b>Keep work data out of unapproved AI tools.</b>||ما تلصقونه قد يغادر الهيئة. <b>لا تضعوا بيانات العمل في أدوات غير معتمدة.</b>}}</p>
+        </li>
+      </ul>
+      <p class="source rise" style="--d:2">{{The UAE Cyber Security Council links AI-powered phishing to more than 90% of digital breaches.||يربط مجلس الأمن السيبراني التصيّد المدعوم بالذكاء الاصطناعي بأكثر من 90% من الاختراقات الرقمية.}}</p>
+      <aside class="notes">{{Four old instincts, four replacements. The fourth is about us: visitor data, contracts and collection records do not belong in public AI tools.||أربع قناعات قديمة وأربعة بدائل. الرابعة تخصّنا نحن: بيانات الزوار والعقود وسجلات المقتنيات لا مكان لها في أدوات الذكاء الاصطناعي العامة.}}</aside>
+    </section>
+
+    <!-- 14 · THE GUARDIAN'S CODE -->
+    <section class="slide s-code" data-wall="yellow" data-gallery="7" data-min="1" data-steps="7" data-title="The guardian's code||ميثاق الحارس">
+      <h2 class="title rise">{{The guardian's code||ميثاق الحارس}}</h2>
+      <ol class="habits">
+        <li data-at="1" style="--c:var(--blue);--t:#fff;--h:520px"><span class="picto"><svg class="ic"><use href="#i-hand"/></svg></span><b>{{Pause before you click||تمهّلوا قبل النقر}}</b><span>{{Urgency is a warning sign, not a reason.||الاستعجال إشارة تحذير لا مبرّر للتصرف.}}</span></li>
+        <li data-at="2" style="--c:#141414;--t:#fff;--h:580px"><span class="picto"><svg class="ic"><use href="#i-key-round"/></svg></span><b>{{Long passphrase, second lock||عبارة مرور طويلة وقفل ثانٍ}}</b><span>{{Never approve what you did not start.||لا توافقوا على طلب لم تبدؤوه.}}</span></li>
+        <li data-at="3" style="--c:var(--green);--t:#fff;--h:500px"><span class="picto"><svg class="ic"><use href="#i-refresh-cw"/></svg></span><b>{{Update and restart||حدّثوا وأعيدوا التشغيل}}</b><span>{{Updates close the doors attackers use.||التحديثات تُغلق أبواب المهاجمين.}}</span></li>
+        <li data-at="4" style="--c:var(--copper);--t:#161616;--h:560px"><span class="picto"><svg class="ic"><use href="#i-lock"/></svg></span><b>{{Lock your screen||أقفلوا الشاشة}}</b><span>{{Windows + L, every time you stand up.||‏Windows + L كلما غادرتم مقاعدكم.}}</span></li>
+        <li data-at="5" style="--c:var(--stone);--t:#1b1b1b;--h:510px"><span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span><b>{{Approved tools only||الأدوات المعتمدة فقط}}</b><span>{{No personal email, stray USB or public AI for work.||لا بريد شخصي ولا USB مجهول ولا ذكاء اصطناعي عام للعمل.}}</span></li>
+        <li data-at="6" style="--c:var(--red);--t:#fff;--h:570px"><span class="picto"><svg class="ic"><use href="#i-users"/></svg></span><b>{{Share only what is needed||شاركوا بقدر الحاجة}}</b><span>{{Visitor and staff data are held in trust.||بيانات الزوار والموظفين أمانة.}}</span></li>
+        <li data-at="7" style="--c:#fff;--t:#141414;--h:620px"><span class="picto"><svg class="ic"><use href="#i-megaphone"/></svg></span><b>{{Report fast||أبلغوا فوراً}}</b><span>{{No blame. Minutes matter.||بلا لوم. الدقائق تصنع الفرق.}}</span></li>
+      </ol>
+      <aside class="notes">{{Seven habits, one arch each. Do not read them out; pick the two this audience needs most. The last one matters most: nobody is in trouble for reporting.||سبع عادات، لكل عادة قوس. لا تقرؤوها كلها؛ اختاروا العادتين الأهم لهذا الجمهور. والأخيرة هي الأهم: لا أحد يُلام على الإبلاغ.}}</aside>
+    </section>
+
+    <!-- 15 · RECOGNISE AND REPORT -->
+    <section class="slide s-report" data-wall="green" data-gallery="8" data-min="1" data-sim="report" data-steps="4" data-title="I clicked. Now what?||نقرتُ… فماذا الآن؟">
+      <div class="report-left">
+        <h2 class="title rise">{{I clicked.<br>Now what?||نقرتُ…<br>فماذا الآن؟}}</h2>
+        <ol class="five">
+          <li data-at="1"><b dir="ltr">0:00</b><div><strong>{{Stop.||توقّفوا.}}</strong>{{No more clicks. Do not delete anything.||لا نقرات إضافية، ولا تحذفوا شيئاً.}}</div></li>
+          <li data-at="2"><b dir="ltr">0:30</b><div><strong>{{Disconnect.||افصلوا الاتصال.}}</strong>{{Wi-Fi off or cable out. Leave the device switched on.||أوقفوا Wi-Fi أو انزعوا الكابل، واتركوا الجهاز يعمل.}}</div></li>
+          <li data-at="3"><b dir="ltr">1:00</b><div><strong>{{Report.||أبلغوا.}}</strong>{{Call the IT Service Desk. Say what you saw and when.||اتصلوا بمكتب خدمات تقنية المعلومات واذكروا ما رأيتم ومتى.}}</div></li>
+          <li data-at="4"><b dir="ltr">5:00</b><div><strong>{{Change your password.||غيّروا كلمة المرور.}}</strong>{{From a different device.||من جهاز آخر.}}</div></li>
+        </ol>
+      </div>
+      <div class="report-right">
+        <div class="signals paper rise" style="--d:1">
+          <h3 class="placard-title">{{Which of these would you report?||أيّ هذه الحالات تستحق الإبلاغ؟}}</h3>
+          <div class="signal-chips"></div>
+          <div class="signal-foot">
+            <button class="btn" data-do="check">{{Check||تحقّقوا}}</button>
+            <p class="signal-out" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="channels rise" style="--d:2">
+          <div class="channel">
+            <span class="picto"><svg class="ic"><use href="#i-phone-call"/></svg></span>
+            <div><b>{{At work: SMA IT Service Desk||في العمل: مكتب خدمات تقنية المعلومات}}</b>
+              <span class="contact" id="contact" contenteditable="true" spellcheck="false" dir="auto" data-ph-en="Click to add the extension and email" data-ph-ar="انقروا لإضافة الرقم الداخلي والبريد"></span></div>
+          </div>
+          <div class="channel">
+            <span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span>
+            <div><b>{{Personal fraud or cybercrime||الاحتيال الشخصي أو الجرائم الإلكترونية}}</b>
+              <span>{{Ministry of Interior cybercrime platform (MOI UAE app) · Police 901 · Emergency 999||منصة الجرائم الإلكترونية بوزارة الداخلية (تطبيق MOI UAE) · الشرطة 901 · الطوارئ 999}}</span></div>
+          </div>
+        </div>
+      </div>
+      <aside class="notes">{{The message of this gallery is speed without blame. A report within minutes can protect every colleague; a hidden click can cost the whole collection. Click the contact line to type the real extension; it is saved on this computer.||رسالة هذه القاعة: السرعة بلا لوم. بلاغ خلال دقائق قد يحمي كل الزملاء، ونقرة مكتومة قد تكلّف المجموعة كلها. انقروا على سطر جهة الاتصال لكتابة الرقم الداخلي الفعلي، وسيُحفظ على هذا الحاسوب.}}</aside>
+    </section>
+
+    <!-- 16 · QUIZ -->
+    <section class="slide s-quiz" data-wall="charcoal" data-gallery="9" data-min="2" data-sim="quiz" data-title="The guardian's trial||اختبار الحارس">
+      <div class="quiz-head">
+        <h2 class="title rise">{{The guardian's trial||اختبار الحارس}}</h2>
+        <div class="quiz-meter rise" style="--d:1" aria-hidden="true"></div>
+      </div>
+      <div class="quiz-body" aria-live="polite"></div>
+      <aside class="notes">{{Six quick questions. Run it as a room vote: ask for hands, then click the majority answer. Applaud the score whatever it is.||ستة أسئلة سريعة. نفّذوها بتصويت جماعي: اطلبوا رفع الأيدي ثم انقروا على إجابة الأغلبية. وصفّقوا للنتيجة أياً كانت.}}</aside>
+    </section>
+
+    <!-- 17 · PLEDGE -->
+    <section class="slide s-pledge" data-wall="charcoal" data-gallery="9" data-min="0.5" data-sim="pledge" data-title="Pause. Verify. Report.||تمهّل. تحقّق. أبلِغ.">
+      <div class="pledge-text">
+        <h2 class="display display-sm rise">{{Pause.<br>Verify.<br>Report.||تمهّل.<br>تحقّق.<br>أبلِغ.}}</h2>
+        <p class="lead rise" style="--d:2">{{Three words that stop almost every attack in this exhibition.||ثلاث كلمات توقف معظم الهجمات التي رأيناها في هذا المعرض.}}</p>
+        <div class="pledge-cta rise" style="--d:3">
+          <button class="btn btn-hi hold" data-do="hold"><svg class="ic"><use href="#i-fingerprint"/></svg><span class="hold-label">{{Press and hold to take the pledge||اضغطوا مطوّلاً لأداء التعهّد}}</span></button>
+          <span class="caps pledge-done" hidden>{{Pledge taken||تمّ التعهّد}} · <bdi class="pledge-date" dir="ltr"></bdi></span>
+        </div>
+      </div>
+      <div class="pledge-arch arch" aria-hidden="true">
+        <i class="pledge-fill"></i>
+        <span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span>
+      </div>
+      <aside class="notes">{{Ask everyone to say the three words with you while you hold the button. Then move straight to the close.||اطلبوا من الجميع ترديد الكلمات الثلاث معكم أثناء الضغط على الزر، ثم انتقلوا مباشرة إلى الختام.}}</aside>
+    </section>
+
+    <!-- 18 · CLOSE -->
+    <section class="slide s-close" data-wall="charcoal" data-gallery="9" data-min="0.5" data-title="Thank you||شكراً لكم">
+      <div class="close-main">
+        <h2 class="display display-sm rise">{{Thank you,<br>guardians.||شكراً لكم<br>أيها الحرّاس.}}</h2>
+        <p class="lead rise" style="--d:1">{{The collection is safer than it was twenty minutes ago.||مقتنياتنا اليوم أكثر أماناً مما كانت عليه قبل عشرين دقيقة.}}</p>
+        <button class="btn btn-ghost rise" style="--d:2" data-act="restart"><svg class="ic"><use href="#i-rotate-ccw"/></svg>{{Start again||البدء من جديد}}</button>
+      </div>
+      <div class="refs rise" style="--d:2">
+        <h3 class="caps">{{Aligned with official guidance||متوافق مع الإرشادات الرسمية}}</h3>
+        <ul>
+          <li><b>{{UAE Cyber Security Council||مجلس الأمن السيبراني لحكومة دولة الإمارات}}</b>{{Cyber Pulse national awareness campaign||حملة «النبض السيبراني» للتوعية الوطنية}}</li>
+          <li><b>{{Sharjah Cyber Security Centre · Sharjah Digital Department||مركز الشارقة للأمن السيبراني · دائرة الشارقة الرقمية}}</b>{{Sharjah Cyber Security Strategy 2026–2031||استراتيجية الشارقة للأمن السيبراني 2026–2031}}</li>
+          <li><b>{{UAE Government portal (u.ae)||البوابة الرسمية لحكومة دولة الإمارات (u.ae)}}</b>{{Cyber safety and digital security; reporting cybercrime||السلامة السيبرانية والأمن الرقمي؛ الإبلاغ عن الجرائم الإلكترونية}}</li>
+          <li><b>{{Ministry of Interior||وزارة الداخلية}}</b>{{Cybercrime platform and reporting service||منصة الجرائم الإلكترونية وخدمة الإبلاغ}}</li>
+          <li><b>{{UAE federal law||التشريعات الاتحادية}}</b>{{Decree-Law 34 of 2021 on cybercrimes · Decree-Law 45 of 2021 on personal data||المرسوم بقانون 34 لسنة 2021 بشأن الجرائم الإلكترونية · المرسوم بقانون 45 لسنة 2021 بشأن حماية البيانات الشخصية}}</li>
+        </ul>
+      </div>
+      <aside class="notes">{{Close with the reporting contact once more. The presentation can be reopened by anyone afterwards as a self-paced refresher.||اختموا بالتذكير بجهة الإبلاغ. ويمكن لأي موظف فتح العرض لاحقاً لمراجعته ذاتياً.}}</aside>
+    </section>
+
+  </main>
+
+  <footer class="bottom">
+    <div class="nav">
+      <button class="tool" data-act="prev" aria-label="Previous"><svg class="ic flip"><use href="#i-arrow-left"/></svg></button>
+      <button class="tool" data-act="next" aria-label="Next"><svg class="ic flip"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <nav class="arcade" id="arcade" aria-label="Galleries"></nav>
+    <div class="where"><span class="where-name caps" id="whereName"></span><span class="count" id="count" dir="ltr"></span></div>
+  </footer>
+
+  <!-- presenter notes -->
+  <div class="drawer" id="drawer" hidden>
+    <span class="caps">{{Presenter notes||ملاحظات المقدّم}}</span>
+    <p id="drawerText"></p>
+  </div>
+
+  <!-- gallery map -->
+  <div class="map" id="map" hidden>
+    <div class="map-head">
+      <h2 class="title title-sm">{{Gallery map||خريطة القاعات}}</h2>
+      <button class="tool" data-act="map" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="map-grid" id="mapGrid"></div>
+    <p class="map-keys" dir="ltr"><kbd>→</kbd><kbd>Space</kbd> next <kbd>←</kbd> back <kbd>L</kbd> language <kbd>G</kbd> map <kbd>N</kbd> notes <kbd>T</kbd> timer <kbd>F</kbd> full screen <kbd>Home</kbd> start</p>
+  </div>
+
+</div>
+
+<svg class="door" id="door" viewBox="0 0 100 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150V55C0 24 22 6 50 0c28 6 50 24 50 55v95z"/></svg>
+
+<!--@js-->
+</body>
+</html>
