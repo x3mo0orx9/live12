@@ -1300,5 +1300,23 @@
     }, 1200);
   };
 
+  /* 3 · six common threats: all six stay on screen, each with its own explanation */
+  sims.threats = (slide) => {
+    slide.dataset.steps = 0;
+    $('.niches', slide).innerHTML = THREATS.map((t, k) => `<div class="niche tcard rise" style="--d:${k + 1}">
+      <span class="picto">${icon(t.ic)}</span><b>${B(t.name[0], t.name[1])}</b>
+      <p>${B(t.what[0], t.what[1])}</p><small>${B(t.tell[0], t.tell[1])}</small></div>`).join('');
+  };
+
+  /* 8 · workplace scenarios: five situations and the right response, all on screen */
+  sims.day = (slide) => {
+    slide.dataset.steps = 0;
+    $('.plan', slide).innerHTML = PLAN + DAY.map((d) => `<span class="pin" style="left:${(d.x / 1010 * 100).toFixed(2)}%;top:${(d.y / 610 * 100).toFixed(2)}%">${icon(d.ic)}</span>`).join('');
+    $('.scene', slide).innerHTML = `<ol class="resp">${DAY.map((d, k) => {
+      const good = d.opts.find((o) => o.ok);
+      return `<li class="rise" style="--d:${k + 2}"><span class="picto">${icon(d.ic)}</span><div><b>${B(d.title[0], d.title[1])}</b><span>${B(good.t[0], good.t[1])}</span></div></li>`;
+    }).join('')}</ol>`;
+  };
+
   boot();
 })();

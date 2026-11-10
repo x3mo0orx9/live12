@@ -723,3 +723,25 @@ html[dir=rtl] .hold{--from:right}
 .quiz-opts.answered .opt:not(.good){opacity:.4}
 .pledge-fill{transition:transform 1.6s var(--out)}
 .pin{display:grid}
+
+
+/* six threats shown together, nothing rotating */
+.s-threats .threat-wall{grid-template-columns:1fr}
+.s-threats .placard{display:none}
+.tcard{height:650px;justify-content:flex-start;padding:150px 22px 26px;gap:14px;background:var(--niche);color:var(--ink)}
+.tcard .picto{width:84px;height:84px;margin-bottom:6px}
+.tcard b{font-size:27px;line-height:1.2;min-height:66px}
+.tcard p{font-size:20.5px;line-height:1.42;color:var(--ink2)}
+.tcard small{margin-top:auto;padding-top:14px;border-top:2px solid var(--line);font-size:19.5px;line-height:1.35;font-weight:700;width:100%}
+html[lang=ar] .tcard p{line-height:1.6;font-size:20px}
+html[lang=ar] .tcard b{line-height:1.4;min-height:76px}
+/* five workplace situations listed together */
+.s-day{grid-template-columns:1fr 640px}
+.scene{padding:14px 34px}
+.resp li{display:flex;gap:20px;align-items:flex-start;padding:17px 0;border-top:2px solid var(--line);font-size:20.5px;line-height:1.4;color:var(--ink2)}
+.resp li:first-child{border-top:0}
+.resp .picto{width:58px;height:58px;border-width:3px;color:var(--ink)}
+.resp .picto .ic{width:30px;height:30px}
+.resp b{display:block;font-size:24px;line-height:1.25;color:var(--ink)}
+html[lang=ar] .resp li{line-height:1.55}
+.s-day .pin::before{display:none}

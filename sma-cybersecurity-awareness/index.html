@@ -739,6 +739,28 @@ html[dir=rtl] .hold{--from:right}
 .pledge-fill{transition:transform 1.6s var(--out)}
 .pin{display:grid}
 
+
+/* six threats shown together, nothing rotating */
+.s-threats .threat-wall{grid-template-columns:1fr}
+.s-threats .placard{display:none}
+.tcard{height:650px;justify-content:flex-start;padding:150px 22px 26px;gap:14px;background:var(--niche);color:var(--ink)}
+.tcard .picto{width:84px;height:84px;margin-bottom:6px}
+.tcard b{font-size:27px;line-height:1.2;min-height:66px}
+.tcard p{font-size:20.5px;line-height:1.42;color:var(--ink2)}
+.tcard small{margin-top:auto;padding-top:14px;border-top:2px solid var(--line);font-size:19.5px;line-height:1.35;font-weight:700;width:100%}
+html[lang=ar] .tcard p{line-height:1.6;font-size:20px}
+html[lang=ar] .tcard b{line-height:1.4;min-height:76px}
+/* five workplace situations listed together */
+.s-day{grid-template-columns:1fr 640px}
+.scene{padding:14px 34px}
+.resp li{display:flex;gap:20px;align-items:flex-start;padding:17px 0;border-top:2px solid var(--line);font-size:20.5px;line-height:1.4;color:var(--ink2)}
+.resp li:first-child{border-top:0}
+.resp .picto{width:58px;height:58px;border-width:3px;color:var(--ink)}
+.resp .picto .ic{width:30px;height:30px}
+.resp b{display:block;font-size:24px;line-height:1.25;color:var(--ink)}
+html[lang=ar] .resp li{line-height:1.55}
+.s-day .pin::before{display:none}
+
 </style>
 </head>
 <body>
@@ -1073,7 +1095,7 @@ html[dir=rtl] .hold{--from:right}
     <!-- 8 · A DAY AT THE MUSEUM -->
     <section class="slide s-day" data-wall="charcoal" data-gallery="3" data-min="2" data-sim="day" data-title="Workplace scenarios||مواقف من بيئة العمل">
       <div class="day-plan">
-        <h2 class="title rise"><span lang="en">Workplace scenarios</span><span lang="ar">مواقف من بيئة العمل</span></h2>
+        <h2 class="title rise"><span lang="en">Workplace scenarios:<br>the right response</span><span lang="ar">مواقف من بيئة العمل:<br>التصرف الصحيح</span></h2>
         <div class="plan rise" style="--d:1"></div>
       </div>
       <article class="scene paper rise" style="--d:2" aria-live="polite"></article>
@@ -3021,6 +3043,24 @@ html[dir=rtl] .hold{--from:right}
       arch.style.setProperty('--p', s >= 1 ? 1 : 0);
       arch.classList.toggle('signed', s >= 1);
     }, 1200);
+  };
+
+  /* 3 · six common threats: all six stay on screen, each with its own explanation */
+  sims.threats = (slide) => {
+    slide.dataset.steps = 0;
+    $('.niches', slide).innerHTML = THREATS.map((t, k) => `<div class="niche tcard rise" style="--d:${k + 1}">
+      <span class="picto">${icon(t.ic)}</span><b>${B(t.name[0], t.name[1])}</b>
+      <p>${B(t.what[0], t.what[1])}</p><small>${B(t.tell[0], t.tell[1])}</small></div>`).join('');
+  };
+
+  /* 8 · workplace scenarios: five situations and the right response, all on screen */
+  sims.day = (slide) => {
+    slide.dataset.steps = 0;
+    $('.plan', slide).innerHTML = PLAN + DAY.map((d) => `<span class="pin" style="left:${(d.x / 1010 * 100).toFixed(2)}%;top:${(d.y / 610 * 100).toFixed(2)}%">${icon(d.ic)}</span>`).join('');
+    $('.scene', slide).innerHTML = `<ol class="resp">${DAY.map((d, k) => {
+      const good = d.opts.find((o) => o.ok);
+      return `<li class="rise" style="--d:${k + 2}"><span class="picto">${icon(d.ic)}</span><div><b>${B(d.title[0], d.title[1])}</b><span>${B(good.t[0], good.t[1])}</span></div></li>`;
+    }).join('')}</ol>`;
   };
 
   boot();
