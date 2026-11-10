@@ -31,7 +31,7 @@
     ['Phishing', 'التصيّد الاحتيالي'],
     ['Social engineering', 'الهندسة الاجتماعية'],
     ['Malware and ransomware', 'البرمجيات الخبيثة والفدية'],
-    ['Passwords and the second lock', 'كلمات المرور والقفل الثاني'],
+    ['Passwords and MFA', 'كلمات المرور والمصادقة'],
     ['AI-powered threats', 'تهديدات الذكاء الاصطناعي'],
     ['Good habits', 'العادات الآمنة'],
     ['Recognise and report', 'الرصد والإبلاغ'],

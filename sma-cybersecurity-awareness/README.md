@@ -1,8 +1,8 @@
 # SMA · Cybersecurity Awareness
 
 An interactive, bilingual (Arabic / English) awareness presentation for
-non-IT staff at Sharjah Museums Authority. It is staged as an exhibition on one light background:
-ten galleries, entered through arches, each holding one hands-on
+non-IT staff at Sharjah Museums Authority. It has a light background and
+ten short sections, most with one hands-on
 exhibit.
 
 ## Open it
@@ -36,16 +36,16 @@ something to reveal. The timer highlights when you are behind the plan.
 | 1 | Welcome | Security starts with you | Cover | 0.5 |
 | 2 | Welcome | Why cybersecurity matters | Why it matters, with the 98% figure | 1 |
 | 3 | Common threats | Six common cyber threats | Six threats, one placard each | 1.5 |
-| 4 | Phishing | A forgery is made to look right | Loupe over four look-alike addresses | 1 |
-| 5 | Phishing | Spot the forgery | Find six red flags in an email | 2 |
-| 6 | Phishing | Authentic or forgery? | Six-message triage game | 1.5 |
-| 7 | Social engineering | Both sides of the glass | Chat simulation with the attacker's playbook | 2 |
-| 8 | Social engineering | A day at the museum | Five decisions on a floor plan | 2 |
-| 9 | Malware and ransomware | One click. Lights out. | Ransomware demo with rewind | 2 |
-| 10 | Passwords | Long beats clever | Password and passphrase lab | 1.5 |
-| 11 | Passwords | The second lock | MFA prompt-bombing simulation | 1 |
-| 12 | AI-powered threats | The perfect copy | Deepfake video-call decision | 1.5 |
-| 13 | AI-powered threats | AI rewrote the rules | Four old instincts, four new rules | 1 |
+| 4 | Phishing | Look closely at the address | Magnifier over four look-alike addresses | 1 |
+| 5 | Phishing | Find the six warning signs | Find six red flags in an email | 2 |
+| 6 | Phishing | Genuine or fake? | Six-message triage game | 1.5 |
+| 7 | Social engineering | The urgent request | Chat simulation with the attacker's playbook | 2 |
+| 8 | Social engineering | Workplace scenarios | Five decisions on a floor plan | 2 |
+| 9 | Malware and ransomware | Ransomware: one click | Ransomware demo with rewind | 2 |
+| 10 | Passwords | Strong passwords | Password and passphrase lab | 1.5 |
+| 11 | Passwords | Multi-factor authentication | MFA prompt-bombing simulation | 1 |
+| 12 | AI-powered threats | AI deepfakes | Deepfake video-call decision | 1.5 |
+| 13 | AI-powered threats | AI changed the rules | Four old instincts, four new rules | 1 |
 | 14 | Good habits | Seven safe habits | Seven habits | 1 |
 | 15 | Recognise and report | I clicked. Now what? | First five minutes, what to report, who to call | 1 |
 | 16 | Quiz and close | Quick quiz | Six-question quiz | 2 |

@@ -190,14 +190,12 @@
       body: ['Hello, IT here. While fixing your account we sent a 6-digit code to your phone by mistake. Please send it to me now so we can finish.',
         'مرحباً، معكم الدعم الفني. أثناء إصلاح حسابكم أرسلنا رمزاً من 6 أرقام إلى هاتفكم بالخطأ. يرجى إرساله لي الآن لإكمال العمل.'],
       why: ['That code is the key to your account. Nobody genuine will ever ask you to read a code back to them.', 'هذا الرمز هو مفتاح حسابكم. لا جهة حقيقية تطلب منكم إعادة إرسال رمز تحقق.'] },
-    { ok: true, ic: 'users', chan: ['Teams · internal', 'تيمز · داخلي'], from: ['A colleague, Exhibitions team', 'زميل من فريق المعارض'], addr: 'sma.gov.ae',
-      body: ['As agreed in this morning’s meeting, the floor plan is in our team’s shared folder, same place as last week.',
-        'كما اتفقنا في اجتماع هذا الصباح، مخطط القاعة موجود في المجلد المشترك للفريق، في المكان نفسه كالأسبوع الماضي.'],
+    { ok: true, ic: 'users', chan: ['Teams · internal', 'تيمز · داخلي'], from: ['A colleague, Projects team', 'زميل من فريق المشاريع'], addr: 'sma.gov.ae',
+      body: ['As agreed in this morning’s meeting, the project plan is in our team’s shared folder, same place as last week.', 'كما اتفقنا في اجتماع هذا الصباح، خطة المشروع موجودة في المجلد المشترك للفريق، في المكان نفسه كالأسبوع الماضي.'],
       why: ['A known colleague, on the internal channel, about something you were expecting, with no link to click.', 'زميل معروف، عبر القناة الداخلية، في موضوع تتوقعونه، وبلا رابط للنقر.'] },
-    { ok: false, ic: 'mail', chan: ['Email', 'بريد إلكتروني'], from: ['Accounts, shipping supplier', 'الحسابات، شركة الشحن'], addr: 'accounts@fineart-shipping-payments.com',
+    { ok: false, ic: 'mail', chan: ['Email', 'بريد إلكتروني'], from: ['Accounts, supplier', 'الحسابات، المورّد'], addr: 'accounts@supplier-payments-desk.com',
       subj: ['Updated bank details for invoice 2291', 'تحديث بيانات الحساب البنكي للفاتورة 2291'],
-      body: ['Please note that our bank account has changed. Kindly settle the attached invoice to the new account today to avoid delays to the shipment.',
-        'نود إعلامكم بتغيير حسابنا البنكي. يرجى سداد الفاتورة المرفقة إلى الحساب الجديد اليوم تفادياً لتأخير الشحنة.'],
+      body: ['Please note that our bank account has changed. Kindly settle the attached invoice to the new account today to avoid a late fee.', 'نود إعلامكم بتغيير حسابنا البنكي. يرجى سداد الفاتورة المرفقة إلى الحساب الجديد اليوم تفادياً لرسوم التأخير.'],
       why: ['New bank details by email are the signature of invoice fraud. Call the supplier on the number you already hold before anything is paid.', 'تغيير الحساب البنكي عبر البريد هو بصمة احتيال الفواتير. اتصلوا بالمورّد على الرقم المسجّل لديكم قبل أي سداد.'] },
     { ok: false, ic: 'qr-code', chan: ['Email', 'بريد إلكتروني'], from: ['Account Security', 'أمن الحسابات'], addr: 'no-reply@account-security-alerts.net', qr: 41,
       body: ['Your two-step verification expires today. Scan this code with your phone to keep access to your account.',
@@ -250,7 +248,7 @@
       actions.hidden = true;
       why.hidden = false;
       why.className = `triage-why ${good ? 'good' : 'bad'}`;
-      const label = m.ok ? B('Authentic.', 'أصلية.') : B('Forgery.', 'مزيّفة.');
+      const label = m.ok ? B('Genuine.', 'حقيقية.') : B('Fake.', 'مزيّفة.');
       const last = i === TRIAGE.length - 1;
       why.innerHTML = `${icon(good ? 'circle-check' : 'circle-x')}<p><b>${label}</b>${B(m.why[0], m.why[1])}</p>
         <button class="btn" data-next>${last ? B('Result', 'النتيجة') : B('Next', 'التالي')}${icon('arrow-right', 'flip')}</button>`;
@@ -295,7 +293,7 @@
     },
     ask: {
       say: [
-        { t: ['The courier holding the loan objects for tomorrow’s opening must be paid today. Transfer AED 18,500 to the account I am sending. I will sign the paperwork later.', 'شركة الشحن التي تحتجز القطع المُعارة لافتتاح الغد يجب أن تُدفع مستحقاتها اليوم. حوّلوا 18,500 درهم إلى الحساب الذي سأرسله، وسأوقّع الأوراق لاحقاً.'], lev: ['authority', 'urgency'] },
+        { t: ['The supplier for tomorrow’s event must be paid today. Transfer AED 18,500 to the account I am sending. I will sign the paperwork later.', 'مورّد فعالية الغد يجب أن تُدفع مستحقاته اليوم. حوّلوا 18,500 درهم إلى الحساب الذي سأرسله، وسأوقّع الأوراق لاحقاً.'], lev: ['authority', 'urgency'] },
         { t: ['Keep this between us for now.', 'ليبقَ الأمر بيننا في الوقت الحالي.'], lev: ['secrecy'] },
       ],
       opts: [
@@ -305,7 +303,7 @@
       ],
     },
     squeeze: {
-      say: [{ t: ['There is no time for procedure. The delegation arrives at four. Do you want to be the reason the opening fails?', 'لا وقت للإجراءات. الوفد يصل في الرابعة. هل تريدون أن تكونوا سبب فشل الافتتاح؟'], lev: ['pressure'] }],
+      say: [{ t: ['There is no time for procedure. The delegation arrives at four. Do you want to be the reason the event fails?', 'لا وقت للإجراءات. الوفد يصل في الرابعة. هل تريدون أن تكونوا سبب فشل الفعالية؟'], lev: ['pressure'] }],
       opts: [
         { t: ['“All right… sending it.”', '«حسناً… سأرسل المبلغ.»'], to: 'lose' },
         { t: ['Stop. Verify on the known number, then report it.', 'التوقف، والتحقق عبر الرقم المعروف، ثم الإبلاغ.'], to: 'win', act: true },
@@ -321,7 +319,7 @@
     lose: { cls: 'bad',
       sys: ['AED 18,500 sent to a stranger with a profile photo.', 'تم تحويل 18,500 درهم إلى غريب يملك صورة ملف شخصي.'],
       title: ['The money is gone.', 'ضاع المبلغ.'],
-      text: ['There was no delegation and no courier. A real request survives a phone call; this one could not.', 'لم يكن هناك وفد ولا شركة شحن. الطلب الحقيقي يصمد أمام اتصال هاتفي، وهذا الطلب لم يكن ليصمد.'],
+      text: ['There was no delegation and no supplier. A real request survives a phone call; this one could not.', 'لم يكن هناك وفد ولا مورّد. الطلب الحقيقي يصمد أمام اتصال هاتفي، وهذا الطلب لم يكن ليصمد.'],
       out: ['Four levers, one goal: keep you moving and keep you alone. Any pause would have broken it.', 'أربعة عناصر وهدف واحد: أن تواصلوا التنفيذ وأنتم وحدكم. أي توقف كان سيُفشل الخطة.'] },
   };
 
@@ -392,12 +390,12 @@
       <rect x="40" y="440" width="150" height="40"/><circle cx="400" cy="520" r="26"/><circle cx="560" cy="460" r="26"/><circle cx="560" cy="560" r="20"/>
     </g>
     <path class="wall" d="M250 605H1005V5H5V605H140M620 5V96M620 164V292M620 350V476M620 536V605M5 360H116M200 360H436M512 360H620M330 360V448M330 522V605M620 230H1005M620 420H1005"/>
-    <text x="312" y="52" lang="en">PERMANENT GALLERY</text><text x="312" y="56" lang="ar">قاعة العرض الدائم</text>
-    <text x="812" y="52" lang="en">TEMPORARY EXHIBITION</text><text x="812" y="56" lang="ar">المعرض المؤقت</text>
-    <text x="812" y="270" lang="en">OFFICES</text><text x="812" y="274" lang="ar">المكاتب</text>
-    <text x="812" y="462" lang="en">COLLECTIONS STORE</text><text x="812" y="466" lang="ar">مخزن المقتنيات</text>
+    <text x="312" y="52" lang="en">OPEN OFFICE</text><text x="312" y="56" lang="ar">المكاتب المفتوحة</text>
+    <text x="812" y="52" lang="en">MEETING ROOMS</text><text x="812" y="56" lang="ar">قاعات الاجتماعات</text>
+    <text x="812" y="270" lang="en">MANAGEMENT</text><text x="812" y="274" lang="ar">الإدارة</text>
+    <text x="812" y="462" lang="en">SERVER ROOM</text><text x="812" y="466" lang="ar">غرفة الخوادم</text>
     <text x="167" y="402" lang="en">RECEPTION</text><text x="167" y="406" lang="ar">الاستقبال</text>
-    <text x="475" y="402" lang="en">CAFÉ</text><text x="475" y="406" lang="ar">المقهى</text>
+    <text x="475" y="402" lang="en">BREAK AREA</text><text x="475" y="406" lang="ar">الاستراحة</text>
     <text x="195" y="596" lang="en" style="font-size:13px">ENTRANCE</text><text x="195" y="597" lang="ar" style="font-size:15px">المدخل</text>
   </svg>`;
 
@@ -410,7 +408,7 @@
         { t: ['Point him to the room and get on with your work.', 'إرشاده إلى الغرفة ومتابعة العمل.'], why: ['Unescorted access to systems is how break-ins begin.', 'الوصول إلى الأنظمة دون مرافقة هو بداية الاختراق.'] },
       ] },
     { x: 330, y: 205, ic: 'usb', title: ['The lost USB stick', 'ذاكرة USB المفقودة'],
-      text: ['On a gallery bench you find a USB stick labelled “Salaries 2026”.', 'تجدون على مقعد في القاعة ذاكرة USB كُتب عليها «رواتب 2026».'],
+      text: ['In the corridor you find a USB stick labelled “Salaries 2026”.', 'تجدون في الممر ذاكرة USB كُتب عليها «رواتب 2026».'],
       opts: [
         { t: ['Plug it into your computer to find out whose it is.', 'توصيلها بحاسوبكم لمعرفة صاحبها.'], why: ['That label was written for you. Curiosity is what installs the malware.', 'هذه العبارة كُتبت لكم تحديداً. الفضول هو ما يثبّت البرمجية الخبيثة.'] },
         { ok: true, t: ['Hand it to IT or Security, unopened.', 'تسليمها لتقنية المعلومات أو الأمن دون فتحها.'], why: ['They can examine it safely. You have just stopped an attack with one short walk.', 'هم قادرون على فحصها بأمان. لقد أوقفتم هجوماً بمشوار قصير.'] },
@@ -424,14 +422,14 @@
         { t: ['Ask for his employee number first, then read the code.', 'طلب رقمه الوظيفي أولاً ثم قراءة الرمز.'], why: ['Anyone can invent a number. Verify by calling back, not by asking.', 'أي شخص يستطيع اختلاق رقم. التحقق يكون بمعاودة الاتصال لا بالسؤال.'] },
       ] },
     { x: 812, y: 130, ic: 'qr-code', title: ['The sticker', 'الملصق'],
-      text: ['A QR code on an exhibit label is peeling at the corner. There is a different QR code printed underneath it.', 'رمز QR على بطاقة أحد المعروضات بدأ ينفصل من زاويته، وتحته رمز آخر مختلف مطبوع.'],
+      text: ['A QR code on a notice-board poster is peeling at the corner. There is a different QR code printed underneath it.', 'رمز QR على ملصق في لوحة الإعلانات بدأ ينفصل من زاويته، وتحته رمز آخر مختلف مطبوع.'],
       opts: [
-        { t: ['Press it back down so the label looks tidy.', 'إعادة لصقه لتبدو البطاقة مرتبة.'], why: ['You have just repaired the attacker’s trap.', 'لقد أصلحتم فخّ المهاجم للتو.'] },
-        { ok: true, t: ['Remove it, keep it, and report it to Security and IT.', 'نزعه والاحتفاظ به وإبلاغ الأمن وتقنية المعلومات.'], why: ['Fake QR stickers send our visitors to payment-stealing sites, in SMA’s name.', 'ملصقات QR المزيّفة تقود زوارنا إلى مواقع تسرق بيانات الدفع… باسم الهيئة.'] },
+        { t: ['Press it back down so the poster looks tidy.', 'إعادة لصقه ليبدو الملصق مرتباً.'], why: ['You have just repaired the attacker’s trap.', 'لقد أصلحتم فخّ المهاجم للتو.'] },
+        { ok: true, t: ['Remove it, keep it, and report it to Security and IT.', 'نزعه والاحتفاظ به وإبلاغ الأمن وتقنية المعلومات.'], why: ['Fake QR stickers send people to sites that steal payment details, in SMA’s name.', 'ملصقات QR المزيّفة تقود الناس إلى مواقع تسرق بيانات الدفع… باسم الهيئة.'] },
         { t: ['Scan it with your phone to see where it leads.', 'مسحه بهاتفكم لمعرفة وجهته.'], why: ['Never test a suspicious link on your own device.', 'لا تختبروا رابطاً مريباً على أجهزتكم.'] },
       ] },
     { x: 475, y: 500, ic: 'wifi', title: ['The free Wi-Fi', 'الشبكة المجانية'],
-      text: ['You are working from a café and must send a loan agreement. A network called “Museum_Guest_Free” needs no password.', 'تعملون من مقهى وعليكم إرسال اتفاقية إعارة. وهناك شبكة باسم «Museum_Guest_Free» لا تتطلب كلمة مرور.'],
+      text: ['You are working from a café and must send a contract. A network called “Office_Guest_Free” needs no password.', 'تعملون من مقهى وعليكم إرسال عقد. وهناك شبكة باسم «Office_Guest_Free» لا تتطلب كلمة مرور.'],
       opts: [
         { t: ['Connect. It will only take a minute.', 'الاتصال بها، فالأمر لن يستغرق سوى دقيقة.'], why: ['Anyone can name a hotspot. On an open network, others can watch what you send.', 'أي شخص يستطيع تسمية شبكة. وفي الشبكات المفتوحة يمكن للآخرين مراقبة ما ترسلونه.'] },
         { ok: true, t: ['Use your phone’s hotspot or the approved VPN.', 'استخدام نقطة اتصال الهاتف أو الشبكة الافتراضية المعتمدة.'], why: ['Your own connection, or SMA’s protected tunnel. Nothing in between.', 'اتصالكم الخاص أو النفق المحمي للهيئة. ولا شيء بينهما.'] },
@@ -480,9 +478,9 @@
   };
 
   /* ---- 9 · ransomware: one click, lights out ----------------------------- */
-  const FILES = ['Collection_Inventory_2026.xlsx', 'Loan_Agreement_0412.pdf', 'Exhibition_Plan_Spring.pptx', 'Condition_Report_117.docx',
-    'Visitor_Stats_Q3.xlsx', 'Insurance_Valuations.pdf', 'Gallery_Floorplan.dwg', 'Press_Images_Opening.zip',
-    'School_Visits.xlsx', 'Conservation_Notes.docx', 'Provenance_Records.pdf', 'Catalogue_Draft_AR-EN.docx'];
+  const FILES = ['Budget_2026.xlsx', 'Contract_0412.pdf', 'Annual_Plan.pptx', 'Meeting_Minutes_117.docx',
+    'Statistics_Q3.xlsx', 'Supplier_Invoices.pdf', 'Office_Floorplan.dwg', 'Event_Photos.zip',
+    'Staff_Rota.xlsx', 'Policy_Draft.docx', 'HR_Records.pdf', 'Report_Draft_AR-EN.docx'];
   const FILE_ICON = { xlsx: 'file-spreadsheet', pdf: 'file-text', docx: 'file-text', pptx: 'presentation', dwg: 'file-image', zip: 'archive' };
   const STAGES = [
     { n: ['Email arrives', 'وصول الرسالة'], save: true, locked: 0,
@@ -716,8 +714,8 @@
     const end = (kind) => {
       const E = {
         lose: { f: ['ok', 'check', ['Approved by you. They are in: mailbox, shared drives, HR portal.', 'وافقتم أنتم على الطلب. أصبحوا في الداخل: البريد والمجلدات المشتركة وبوابة الموارد البشرية.']],
-          title: ['The door opened from the inside.', 'فُتح الباب من الداخل.'],
-          text: ['The second lock only works while we keep it shut. Report it immediately: speed limits the damage.', 'القفل الثاني لا يعمل إلا إذا أبقيناه مغلقاً. أبلغوا فوراً، فالسرعة تحدّ من الضرر.'] },
+          title: ['Access granted.', 'تم منح الوصول.'],
+          text: ['MFA only protects us if we refuse requests we did not start. Report it immediately: speed limits the damage.', 'المصادقة متعددة العوامل لا تحمينا إلا إذا رفضنا الطلبات التي لم نبدأها. أبلغوا فوراً، فالسرعة تحدّ من الضرر.'] },
         half: { f: ['wait', 'hourglass', ['Blocked for tonight. They still hold the password and will try again.', 'تم الصدّ الليلة. لكنهم ما زالوا يملكون كلمة المرور وسيحاولون مجدداً.']],
           title: ['Blocked. Not finished.', 'تم الصدّ… ولم ينتهِ الأمر.'],
           text: ['A stranger still has your password. Report it and change it, or tomorrow’s prompts will arrive when you are tired.', 'ما زالت كلمة مروركم بيد غريب. أبلغوا وغيّروها، وإلا وصلت طلبات الغد وأنتم متعبون.'] },
@@ -774,7 +772,7 @@
     $('.call-wave', slide).innerHTML = Array.from({ length: 16 }, (_, k) => `<i style="animation-duration:${(0.5 + (k * 37 % 9) / 12).toFixed(2)}s;animation-delay:-${(k * 53 % 10) / 10}s"></i>`).join('');
 
     const LINES = [
-      ['“Hi, I am between flights so I will be quick. We are acquiring a piece at auction and the deposit must go out within thirty minutes.”', '«مرحباً، أنا بين رحلتين فسأختصر. نحن بصدد اقتناء قطعة في مزاد ويجب تحويل العربون خلال ثلاثين دقيقة.»'],
+      ['“Hi, I am between flights so I will be quick. We are closing a contract and the deposit must go out within thirty minutes.”', '«مرحباً، أنا بين رحلتين فسأختصر. نحن بصدد إبرام عقد ويجب تحويل الدفعة المقدّمة خلال ثلاثين دقيقة.»'],
       ['“I have emailed you the account details. Please process it now, and keep it quiet until the announcement.”', '«أرسلت لكم بيانات الحساب بالبريد. نفّذوا التحويل الآن، وأبقوا الأمر طيّ الكتمان حتى الإعلان.»'],
     ];
     const OPTIONS = [
