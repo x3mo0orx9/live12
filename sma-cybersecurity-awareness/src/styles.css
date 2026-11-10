@@ -664,3 +664,9 @@ html[dir=rtl] .hold{--from:right}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* single-wall scheme: one charcoal background throughout; colour lives in the exhibits */
+.playbook,.call,.outcome,.old,.stage-tip,.drawer{background:#111}
+.plan .room-alt{fill:#2C2C2C}
+.plan text{fill:#CFCAC2}
+.map-room{background:#232323}

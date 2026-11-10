@@ -1,8 +1,8 @@
 # SMA · Cybersecurity Awareness
 
 An interactive, bilingual (Arabic / English) awareness presentation for
-non-IT staff at Sharjah Museums Authority. It is staged as an exhibition:
-ten painted galleries, entered through arches, each holding one hands-on
+non-IT staff at Sharjah Museums Authority. It is staged as an exhibition on one charcoal background:
+ten galleries, entered through arches, each holding one hands-on
 exhibit.
 
 ## Open it

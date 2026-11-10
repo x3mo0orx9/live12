@@ -543,7 +543,7 @@
     const reset = () => {
       run += 1;
       stopClock();
-      wall('stone');
+      wall('charcoal');
       draw();
       setLocked(0);
       note.hidden = true;
@@ -573,7 +573,7 @@
       const st = STAGES[k];
       $$('button', stages).forEach((b, n) => b.classList.toggle('now', n === k));
       setLocked(st.locked);
-      wall(k >= 3 ? 'red' : 'stone');
+      wall(k >= 3 ? 'red' : 'charcoal');
       tip.innerHTML = B(st.tip[0], st.tip[1]);
     };
 
