@@ -23,7 +23,8 @@
   };
   const archSvg = (w = 30, h = 44) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="${ARCH(w, h)}"/></svg>`;
 
-  const WALLS = { charcoal: '#232323', blue: '#0050D0', yellow: '#F0CA33', green: '#207238', red: '#B91A1A', stone: '#D2C7B3', copper: '#BA7D4D' };
+  const LIGHT = '#F3F1ED';
+  const WALLS = { charcoal: LIGHT, blue: LIGHT, yellow: LIGHT, green: LIGHT, red: LIGHT, stone: LIGHT, copper: LIGHT };
   const GALLERIES = [
     ['Welcome', 'الترحيب'],
     ['The threat gallery', 'قاعة التهديدات'],

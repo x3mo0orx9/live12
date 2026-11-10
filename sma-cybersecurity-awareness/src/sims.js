@@ -675,7 +675,7 @@
       }
       const r = crackTime(pw);
       time.innerHTML = B(r.label[0], r.label[1]);
-      const colour = r.gates <= 1 ? '#FF8A7A' : r.gates <= 3 ? '#F0CA33' : '#7BD89A';
+      const colour = r.gates <= 1 ? '#A32A2A' : r.gates <= 3 ? '#9A5F33' : '#2E6B45';
       gates.style.setProperty('--gate', colour);
       $$('svg', gates).forEach((g, k) => g.classList.toggle('lit', k < Math.max(r.gates, 1)));
       findings.innerHTML = r.notes.map((n) => `<li>${icon(r.gates >= 4 ? 'circle-check' : 'circle-alert')}<span>${n}</span></li>`).join('');

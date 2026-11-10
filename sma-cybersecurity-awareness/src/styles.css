@@ -670,3 +670,44 @@ html[dir=rtl] .hold{--from:right}
 .plan .room-alt{fill:#2C2C2C}
 .plan text{fill:#CFCAC2}
 .map-room{background:#232323}
+
+
+/* ==========================================================================
+   Light professional theme: one off-white background, black type, a single
+   copper accent. Green and red appear only as right / wrong feedback.
+   ========================================================================== */
+:root{--blue:#191919;--yellow:#DDAE85;--green:#2E6B45;--red:#A32A2A;--stone:#DAD6CF;--copper:#9A5F33}
+[data-wall=charcoal],[data-wall=blue],[data-wall=yellow],[data-wall=green],[data-wall=red],[data-wall=stone],[data-wall=copper]{
+  --wall:#F3F1ED;--floor:#E6E3DD;--ink:#191919;--ink2:#55504A;--hi:#9A5F33;--hi-ink:#fff;--line:rgba(25,25,25,.24);--niche:#E4E0D9}
+.paper{--hi:#191919;--hi-ink:#fff;--wall:#fff;--ink:#191919;--ink2:#55504A;--line:rgba(25,25,25,.16)}
+.playbook,.call,.outcome,.old,.stage-tip,.drawer{background:#191919}
+.btn-safe{background:#191919;color:#fff}
+.btn-danger{background:transparent;color:#191919;box-shadow:inset 0 0 0 3px #191919}
+.niche{color:var(--ink)}
+.niche[aria-selected=true]{background:#191919;color:#fff}
+.gates path{stroke:var(--ink)}
+.quiz-meter path{stroke:var(--ink)}
+.quiz-meter .now path{stroke:var(--hi)}
+.quiz-meter .ok path{fill:var(--green);stroke:var(--green)}
+.quiz-meter .no path{fill:var(--red);stroke:var(--red)}
+.quiz-opts .opt{border-color:var(--line);background:#fff}
+.quiz-opts .opt:hover{border-color:var(--ink)}
+.quiz-opts .opt.good{background:var(--green);border-color:var(--green)}
+.quiz-why{box-shadow:var(--lift)}
+.quiz-score,.pledge-done,.refs .caps,.pass-findings .ic{color:var(--hi)}
+.plan .wall{stroke:var(--ink)}
+.plan .room{fill:#EAE7E1}
+.plan .room-alt{fill:#DEDAD3}
+.plan text{fill:var(--ink2)}
+.plan svg g{stroke:#191919}
+.pin{background:#191919;color:#fff}
+.pin::before{border-color:#191919}
+.pin.now{background:var(--hi);color:#fff}
+.pin.done{background:#B9B3A9;color:#191919}
+.new{background:#fff;box-shadow:var(--lift)}
+.map{background:#F3F1ED;color:#191919;--ink:#191919;--wall:#F3F1ED;--line:rgba(25,25,25,.24);--hi:#9A5F33}
+.map-room{background:#fff}
+.map-keys{color:#55504A}
+.map-keys kbd{border-color:rgba(25,25,25,.35);color:#191919}
+.mail-bar{background:#191919}
+.doc-bar{background:#191919}

@@ -1,7 +1,7 @@
 # SMA · Cybersecurity Awareness
 
 An interactive, bilingual (Arabic / English) awareness presentation for
-non-IT staff at Sharjah Museums Authority. It is staged as an exhibition on one charcoal background:
+non-IT staff at Sharjah Museums Authority. It is staged as an exhibition on one light background:
 ten galleries, entered through arches, each holding one hands-on
 exhibit.
 
@@ -84,8 +84,9 @@ illustrative estimate, and nothing typed into the page leaves the browser.
 ## Brand
 
 - **Logo:** the official SMA wordmark, taken from sharjahmuseums.ae.
-- **Colours:** charcoal, cobalt, yellow, green and stone are sampled from
-  SMA's current artwork; copper `#BA7D4D` is the accent used on the website.
+- **Colours:** one off-white background, black type and neutral greys, with
+  a single copper accent taken from the SMA website. Green and red appear only
+  as right / wrong feedback.
 - **Type:** SMA's own typeface (Adapter) is a licensed font and is not
   bundled. The presentation uses open-licence faces chosen to sit close to
   it: Alexandria (Arabic), Schibsted Grotesk (Latin text) and Azeret Mono

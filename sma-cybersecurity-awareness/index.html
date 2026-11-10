@@ -686,6 +686,47 @@ html[dir=rtl] .hold{--from:right}
 .plan text{fill:#CFCAC2}
 .map-room{background:#232323}
 
+
+/* ==========================================================================
+   Light professional theme: one off-white background, black type, a single
+   copper accent. Green and red appear only as right / wrong feedback.
+   ========================================================================== */
+:root{--blue:#191919;--yellow:#DDAE85;--green:#2E6B45;--red:#A32A2A;--stone:#DAD6CF;--copper:#9A5F33}
+[data-wall=charcoal],[data-wall=blue],[data-wall=yellow],[data-wall=green],[data-wall=red],[data-wall=stone],[data-wall=copper]{
+  --wall:#F3F1ED;--floor:#E6E3DD;--ink:#191919;--ink2:#55504A;--hi:#9A5F33;--hi-ink:#fff;--line:rgba(25,25,25,.24);--niche:#E4E0D9}
+.paper{--hi:#191919;--hi-ink:#fff;--wall:#fff;--ink:#191919;--ink2:#55504A;--line:rgba(25,25,25,.16)}
+.playbook,.call,.outcome,.old,.stage-tip,.drawer{background:#191919}
+.btn-safe{background:#191919;color:#fff}
+.btn-danger{background:transparent;color:#191919;box-shadow:inset 0 0 0 3px #191919}
+.niche{color:var(--ink)}
+.niche[aria-selected=true]{background:#191919;color:#fff}
+.gates path{stroke:var(--ink)}
+.quiz-meter path{stroke:var(--ink)}
+.quiz-meter .now path{stroke:var(--hi)}
+.quiz-meter .ok path{fill:var(--green);stroke:var(--green)}
+.quiz-meter .no path{fill:var(--red);stroke:var(--red)}
+.quiz-opts .opt{border-color:var(--line);background:#fff}
+.quiz-opts .opt:hover{border-color:var(--ink)}
+.quiz-opts .opt.good{background:var(--green);border-color:var(--green)}
+.quiz-why{box-shadow:var(--lift)}
+.quiz-score,.pledge-done,.refs .caps,.pass-findings .ic{color:var(--hi)}
+.plan .wall{stroke:var(--ink)}
+.plan .room{fill:#EAE7E1}
+.plan .room-alt{fill:#DEDAD3}
+.plan text{fill:var(--ink2)}
+.plan svg g{stroke:#191919}
+.pin{background:#191919;color:#fff}
+.pin::before{border-color:#191919}
+.pin.now{background:var(--hi);color:#fff}
+.pin.done{background:#B9B3A9;color:#191919}
+.new{background:#fff;box-shadow:var(--lift)}
+.map{background:#F3F1ED;color:#191919;--ink:#191919;--wall:#F3F1ED;--line:rgba(25,25,25,.24);--hi:#9A5F33}
+.map-room{background:#fff}
+.map-keys{color:#55504A}
+.map-keys kbd{border-color:rgba(25,25,25,.35);color:#191919}
+.mail-bar{background:#191919}
+.doc-bar{background:#191919}
+
 </style>
 </head>
 <body>
@@ -846,11 +887,11 @@ html[dir=rtl] .hold{--from:right}
         </div>
       </div>
       <div class="enfilade" aria-hidden="true">
-        <i class="arch" style="--c:var(--blue);--w:700px;--h:800px;--z:1"></i>
-        <i class="arch" style="--c:var(--yellow);--w:560px;--h:690px;--z:2"></i>
-        <i class="arch" style="--c:var(--green);--w:430px;--h:585px;--z:3"></i>
-        <i class="arch" style="--c:var(--copper);--w:310px;--h:485px;--z:4"></i>
-        <i class="arch" style="--c:var(--stone);--w:200px;--h:390px;--z:5"></i>
+        <i class="arch" style="--c:#E2DED7;--w:700px;--h:800px;--z:1"></i>
+        <i class="arch" style="--c:#CDC8C0;--w:560px;--h:690px;--z:2"></i>
+        <i class="arch" style="--c:#ADA79E;--w:430px;--h:585px;--z:3"></i>
+        <i class="arch" style="--c:#8A847B;--w:310px;--h:485px;--z:4"></i>
+        <i class="arch" style="--c:#5F5B55;--w:200px;--h:390px;--z:5"></i>
         <i class="arch" style="--c:#141414;--w:104px;--h:300px;--z:6"></i>
       </div>
       <aside class="notes"><span lang="en">Welcome everyone. The idea of the session: technology helps, but most attacks are stopped by people. Press L at any time to switch language.</span><span lang="ar">رحّبوا بالحضور. فكرة الجلسة: التقنية تساعد، لكن معظم الهجمات يوقفها الإنسان. اضغطوا L في أي وقت لتبديل اللغة.</span></aside>
@@ -871,23 +912,23 @@ html[dir=rtl] .hold{--from:right}
         </p>
       </div>
       <ul class="plinths">
-        <li data-at="1" style="--c:var(--blue);--t:#fff;--h:236px">
+        <li data-at="1" style="--c:#2B2B2B;--t:#fff;--h:236px">
           <span class="vitrine"><svg class="ic"><use href="#i-ticket"/></svg></span>
           <div class="plinth"><strong><span lang="en">Visitors &amp; members</span><span lang="ar">الزوار والأعضاء</span></strong><span><span lang="en">Bookings, memberships, school visits</span><span lang="ar">الحجوزات والعضويات والزيارات المدرسية</span></span></div>
         </li>
-        <li data-at="2" style="--c:var(--yellow);--t:#1b1b1b;--h:300px">
+        <li data-at="2" style="--c:#DAD6CF;--t:#191919;--h:300px">
           <span class="vitrine"><svg class="ic"><use href="#i-amphora"/></svg></span>
           <div class="plinth"><strong><span lang="en">Collection records</span><span lang="ar">سجلات المقتنيات</span></strong><span><span lang="en">Provenance, valuations, storage locations</span><span lang="ar">المصدر والتقييمات ومواقع الحفظ</span></span></div>
         </li>
-        <li data-at="3" style="--c:var(--green);--t:#fff;--h:210px">
+        <li data-at="3" style="--c:#55514B;--t:#fff;--h:210px">
           <span class="vitrine"><svg class="ic"><use href="#i-scroll-text"/></svg></span>
           <div class="plinth"><strong><span lang="en">Loans &amp; contracts</span><span lang="ar">الإعارات والعقود</span></strong><span><span lang="en">Lenders, insurers, shippers</span><span lang="ar">المُعيرون وشركات التأمين والشحن</span></span></div>
         </li>
-        <li data-at="4" style="--c:var(--copper);--t:#161616;--h:272px">
+        <li data-at="4" style="--c:#C4BFB6;--t:#191919;--h:272px">
           <span class="vitrine"><svg class="ic"><use href="#i-id-card-lanyard"/></svg></span>
           <div class="plinth"><strong><span lang="en">Our people</span><span lang="ar">فريق العمل</span></strong><span><span lang="en">HR files, payroll, identity documents</span><span lang="ar">ملفات الموارد البشرية والرواتب والهويات</span></span></div>
         </li>
-        <li data-at="5" style="--c:var(--stone);--t:#1b1b1b;--h:228px">
+        <li data-at="5" style="--c:#CFCAC2;--t:#191919;--h:228px">
           <span class="vitrine"><svg class="ic"><use href="#i-cctv"/></svg></span>
           <div class="plinth"><strong><span lang="en">Building systems</span><span lang="ar">أنظمة المبنى</span></strong><span><span lang="en">Cameras, doors, the climate control that protects the objects</span><span lang="ar">الكاميرات والأبواب وأنظمة المناخ التي تحمي المعروضات</span></span></div>
         </li>
@@ -1181,13 +1222,13 @@ html[dir=rtl] .hold{--from:right}
     <section class="slide s-code" data-wall="charcoal" data-gallery="7" data-min="1" data-steps="7" data-title="The guardian's code||ميثاق الحارس">
       <h2 class="title rise"><span lang="en">The guardian's code</span><span lang="ar">ميثاق الحارس</span></h2>
       <ol class="habits">
-        <li data-at="1" style="--c:var(--blue);--t:#fff;--h:520px"><span class="picto"><svg class="ic"><use href="#i-hand"/></svg></span><b><span lang="en">Pause before you click</span><span lang="ar">تمهّلوا قبل النقر</span></b><span><span lang="en">Urgency is a warning sign, not a reason.</span><span lang="ar">الاستعجال إشارة تحذير لا مبرّر للتصرف.</span></span></li>
+        <li data-at="1" style="--c:#2B2B2B;--t:#fff;--h:520px"><span class="picto"><svg class="ic"><use href="#i-hand"/></svg></span><b><span lang="en">Pause before you click</span><span lang="ar">تمهّلوا قبل النقر</span></b><span><span lang="en">Urgency is a warning sign, not a reason.</span><span lang="ar">الاستعجال إشارة تحذير لا مبرّر للتصرف.</span></span></li>
         <li data-at="2" style="--c:#141414;--t:#fff;--h:580px"><span class="picto"><svg class="ic"><use href="#i-key-round"/></svg></span><b><span lang="en">Long passphrase, second lock</span><span lang="ar">عبارة مرور طويلة وقفل ثانٍ</span></b><span><span lang="en">Never approve what you did not start.</span><span lang="ar">لا توافقوا على طلب لم تبدؤوه.</span></span></li>
-        <li data-at="3" style="--c:var(--green);--t:#fff;--h:500px"><span class="picto"><svg class="ic"><use href="#i-refresh-cw"/></svg></span><b><span lang="en">Update and restart</span><span lang="ar">حدّثوا وأعيدوا التشغيل</span></b><span><span lang="en">Updates close the doors attackers use.</span><span lang="ar">التحديثات تُغلق أبواب المهاجمين.</span></span></li>
-        <li data-at="4" style="--c:var(--copper);--t:#161616;--h:560px"><span class="picto"><svg class="ic"><use href="#i-lock"/></svg></span><b><span lang="en">Lock your screen</span><span lang="ar">أقفلوا الشاشة</span></b><span><span lang="en">Windows + L, every time you stand up.</span><span lang="ar">‏Windows + L كلما غادرتم مقاعدكم.</span></span></li>
-        <li data-at="5" style="--c:var(--stone);--t:#1b1b1b;--h:510px"><span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span><b><span lang="en">Approved tools only</span><span lang="ar">الأدوات المعتمدة فقط</span></b><span><span lang="en">No personal email, stray USB or public AI for work.</span><span lang="ar">لا بريد شخصي ولا USB مجهول ولا ذكاء اصطناعي عام للعمل.</span></span></li>
-        <li data-at="6" style="--c:var(--red);--t:#fff;--h:570px"><span class="picto"><svg class="ic"><use href="#i-users"/></svg></span><b><span lang="en">Share only what is needed</span><span lang="ar">شاركوا بقدر الحاجة</span></b><span><span lang="en">Visitor and staff data are held in trust.</span><span lang="ar">بيانات الزوار والموظفين أمانة.</span></span></li>
-        <li data-at="7" style="--c:#fff;--t:#141414;--h:620px"><span class="picto"><svg class="ic"><use href="#i-megaphone"/></svg></span><b><span lang="en">Report fast</span><span lang="ar">أبلغوا فوراً</span></b><span><span lang="en">No blame. Minutes matter.</span><span lang="ar">بلا لوم. الدقائق تصنع الفرق.</span></span></li>
+        <li data-at="3" style="--c:#55514B;--t:#fff;--h:500px"><span class="picto"><svg class="ic"><use href="#i-refresh-cw"/></svg></span><b><span lang="en">Update and restart</span><span lang="ar">حدّثوا وأعيدوا التشغيل</span></b><span><span lang="en">Updates close the doors attackers use.</span><span lang="ar">التحديثات تُغلق أبواب المهاجمين.</span></span></li>
+        <li data-at="4" style="--c:#C4BFB6;--t:#191919;--h:560px"><span class="picto"><svg class="ic"><use href="#i-lock"/></svg></span><b><span lang="en">Lock your screen</span><span lang="ar">أقفلوا الشاشة</span></b><span><span lang="en">Windows + L, every time you stand up.</span><span lang="ar">‏Windows + L كلما غادرتم مقاعدكم.</span></span></li>
+        <li data-at="5" style="--c:#CFCAC2;--t:#191919;--h:510px"><span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span><b><span lang="en">Approved tools only</span><span lang="ar">الأدوات المعتمدة فقط</span></b><span><span lang="en">No personal email, stray USB or public AI for work.</span><span lang="ar">لا بريد شخصي ولا USB مجهول ولا ذكاء اصطناعي عام للعمل.</span></span></li>
+        <li data-at="6" style="--c:#55514B;--t:#fff;--h:570px"><span class="picto"><svg class="ic"><use href="#i-users"/></svg></span><b><span lang="en">Share only what is needed</span><span lang="ar">شاركوا بقدر الحاجة</span></b><span><span lang="en">Visitor and staff data are held in trust.</span><span lang="ar">بيانات الزوار والموظفين أمانة.</span></span></li>
+        <li data-at="7" style="--c:#9A5F33;--t:#fff;--h:620px"><span class="picto"><svg class="ic"><use href="#i-megaphone"/></svg></span><b><span lang="en">Report fast</span><span lang="ar">أبلغوا فوراً</span></b><span><span lang="en">No blame. Minutes matter.</span><span lang="ar">بلا لوم. الدقائق تصنع الفرق.</span></span></li>
       </ol>
       <aside class="notes"><span lang="en">Seven habits, one arch each. Do not read them out; pick the two this audience needs most. The last one matters most: nobody is in trouble for reporting.</span><span lang="ar">سبع عادات، لكل عادة قوس. لا تقرؤوها كلها؛ اختاروا العادتين الأهم لهذا الجمهور. والأخيرة هي الأهم: لا أحد يُلام على الإبلاغ.</span></aside>
     </section>
@@ -1333,7 +1374,8 @@ html[dir=rtl] .hold{--from:right}
   };
   const archSvg = (w = 30, h = 44) => `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="${ARCH(w, h)}"/></svg>`;
 
-  const WALLS = { charcoal: '#232323', blue: '#0050D0', yellow: '#F0CA33', green: '#207238', red: '#B91A1A', stone: '#D2C7B3', copper: '#BA7D4D' };
+  const LIGHT = '#F3F1ED';
+  const WALLS = { charcoal: LIGHT, blue: LIGHT, yellow: LIGHT, green: LIGHT, red: LIGHT, stone: LIGHT, copper: LIGHT };
   const GALLERIES = [
     ['Welcome', 'الترحيب'],
     ['The threat gallery', 'قاعة التهديدات'],
@@ -2359,7 +2401,7 @@ html[dir=rtl] .hold{--from:right}
       }
       const r = crackTime(pw);
       time.innerHTML = B(r.label[0], r.label[1]);
-      const colour = r.gates <= 1 ? '#FF8A7A' : r.gates <= 3 ? '#F0CA33' : '#7BD89A';
+      const colour = r.gates <= 1 ? '#A32A2A' : r.gates <= 3 ? '#9A5F33' : '#2E6B45';
       gates.style.setProperty('--gate', colour);
       $$('svg', gates).forEach((g, k) => g.classList.toggle('lit', k < Math.max(r.gates, 1)));
       findings.innerHTML = r.notes.map((n) => `<li>${icon(r.gates >= 4 ? 'circle-check' : 'circle-alert')}<span>${n}</span></li>`).join('');
