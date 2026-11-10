@@ -711,3 +711,15 @@ html[dir=rtl] .hold{--from:right}
 .map-keys kbd{border-color:rgba(25,25,25,.35);color:#191919}
 .mail-bar{background:#191919}
 .doc-bar{background:#191919}
+
+
+/* presentation mode: slides are driven by Next; exhibits are shown, not operated */
+.lens,.loupe-foot .btn,.verdict-row,.triage-actions,.ransom-choice,.ransom-note .btn,.signal-foot .btn,.pledge-cta,.spec.picked::after{display:none!important}
+.specimens,.clue,.decoy{cursor:default}
+.spec,.niche,.pin,.stages button,.signal,.opt,.chip{pointer-events:none}
+.clue:not(.mail-cta):not(.found):hover{background:none;box-shadow:none}
+.pass-field{cursor:default}
+.chip.on{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+.quiz-opts.answered .opt:not(.good){opacity:.4}
+.pledge-fill{transition:transform 1.6s var(--out)}
+.pin{display:grid}

@@ -1,9 +1,9 @@
 # SMA · Cybersecurity Awareness
 
-An interactive, bilingual (Arabic / English) awareness presentation for
-non-IT staff at Sharjah Museums Authority. It has a light background and
-ten short sections, most with one hands-on
-exhibit.
+A bilingual (Arabic / English) awareness presentation for non-IT staff at
+Sharjah Museums Authority. It is presenter-led: every slide is driven by the
+**Next** key alone, and each press reveals the next point with an animation.
+Nothing on a slide needs to be clicked or typed.
 
 ## Open it
 

@@ -987,5 +987,317 @@
     });
   };
 
+  /* ==========================================================================
+     Presentation mode. Every slide is driven by Next alone: each press reveals
+     the next point with an animation, and nothing needs to be clicked or typed.
+     These definitions replace the click-through versions above.
+     ========================================================================== */
+  const steps = (slide, n, paint) => {
+    slide.dataset.steps = n;
+    on(slide, 'step', (e) => paint(e.detail));
+  };
+
+  /* 4 · look closely at the address: Next shows which one is genuine */
+  sims.loupe = (slide) => {
+    steps(slide, 1, (s) => $('.specimens', slide).classList.toggle('revealed', s >= 1));
+  };
+
+  /* 5 · warning signs: Next marks them one by one, then the advice appears */
+  sims.inspect = (slide) => {
+    const TOTAL = 6;
+    steps(slide, TOTAL, (s) => {
+      for (let id = 1; id <= TOTAL; id += 1) {
+        $$(`.clue[data-clue="${id}"]`, slide).forEach((c) => c.classList.toggle('found', id <= s));
+        $(`.clues li[data-clue="${id}"]`, slide).classList.toggle('found', id <= s);
+      }
+      $('#clueCount').textContent = `${s}/${TOTAL}`;
+      $('.inspect-count', slide).hidden = s === TOTAL;
+      $('.inspect-verdict', slide).hidden = s !== TOTAL;
+      $('.mail-status', slide).textContent = s >= 4 ? $('.mail-cta', slide).dataset.url : '';
+    });
+  };
+
+  /* 6 · genuine or fake: each message, then its verdict */
+  sims.triage = (slide) => {
+    const card = $('.msg', slide);
+    const why = $('.triage-why', slide);
+    const dots = $('.triage-dots', slide);
+    let shown = -1;
+    dots.innerHTML = TRIAGE.map(() => '<i></i>').join('');
+    steps(slide, TRIAGE.length * 2 - 1, (s) => {
+      const i = s >> 1;
+      const verdict = (s & 1) === 1;
+      const m = TRIAGE[i];
+      if (i !== shown) {
+        shown = i;
+        const body = `<p>${B(m.body[0], m.body[1])}</p>`;
+        card.className = 'msg paper';
+        void card.offsetWidth;
+        card.classList.add('swap');
+        card.innerHTML = `<div class="msg-top"><span class="picto">${icon(m.ic)}</span>
+            <div class="msg-who"><b>${B(m.from[0], m.from[1])}</b><small dir="ltr">${m.addr}</small></div>
+            <span class="caps msg-chan">${B(m.chan[0], m.chan[1])}</span></div>
+          ${m.subj ? `<h3>${B(m.subj[0], m.subj[1])}</h3>` : ''}
+          ${m.qr ? `<div class="msg-qr">${qrSvg(m.qr)}${body}</div>` : body}`;
+      }
+      why.hidden = !verdict;
+      why.className = `triage-why ${m.ok ? 'good' : 'bad'}`;
+      why.innerHTML = `${icon(m.ok ? 'circle-check' : 'triangle-alert')}<p><b>${m.ok ? B('Genuine.', 'حقيقية.') : B('Fake.', 'مزيّفة.')}</b>${B(m.why[0], m.why[1])}</p>`;
+      $$('i', dots).forEach((d, k) => {
+        const done = k < i || (k === i && verdict);
+        d.className = done ? (TRIAGE[k].ok ? 'ok' : 'no') : (k === i ? 'now' : '');
+      });
+    });
+  };
+
+  /* 7 · the urgent request: the conversation plays out one message per Next */
+  sims.con = (slide) => {
+    const chat = $('.chat', slide);
+    const replies = $('.replies', slide);
+    const out = $('.playbook-out', slide);
+    const end = CON_END.win;
+    const SCRIPT = [
+      CON.start.say[0], CON.start.say[1], { me: CON.start.opts[0].t },
+      CON.ask.say[0], CON.ask.say[1], { me: CON.ask.opts[1].t }, CON.squeeze.say[0], { end: true },
+    ];
+    steps(slide, SCRIPT.length - 1, (s) => {
+      const used = new Set();
+      chat.innerHTML = SCRIPT.slice(0, s + 1).map((line, k) => {
+        const fresh = k === s ? '' : ' style="animation:none"';
+        if (line.end) return `<div class="bub sys good"${fresh}>${B(end.sys[0], end.sys[1])}</div>`;
+        if (line.me) return `<div class="bub me"${fresh}>${B(line.me[0], line.me[1])}</div>`;
+        line.lev.forEach((l) => used.add(l));
+        return `<div class="bub"${fresh}>${B(line.t[0], line.t[1])}</div>`;
+      }).join('');
+      $$('.levers li', slide).forEach((l) => l.classList.toggle('on', used.has(l.dataset.lever)));
+      const done = s === SCRIPT.length - 1;
+      out.innerHTML = done ? B(end.out[0], end.out[1]) : '';
+      replies.innerHTML = done ? `<div class="outcome"><b>${B(end.title[0], end.title[1])}</b>${B(end.text[0], end.text[1])}</div>` : '';
+    });
+  };
+
+  /* 8 · workplace scenarios: one situation per Next, with the right response marked */
+  sims.day = (slide) => {
+    const plan = $('.plan', slide);
+    const scene = $('.scene', slide);
+    plan.innerHTML = PLAN + DAY.map((d, k) => `<span class="pin" data-k="${k}" style="left:${(d.x / 1010 * 100).toFixed(2)}%;top:${(d.y / 610 * 100).toFixed(2)}%">${icon(d.ic)}</span>`).join('');
+    const pins = $$('.pin', plan);
+    steps(slide, DAY.length - 1, (k) => {
+      const d = DAY[k];
+      const good = d.opts.find((o) => o.ok);
+      pins.forEach((p, n) => { p.classList.toggle('now', n === k); p.classList.toggle('done', n < k); });
+      scene.classList.remove('swap');
+      void scene.offsetWidth;
+      scene.classList.add('swap');
+      scene.innerHTML = `<h3>${B(d.title[0], d.title[1])}</h3><p>${B(d.text[0], d.text[1])}</p>
+        <div class="opts locked">${d.opts.map((o) => `<div class="opt ${o.ok ? 'good' : ''}">${icon(o.ok ? 'circle-check' : 'circle-x')}<span>${B(o.t[0], o.t[1])}</span></div>`).join('')}</div>
+        <p class="why"><b>${B('The right response.', 'التصرف الصحيح.')}</b>${B(good.why[0], good.why[1])}</p>`;
+    });
+  };
+
+  /* 9 · ransomware: Next runs the attack, then walks back through its five stages */
+  sims.ransom = (slide) => {
+    const list = $('.files', slide);
+    const note = $('.ransom-note', slide);
+    const rewind = $('.rewind', slide);
+    const msg = $('.ransom-msg', slide);
+    const tip = $('.stage-tip', slide);
+    const stages = $('.stages', slide);
+    const order = [3, 0, 7, 10, 1, 5, 8, 2, 11, 4, 9, 6];
+    const ext = (f) => FILE_ICON[f.split('.').pop()];
+    let run = 0;
+    list.innerHTML = FILES.map((f, k) => `<li class="file" data-k="${k}">${icon(ext(f))}<span>${f}</span></li>`).join('');
+    stages.innerHTML = STAGES.map((st, k) => `<li><button class="${st.save ? 'save' : ''}" tabindex="-1"><i>${k + 1}</i><span>${B(st.n[0], st.n[1])}</span></button></li>`).join('');
+    const setLocked = (n) => {
+      $$('.file', list).forEach((el) => {
+        const k = +el.dataset.k;
+        const lock = order.indexOf(k) < n;
+        if (lock === el.classList.contains('locked')) return;
+        el.classList.toggle('locked', lock);
+        $('use', el).setAttribute('href', `#i-${lock ? 'lock' : ext(FILES[k])}`);
+        $('span', el).textContent = lock ? `${(k * 7919 + 104729).toString(16)}${(k * 131 + 977).toString(16)}.locked` : FILES[k];
+      });
+      $('.drive-count', slide).textContent = `${12 - n} / 12`;
+    };
+    steps(slide, 6, async (s) => {
+      run += 1;
+      const mine = run;
+      note.hidden = true;
+      rewind.hidden = s < 2;
+      if (s === 0) { setLocked(0); msg.innerHTML = ''; return; }
+      if (s === 1) {
+        setLocked(0);
+        msg.innerHTML = B('Someone clicks “Enable content”. Nothing on screen changes, at first.', 'أحدهم ينقر «تمكين المحتوى». لا يتغيّر شيء على الشاشة… في البداية.');
+        await wait(900);
+        for (let n = 1; n <= 12; n += 1) {
+          if (mine !== run) return;
+          setLocked(n);
+          await wait(n < 4 ? 380 : 160);
+        }
+        if (mine !== run) return;
+        note.hidden = false;
+        return;
+      }
+      const st = STAGES[s - 2];
+      $$('button', stages).forEach((b, n) => b.classList.toggle('now', n === s - 2));
+      setLocked(st.locked);
+      tip.innerHTML = B(st.tip[0], st.tip[1]);
+      msg.innerHTML = B('The same attack, step by step. Three of the five steps could be stopped by one person.', 'الهجوم نفسه خطوة بخطوة. ثلاث من الخطوات الخمس كان يمكن لشخص واحد إيقافها.');
+    });
+  };
+
+  /* 10 · strong passwords: Next types four examples */
+  sims.pass = (slide) => {
+    const input = $('#pw');
+    const gates = $('.gates', slide);
+    const time = $('#pwTime');
+    const findings = $('.pass-findings', slide);
+    const SAMPLES = ['Sharjah2026', 'P@ssw0rd!', 'Museum@123', 'falcon-coffee-lantern-tide'];
+    let run = 0;
+    input.readOnly = true;
+    input.tabIndex = -1;
+    gates.innerHTML = Array.from({ length: 5 }, () => api.archSvg(58, 88)).join('');
+    const chipBox = $('.pass-presets', slide);
+    chipBox.innerHTML = SAMPLES.map((p) => `<span class="chip">${p}</span>`).join('');
+    const rate = (pw) => {
+      if (!pw) { time.textContent = '—'; findings.innerHTML = ''; $$('svg', gates).forEach((g) => g.classList.remove('lit')); return; }
+      const r = crackTime(pw);
+      time.innerHTML = B(r.label[0], r.label[1]);
+      gates.style.setProperty('--gate', r.gates <= 1 ? '#A32A2A' : r.gates <= 3 ? '#9A5F33' : '#2E6B45');
+      $$('svg', gates).forEach((g, k) => g.classList.toggle('lit', k < Math.max(r.gates, 1)));
+      findings.innerHTML = r.notes.map((n) => `<li>${icon(r.gates >= 4 ? 'circle-check' : 'circle-alert')}<span>${n}</span></li>`).join('');
+    };
+    steps(slide, SAMPLES.length, async (s) => {
+      run += 1;
+      const mine = run;
+      $$('.chip', chipBox).forEach((c, k) => c.classList.toggle('on', k === s - 1));
+      input.value = '';
+      rate('');
+      if (s === 0) return;
+      const pw = SAMPLES[s - 1];
+      for (let k = 1; k <= pw.length; k += 1) {
+        if (mine !== run) return;
+        input.value = pw.slice(0, k);
+        await wait(45);
+      }
+      if (mine === run) rate(pw);
+    });
+  };
+
+  /* 11 · multi-factor authentication: three unexpected requests, then the right response */
+  sims.mfa = (slide) => {
+    const pushes = $('.pushes', slide);
+    const replies = $('.replies', slide);
+    const out = $('.playbook-out', slide);
+    const factor = $('[data-mfa]', slide);
+    const push = (kind, title, text, fresh) => `<div class="push ${kind === 'chat' ? 'chat-push' : ''} ${fresh ? '' : 'old'}"${fresh ? '' : ' style="animation:none"'}>
+      <span class="app">${icon(kind === 'chat' ? 'message-circle' : 'shield-check')}</span><div><b>${B(title[0], title[1])}</b><span>${B(text[0], text[1])}</span></div></div>`;
+    const signIn = (n, fresh) => push('auth', ['Approve sign-in?', 'الموافقة على تسجيل الدخول؟'],
+      [`SMA account · new device · location unknown · request ${n}`, `حساب الهيئة · جهاز جديد · موقع غير معروف · الطلب ${n}`], fresh);
+    const itMsg = (fresh) => push('chat', ['IT Support', 'الدعم الفني'], ['We are fixing a sync error on your account. Please approve the next request.', 'نعالج خطأ مزامنة في حسابكم. يرجى الموافقة على الطلب القادم.'], fresh);
+    steps(slide, 3, (s) => {
+      const done = s === 3;
+      $('.lock-time', slide).textContent = `03:1${Math.min(s, 2) + 2}`;
+      pushes.innerHTML = [signIn(1, s === 0), s >= 1 ? signIn(2, s === 1) : '', s >= 2 ? itMsg(false) + signIn(3, s === 2) : ''].join('');
+      while (pushes.children.length > 3) pushes.firstChild.remove();
+      factor.className = done ? 'blocked' : 'wait';
+      $('use', factor).setAttribute('href', `#i-${done ? 'lock' : 'hourglass'}`);
+      $('.mfa-state', slide).innerHTML = done
+        ? B('Denied and reported. The password was changed. Locked out for good.', 'تم الرفض والإبلاغ وتغيير كلمة المرور. أُغلق الباب نهائياً.')
+        : B('Waiting for you to approve…', 'بانتظار موافقتكم…');
+      out.innerHTML = done ? B('The same rule covers UAE PASS requests and one-time codes: if you did not start it, reject it and tell someone.', 'القاعدة نفسها تنطبق على طلبات الهوية الرقمية UAE PASS ورموز التحقق: إن لم تبدؤوا الطلب فارفضوه وأبلغوا.') : '';
+      replies.innerHTML = done
+        ? `<div class="outcome"><b>${B('Deny. Report. Change the password.', 'ارفضوا. أبلغوا. غيّروا كلمة المرور.')}</b>${B('A request you did not start is an attack in progress. Approving it “so that it stops” lets the intruder in.', 'كل طلب لم تبدؤوه هو هجوم جارٍ. والموافقة عليه «كي يتوقف» تُدخل المتسلّل.')}</div>`
+        : '';
+    });
+  };
+
+  /* 12 · AI deepfakes: the call plays, then Next exposes it */
+  sims.fake = (slide) => {
+    const call = $('.call', slide);
+    const caption = $('.call-caption', slide);
+    const replies = $('.replies', slide);
+    const clock = $('.call-clock', slide);
+    let run = 0;
+    let ticker = null;
+    $('.call-wave', slide).innerHTML = Array.from({ length: 16 }, (_, k) => `<i style="animation-duration:${(0.5 + (k * 37 % 9) / 12).toFixed(2)}s;animation-delay:-${(k * 53 % 10) / 10}s"></i>`).join('');
+    const LINES = [
+      ['“Hi, I am between flights so I will be quick. We are closing a contract and the deposit must go out within thirty minutes.”', '«مرحباً، أنا بين رحلتين فسأختصر. نحن بصدد إبرام عقد ويجب تحويل الدفعة المقدّمة خلال ثلاثين دقيقة.»'],
+      ['“I have emailed you the account details. Please process it now, and keep it quiet until the announcement.”', '«أرسلت لكم بيانات الحساب بالبريد. نفّذوا التحويل الآن، وأبقوا الأمر طيّ الكتمان حتى الإعلان.»'],
+    ];
+    const say = async (line, mine) => {
+      const en = line[0].split(' ');
+      const ar = line[1].split(' ');
+      for (let k = 1; k <= Math.max(en.length, ar.length); k += 1) {
+        if (mine !== run) return;
+        caption.innerHTML = B(en.slice(0, k).join(' '), ar.slice(0, k).join(' '));
+        await wait(95);
+      }
+    };
+    steps(slide, 1, (s) => {
+      const exposed = s >= 1;
+      call.classList.toggle('exposed', exposed);
+      $('.call-stamp', slide).hidden = !exposed;
+      $('.fake-tells', slide).hidden = !exposed;
+      replies.innerHTML = exposed
+        ? `<div class="outcome"><b>${B('Hang up. Call back on a number you know.', 'أنهوا المكالمة وعاودوا الاتصال برقم تعرفونه.')}</b>${B('A real colleague will understand. A fake one pushes back, and that is your answer.', 'الزميل الحقيقي سيتفهّم. أما المحتال فسيعترض، وذلك هو الجواب.')}</div>`
+        : '';
+    });
+    on(slide, 'enter', () => {
+      run += 1;
+      const mine = run;
+      let sec = 0;
+      clearInterval(ticker);
+      clock.textContent = '00:00';
+      ticker = setInterval(() => { sec += 1; clock.textContent = `00:${String(sec % 60).padStart(2, '0')}`; }, 1000);
+      (async () => { await wait(700); await say(LINES[0], mine); await wait(1300); await say(LINES[1], mine); })();
+    });
+    on(slide, 'leave', () => { run += 1; clearInterval(ticker); });
+  };
+
+  /* 15 · recognise and report: the list of things worth reporting is simply shown */
+  sims.report = (slide) => {
+    $('.signals', slide).classList.add('checked');
+    $('.signal-chips', slide).innerHTML = SIGNALS.map((s) => `<span class="signal">${icon('flag')}<span>${B(s[0], s[1])}</span></span>`).join('');
+    $('.signal-out', slide).innerHTML = B('If it feels wrong, it is worth a two-minute call.', 'ما دام الأمر مريباً فهو يستحق اتصالاً من دقيقتين.');
+    const contact = $('#contact');
+    contact.textContent = api.store.get('contact') || '';
+    on(contact, 'input', () => api.store.set('contact', contact.textContent.trim()));
+    on(contact, 'blur', () => { if (!contact.textContent.trim()) contact.textContent = ''; });
+  };
+
+  /* 16 · quick quiz: each question, then its answer */
+  sims.quiz = (slide) => {
+    const body = $('.quiz-body', slide);
+    const meter = $('.quiz-meter', slide);
+    let shown = -1;
+    meter.innerHTML = QUIZ.map(() => api.archSvg(40, 60)).join('');
+    const pips = $$('svg', meter);
+    steps(slide, QUIZ.length * 2 - 1, (s) => {
+      const i = s >> 1;
+      const answer = (s & 1) === 1;
+      const q = QUIZ[i];
+      if (i !== shown) {
+        shown = i;
+        body.innerHTML = `<h3 class="quiz-q">${B(q.q[0], q.q[1])}</h3>
+          <div class="opts quiz-opts locked">${q.a.map((a, k) => `<div class="opt" style="--i:${k}">${icon(k === q.ok ? 'circle-check' : 'circle-x')}<span>${B(a[0], a[1])}</span></div>`).join('')}</div>
+          <div class="quiz-why"><span>${B(q.why[0], q.why[1])}</span></div>`;
+      }
+      $$('.opt', body)[q.ok].classList.toggle('good', answer);
+      $('.quiz-opts', body).classList.toggle('answered', answer);
+      $('.quiz-why', body).hidden = !answer;
+      pips.forEach((p, k) => p.setAttribute('class', k < i || (k === i && answer) ? 'ok' : (k === i ? 'now' : '')));
+    });
+  };
+
+  /* 17 · pause, verify, report: Next fills the arch */
+  sims.pledge = (slide) => {
+    const arch = $('.pledge-arch', slide);
+    steps(slide, 1, (s) => {
+      arch.style.setProperty('--p', s >= 1 ? 1 : 0);
+      arch.classList.toggle('signed', s >= 1);
+    });
+  };
+
   boot();
 })();

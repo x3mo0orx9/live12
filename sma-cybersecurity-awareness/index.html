@@ -727,6 +727,18 @@ html[dir=rtl] .hold{--from:right}
 .mail-bar{background:#191919}
 .doc-bar{background:#191919}
 
+
+/* presentation mode: slides are driven by Next; exhibits are shown, not operated */
+.lens,.loupe-foot .btn,.verdict-row,.triage-actions,.ransom-choice,.ransom-note .btn,.signal-foot .btn,.pledge-cta,.spec.picked::after{display:none!important}
+.specimens,.clue,.decoy{cursor:default}
+.spec,.niche,.pin,.stages button,.signal,.opt,.chip{pointer-events:none}
+.clue:not(.mail-cta):not(.found):hover{background:none;box-shadow:none}
+.pass-field{cursor:default}
+.chip.on{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+.quiz-opts.answered .opt:not(.good){opacity:.4}
+.pledge-fill{transition:transform 1.6s var(--out)}
+.pin{display:grid}
+
 </style>
 </head>
 <body>
@@ -957,7 +969,7 @@ html[dir=rtl] .hold{--from:right}
     <section class="slide s-loupe" data-wall="charcoal" data-gallery="2" data-min="1" data-sim="loupe" data-title="Look closely at the address||دقّقوا في العنوان">
       <div class="loupe-head">
         <h2 class="title rise"><span lang="en">Look closely<br>at the address</span><span lang="ar">دقّقوا<br>في العنوان</span></h2>
-        <p class="lead rise" style="--d:1"><span lang="en">Only one of these addresses belongs to SMA. Move the magnifier over them, then choose.</span><span lang="ar">عنوان واحد فقط يعود للهيئة. حرّكوا العدسة المكبّرة فوق العناوين ثم اختاروا.</span></p>
+        <p class="lead rise" style="--d:1"><span lang="en">Four addresses that look alike. Only one belongs to SMA.</span><span lang="ar">أربعة عناوين متشابهة، وواحد فقط منها يعود للهيئة.</span></p>
       </div>
       <div class="specimens rise" style="--d:2">
         <button class="spec paper" data-ok="0">
@@ -1011,7 +1023,7 @@ html[dir=rtl] .hold{--from:right}
       </div>
       <div class="inspect-side">
         <h2 class="title title-sm rise"><span lang="en">Find the six warning signs</span><span lang="ar">ابحثوا عن علامات التحذير الست</span></h2>
-        <p class="inspect-count rise" style="--d:1"><b id="clueCount" dir="ltr">0/6</b><span><span lang="en">Click anything in the email that looks wrong.</span><span lang="ar">انقروا على كل ما يبدو مريباً في الرسالة.</span></span></p>
+        <p class="inspect-count rise" style="--d:1"><b id="clueCount" dir="ltr">0/6</b><span><span lang="en">What looks wrong in this email?</span><span lang="ar">ما الذي يبدو مريباً في هذه الرسالة؟</span></span></p>
         <ol class="clues">
           <li data-clue="1"><span lang="en"><b>The sender.</b> srna-gov.ae is not sma.gov.ae. A display name can say anything.</span><span lang="ar"><b>المرسل.</b> ‏srna-gov.ae ليس sma.gov.ae. اسم العرض يمكن أن يكون أي شيء.</span></li>
           <li data-clue="2"><span lang="en"><b>Urgency and threat.</b> Attackers rush you so that you stop thinking.</span><span lang="ar"><b>استعجال وتهديد.</b> المهاجم يستعجلكم كي تتوقفوا عن التفكير.</span></li>
@@ -1021,16 +1033,16 @@ html[dir=rtl] .hold{--from:right}
           <li data-clue="6"><span lang="en"><b>Surprise attachment.</b> An .html file can be a fake sign-in page.</span><span lang="ar"><b>مرفق غير متوقع.</b> ملف ‎.html قد يكون صفحة دخول مزيّفة.</span></li>
         </ol>
         <div class="inspect-verdict" hidden>
-          <p class="caps"><span lang="en">Six out of six. What do you do with it?</span><span lang="ar">ستّ من ستّ. فماذا تفعلون بالرسالة؟</span></p>
+          <p class="caps"><span lang="en">Six warning signs. What now?</span><span lang="ar">ست علامات تحذير. فماذا الآن؟</span></p>
           <div class="verdict-row">
             <button class="btn" data-v="report"><span lang="en">Report it</span><span lang="ar">الإبلاغ عنها</span></button>
             <button class="btn btn-ghost" data-v="delete"><span lang="en">Delete it</span><span lang="ar">حذفها</span></button>
             <button class="btn btn-ghost" data-v="click"><span lang="en">Click to check</span><span lang="ar">النقر للتأكد</span></button>
           </div>
-          <p class="verdict-out" aria-live="polite"></p>
+          <p class="verdict-out"><span lang="en">Do not click and do not reply. Report it: one report lets IT block the sender for everyone.</span><span lang="ar">لا تنقروا ولا تردّوا. أبلغوا عنها: بلاغ واحد يتيح لتقنية المعلومات حظر المرسل عن الجميع.</span></p>
         </div>
       </div>
-      <aside class="notes"><span lang="en">Ask the room to call out what looks wrong and click as they shout. Next reveals the clues one by one if the room goes quiet. Finish on the action: report, do not just delete.</span><span lang="ar">اطلبوا من الحضور أن يذكروا ما يبدو مريباً وانقروا مع إجاباتهم. زر «التالي» يكشف العلامات واحدة تلو الأخرى إن ساد الصمت. واختموا بالتصرف الصحيح: الإبلاغ لا الحذف فقط.</span></aside>
+      <aside class="notes"><span lang="en">Ask the room what looks wrong before each press of Next; each press marks one warning sign. Finish on the action: report, do not just delete.</span><span lang="ar">اسألوا الحضور عمّا يبدو مريباً قبل كل ضغطة على «التالي»؛ كل ضغطة تُظهر علامة تحذير. واختموا بالتصرف الصحيح: الإبلاغ لا الحذف فقط.</span></aside>
     </section>
 
     <!-- 6 · TRIAGE -->
@@ -1048,14 +1060,14 @@ html[dir=rtl] .hold{--from:right}
         </div>
         <div class="triage-why" hidden></div>
       </div>
-      <aside class="notes"><span lang="en">Take a show of hands before each answer. Two of the six are genuine: the lesson is judgement, not suspicion of everything. Skip this slide for a 20-minute session.</span><span lang="ar">اطلبوا رفع الأيدي قبل كل إجابة. رسالتان من الست أصليتان: الدرس هو حسن التقدير لا الشك في كل شيء. يمكن تجاوز هذه الشريحة في جلسة من 20 دقيقة.</span></aside>
+      <aside class="notes"><span lang="en">Each press of Next shows a message, the next press shows the verdict. Ask for a show of hands in between. Two of the six are genuine. Skip this slide for a 20-minute session.</span><span lang="ar">كل ضغطة على «التالي» تعرض رسالة، والضغطة التالية تعرض الحكم. اطلبوا رفع الأيدي بينهما. رسالتان من الست حقيقيتان. يمكن تجاوز هذه الشريحة في جلسة من 20 دقيقة.</span></aside>
     </section>
 
     <!-- 7 · SOCIAL ENGINEERING CHAT -->
     <section class="slide s-con" data-wall="charcoal" data-gallery="3" data-min="2" data-sim="con" data-title="Social engineering: the urgent request||الهندسة الاجتماعية: الطلب العاجل">
       <div class="con-you">
         <h2 class="title rise"><span lang="en">The urgent<br>request</span><span lang="ar">الطلب<br>العاجل</span></h2>
-        <p class="lead rise" style="--d:1"><span lang="en">You answer the message. On the right, see which pressure tactic the sender is using.</span><span lang="ar">أنتم تردّون على الرسالة، وعلى الجانب الآخر تظهر أساليب الضغط التي يستخدمها المرسل.</span></p>
+        <p class="lead rise" style="--d:1"><span lang="en">A message arrives from an unknown number. On the right, the pressure tactics the sender uses.</span><span lang="ar">تصل رسالة من رقم غير معروف، وعلى الجانب الآخر أساليب الضغط التي يستخدمها المرسل.</span></p>
         <div class="replies" aria-live="polite"></div>
       </div>
       <div class="phone rise" style="--d:1">
@@ -1073,7 +1085,7 @@ html[dir=rtl] .hold{--from:right}
         </ul>
         <p class="playbook-out" aria-live="polite"></p>
       </aside>
-      <aside class="notes"><span lang="en">Read the messages aloud and let the room choose the reply. Point at the playbook each time a lever lights up. The defence never changes: pause, verify on a channel you already trust, report.</span><span lang="ar">اقرؤوا الرسائل بصوت مسموع ودعوا الحضور يختارون الرد. أشيروا إلى الخطة كلما أضاء أحد عناصرها. الدفاع لا يتغيّر: تمهّلوا، تحققوا عبر قناة تثقون بها أصلاً، ثم أبلغوا.</span></aside>
+      <aside class="notes"><span lang="en">Read each message aloud as it appears and point at the tactic that lights up. The defence never changes: pause, verify on a channel you already trust, report.</span><span lang="ar">اقرؤوا كل رسالة بصوت مسموع عند ظهورها وأشيروا إلى الأسلوب الذي يضيء. الدفاع لا يتغيّر: تمهّلوا، تحققوا عبر قناة تثقون بها أصلاً، ثم أبلغوا.</span></aside>
     </section>
 
     <!-- 8 · A DAY AT THE MUSEUM -->
@@ -1117,14 +1129,14 @@ html[dir=rtl] .hold{--from:right}
         <ol class="stages"></ol>
         <p class="stage-tip" aria-live="polite"></p>
       </div>
-      <aside class="notes"><span lang="en">Ask who would click “Enable content”. Then click it. Let the silence work while the files lock, then rewind: there were three chances to stop it, and all three belonged to a person.</span><span lang="ar">اسألوا: من كان سينقر «تمكين المحتوى»؟ ثم انقروا. دعوا الصمت يؤدي دوره أثناء قفل الملفات، ثم أعيدوا المشهد إلى الوراء: كانت هناك ثلاث فرص لإيقاف الهجوم، وكلها بيد إنسان.</span></aside>
+      <aside class="notes"><span lang="en">Ask who would click “Enable content”, then press Next and let the files lock. The following presses walk back through the attack: three chances to stop it, all in the hands of a person.</span><span lang="ar">اسألوا: من كان سينقر «تمكين المحتوى»؟ ثم اضغطوا «التالي» ودعوا الملفات تُقفل. الضغطات التالية تستعرض الهجوم خطوة بخطوة: ثلاث فرص لإيقافه، وكلها بيد إنسان.</span></aside>
     </section>
 
     <!-- 10 · PASSWORD LAB -->
     <section class="slide s-pass" data-wall="charcoal" data-gallery="5" data-min="1.5" data-sim="pass" data-title="Strong passwords||كلمات المرور القوية">
       <div class="pass-main">
         <h2 class="title rise"><span lang="en">Strong passwords</span><span lang="ar">كلمات المرور القوية</span></h2>
-        <p class="lead rise" style="--d:1"><span lang="en">Try a password. Not your real one.</span><span lang="ar">جرّبوا كلمة مرور، على ألّا تكون الحقيقية.</span></p>
+        <p class="lead rise" style="--d:1"><span lang="en">How long would each of these take to crack?</span><span lang="ar">كم يستغرق اختراق كل واحدة من هذه؟</span></p>
         <label class="pass-field paper rise" style="--d:2">
           <svg class="ic"><use href="#i-key-round"/></svg>
           <input id="pw" type="text" dir="ltr" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="48" placeholder="…">
@@ -1135,7 +1147,7 @@ html[dir=rtl] .hold{--from:right}
           <div class="pass-time"><span class="caps"><span lang="en">Time to crack</span><span lang="ar">الزمن اللازم للاختراق</span></span><strong id="pwTime" aria-live="polite">—</strong></div>
         </div>
         <ul class="pass-findings" aria-live="polite"></ul>
-        <small class="fine"><span lang="en">Illustrative estimate for a fast offline attack. Nothing you type leaves this page.</span><span lang="ar">تقدير توضيحي لهجوم سريع دون اتصال. ما تكتبونه لا يغادر هذه الصفحة.</span></small>
+        <small class="fine"><span lang="en">Illustrative estimate for a fast offline attack.</span><span lang="ar">تقدير توضيحي لهجوم سريع دون اتصال.</span></small>
       </div>
       <aside class="placard paper rules rise" style="--d:2">
         <h3 class="placard-title"><span lang="en">Three rules for every key</span><span lang="ar">ثلاث قواعد لكل مفتاح</span></h3>
@@ -1145,7 +1157,7 @@ html[dir=rtl] .hold{--from:right}
           <li><b><span lang="en">Never share it.</span><span lang="ar">لا تشاركوها أبداً.</span></b><span lang="en">Not with IT, not with your manager, not on a sticky note.</span><span lang="ar">لا مع تقنية المعلومات ولا مع المدير ولا على ورقة ملاحظات.</span></li>
         </ol>
       </aside>
-      <aside class="notes"><span lang="en">Type the room's suggestions or use the presets. Sharjah2026 falls instantly; four random words last for centuries. Length and uniqueness, not symbols.</span><span lang="ar">اكتبوا اقتراحات الحضور أو استخدموا الأمثلة الجاهزة. ‏Sharjah2026 تسقط فوراً، وأربع كلمات عشوائية تصمد قروناً. المهم الطول والتفرّد لا الرموز.</span></aside>
+      <aside class="notes"><span lang="en">Each press of Next types one example. Sharjah2026 falls instantly; four random words last for centuries. Length and uniqueness, not symbols.</span><span lang="ar">كل ضغطة على «التالي» تكتب مثالاً. ‏Sharjah2026 تسقط فوراً، وأربع كلمات عشوائية تصمد قروناً. المهم الطول والتفرّد لا الرموز.</span></aside>
     </section>
 
     <!-- 11 · MFA -->
@@ -1190,7 +1202,7 @@ html[dir=rtl] .hold{--from:right}
           <li><svg class="ic"><use href="#i-phone-call"/></svg><span lang="en">What cannot be copied: your call back on a number you already hold.</span><span lang="ar">ما لا يمكن تقليده: اتصالكم أنتم برقم معروف لديكم مسبقاً.</span></li>
         </ul>
       </div>
-      <aside class="notes"><span lang="en">Artificial intelligence removes the old warning signs. Do not ask the room to spot the fake; ask what process would have caught it. Answer: a call back on a known number.</span><span lang="ar">الذكاء الاصطناعي يُلغي علامات التحذير القديمة. لا تطلبوا من الحضور اكتشاف التزييف، بل اسألوهم: ما الإجراء الذي كان سيكشفه؟ الجواب: معاودة الاتصال برقم معروف.</span></aside>
+      <aside class="notes"><span lang="en">Let the call play, then press Next to expose it. Do not ask the room to spot the fake; ask what process would have caught it. Answer: a call back on a known number.</span><span lang="ar">دعوا المكالمة تُعرض ثم اضغطوا «التالي» لكشفها. لا تطلبوا من الحضور اكتشاف التزييف، بل اسألوهم: ما الإجراء الذي كان سيكشفه؟ الجواب: معاودة الاتصال برقم معروف.</span></aside>
     </section>
 
     <!-- 13 · AI REWROTE THE RULES -->
@@ -1246,7 +1258,7 @@ html[dir=rtl] .hold{--from:right}
       </div>
       <div class="report-right">
         <div class="signals paper rise" style="--d:1">
-          <h3 class="placard-title"><span lang="en">Which of these would you report?</span><span lang="ar">أيّ هذه الحالات تستحق الإبلاغ؟</span></h3>
+          <h3 class="placard-title"><span lang="en">Report all of these</span><span lang="ar">أبلغوا عن كل هذه الحالات</span></h3>
           <div class="signal-chips"></div>
           <div class="signal-foot">
             <button class="btn" data-do="check"><span lang="en">Check</span><span lang="ar">تحقّقوا</span></button>
@@ -1276,7 +1288,7 @@ html[dir=rtl] .hold{--from:right}
         <div class="quiz-meter rise" style="--d:1" aria-hidden="true"></div>
       </div>
       <div class="quiz-body" aria-live="polite"></div>
-      <aside class="notes"><span lang="en">Six quick questions. Run it as a room vote: ask for hands, then click the majority answer. Applaud the score whatever it is.</span><span lang="ar">ستة أسئلة سريعة. نفّذوها بتصويت جماعي: اطلبوا رفع الأيدي ثم انقروا على إجابة الأغلبية. وصفّقوا للنتيجة أياً كانت.</span></aside>
+      <aside class="notes"><span lang="en">Six quick questions. Each press of Next shows a question, the next press shows the answer. Ask for hands in between.</span><span lang="ar">ستة أسئلة سريعة. كل ضغطة على «التالي» تعرض سؤالاً، والضغطة التالية تعرض الإجابة. اطلبوا رفع الأيدي بينهما.</span></aside>
     </section>
 
     <!-- 17 · PLEDGE -->
@@ -1293,7 +1305,7 @@ html[dir=rtl] .hold{--from:right}
         <i class="pledge-fill"></i>
         <span class="picto"><svg class="ic"><use href="#i-shield-check"/></svg></span>
       </div>
-      <aside class="notes"><span lang="en">Ask everyone to say the three words with you while you hold the button. Then move straight to the close.</span><span lang="ar">اطلبوا من الجميع ترديد الكلمات الثلاث معكم أثناء الضغط على الزر، ثم انتقلوا مباشرة إلى الختام.</span></aside>
+      <aside class="notes"><span lang="en">Ask everyone to say the three words with you, then press Next.</span><span lang="ar">اطلبوا من الجميع ترديد الكلمات الثلاث معكم، ثم اضغطوا «التالي».</span></aside>
     </section>
 
     <!-- 18 · CLOSE -->
@@ -2714,6 +2726,318 @@ html[dir=rtl] .hold{--from:right}
       arch.classList.remove('signed');
       btn.hidden = false;
       done.hidden = true;
+    });
+  };
+
+  /* ==========================================================================
+     Presentation mode. Every slide is driven by Next alone: each press reveals
+     the next point with an animation, and nothing needs to be clicked or typed.
+     These definitions replace the click-through versions above.
+     ========================================================================== */
+  const steps = (slide, n, paint) => {
+    slide.dataset.steps = n;
+    on(slide, 'step', (e) => paint(e.detail));
+  };
+
+  /* 4 · look closely at the address: Next shows which one is genuine */
+  sims.loupe = (slide) => {
+    steps(slide, 1, (s) => $('.specimens', slide).classList.toggle('revealed', s >= 1));
+  };
+
+  /* 5 · warning signs: Next marks them one by one, then the advice appears */
+  sims.inspect = (slide) => {
+    const TOTAL = 6;
+    steps(slide, TOTAL, (s) => {
+      for (let id = 1; id <= TOTAL; id += 1) {
+        $$(`.clue[data-clue="${id}"]`, slide).forEach((c) => c.classList.toggle('found', id <= s));
+        $(`.clues li[data-clue="${id}"]`, slide).classList.toggle('found', id <= s);
+      }
+      $('#clueCount').textContent = `${s}/${TOTAL}`;
+      $('.inspect-count', slide).hidden = s === TOTAL;
+      $('.inspect-verdict', slide).hidden = s !== TOTAL;
+      $('.mail-status', slide).textContent = s >= 4 ? $('.mail-cta', slide).dataset.url : '';
+    });
+  };
+
+  /* 6 · genuine or fake: each message, then its verdict */
+  sims.triage = (slide) => {
+    const card = $('.msg', slide);
+    const why = $('.triage-why', slide);
+    const dots = $('.triage-dots', slide);
+    let shown = -1;
+    dots.innerHTML = TRIAGE.map(() => '<i></i>').join('');
+    steps(slide, TRIAGE.length * 2 - 1, (s) => {
+      const i = s >> 1;
+      const verdict = (s & 1) === 1;
+      const m = TRIAGE[i];
+      if (i !== shown) {
+        shown = i;
+        const body = `<p>${B(m.body[0], m.body[1])}</p>`;
+        card.className = 'msg paper';
+        void card.offsetWidth;
+        card.classList.add('swap');
+        card.innerHTML = `<div class="msg-top"><span class="picto">${icon(m.ic)}</span>
+            <div class="msg-who"><b>${B(m.from[0], m.from[1])}</b><small dir="ltr">${m.addr}</small></div>
+            <span class="caps msg-chan">${B(m.chan[0], m.chan[1])}</span></div>
+          ${m.subj ? `<h3>${B(m.subj[0], m.subj[1])}</h3>` : ''}
+          ${m.qr ? `<div class="msg-qr">${qrSvg(m.qr)}${body}</div>` : body}`;
+      }
+      why.hidden = !verdict;
+      why.className = `triage-why ${m.ok ? 'good' : 'bad'}`;
+      why.innerHTML = `${icon(m.ok ? 'circle-check' : 'triangle-alert')}<p><b>${m.ok ? B('Genuine.', 'حقيقية.') : B('Fake.', 'مزيّفة.')}</b>${B(m.why[0], m.why[1])}</p>`;
+      $$('i', dots).forEach((d, k) => {
+        const done = k < i || (k === i && verdict);
+        d.className = done ? (TRIAGE[k].ok ? 'ok' : 'no') : (k === i ? 'now' : '');
+      });
+    });
+  };
+
+  /* 7 · the urgent request: the conversation plays out one message per Next */
+  sims.con = (slide) => {
+    const chat = $('.chat', slide);
+    const replies = $('.replies', slide);
+    const out = $('.playbook-out', slide);
+    const end = CON_END.win;
+    const SCRIPT = [
+      CON.start.say[0], CON.start.say[1], { me: CON.start.opts[0].t },
+      CON.ask.say[0], CON.ask.say[1], { me: CON.ask.opts[1].t }, CON.squeeze.say[0], { end: true },
+    ];
+    steps(slide, SCRIPT.length - 1, (s) => {
+      const used = new Set();
+      chat.innerHTML = SCRIPT.slice(0, s + 1).map((line, k) => {
+        const fresh = k === s ? '' : ' style="animation:none"';
+        if (line.end) return `<div class="bub sys good"${fresh}>${B(end.sys[0], end.sys[1])}</div>`;
+        if (line.me) return `<div class="bub me"${fresh}>${B(line.me[0], line.me[1])}</div>`;
+        line.lev.forEach((l) => used.add(l));
+        return `<div class="bub"${fresh}>${B(line.t[0], line.t[1])}</div>`;
+      }).join('');
+      $$('.levers li', slide).forEach((l) => l.classList.toggle('on', used.has(l.dataset.lever)));
+      const done = s === SCRIPT.length - 1;
+      out.innerHTML = done ? B(end.out[0], end.out[1]) : '';
+      replies.innerHTML = done ? `<div class="outcome"><b>${B(end.title[0], end.title[1])}</b>${B(end.text[0], end.text[1])}</div>` : '';
+    });
+  };
+
+  /* 8 · workplace scenarios: one situation per Next, with the right response marked */
+  sims.day = (slide) => {
+    const plan = $('.plan', slide);
+    const scene = $('.scene', slide);
+    plan.innerHTML = PLAN + DAY.map((d, k) => `<span class="pin" data-k="${k}" style="left:${(d.x / 1010 * 100).toFixed(2)}%;top:${(d.y / 610 * 100).toFixed(2)}%">${icon(d.ic)}</span>`).join('');
+    const pins = $$('.pin', plan);
+    steps(slide, DAY.length - 1, (k) => {
+      const d = DAY[k];
+      const good = d.opts.find((o) => o.ok);
+      pins.forEach((p, n) => { p.classList.toggle('now', n === k); p.classList.toggle('done', n < k); });
+      scene.classList.remove('swap');
+      void scene.offsetWidth;
+      scene.classList.add('swap');
+      scene.innerHTML = `<h3>${B(d.title[0], d.title[1])}</h3><p>${B(d.text[0], d.text[1])}</p>
+        <div class="opts locked">${d.opts.map((o) => `<div class="opt ${o.ok ? 'good' : ''}">${icon(o.ok ? 'circle-check' : 'circle-x')}<span>${B(o.t[0], o.t[1])}</span></div>`).join('')}</div>
+        <p class="why"><b>${B('The right response.', 'التصرف الصحيح.')}</b>${B(good.why[0], good.why[1])}</p>`;
+    });
+  };
+
+  /* 9 · ransomware: Next runs the attack, then walks back through its five stages */
+  sims.ransom = (slide) => {
+    const list = $('.files', slide);
+    const note = $('.ransom-note', slide);
+    const rewind = $('.rewind', slide);
+    const msg = $('.ransom-msg', slide);
+    const tip = $('.stage-tip', slide);
+    const stages = $('.stages', slide);
+    const order = [3, 0, 7, 10, 1, 5, 8, 2, 11, 4, 9, 6];
+    const ext = (f) => FILE_ICON[f.split('.').pop()];
+    let run = 0;
+    list.innerHTML = FILES.map((f, k) => `<li class="file" data-k="${k}">${icon(ext(f))}<span>${f}</span></li>`).join('');
+    stages.innerHTML = STAGES.map((st, k) => `<li><button class="${st.save ? 'save' : ''}" tabindex="-1"><i>${k + 1}</i><span>${B(st.n[0], st.n[1])}</span></button></li>`).join('');
+    const setLocked = (n) => {
+      $$('.file', list).forEach((el) => {
+        const k = +el.dataset.k;
+        const lock = order.indexOf(k) < n;
+        if (lock === el.classList.contains('locked')) return;
+        el.classList.toggle('locked', lock);
+        $('use', el).setAttribute('href', `#i-${lock ? 'lock' : ext(FILES[k])}`);
+        $('span', el).textContent = lock ? `${(k * 7919 + 104729).toString(16)}${(k * 131 + 977).toString(16)}.locked` : FILES[k];
+      });
+      $('.drive-count', slide).textContent = `${12 - n} / 12`;
+    };
+    steps(slide, 6, async (s) => {
+      run += 1;
+      const mine = run;
+      note.hidden = true;
+      rewind.hidden = s < 2;
+      if (s === 0) { setLocked(0); msg.innerHTML = ''; return; }
+      if (s === 1) {
+        setLocked(0);
+        msg.innerHTML = B('Someone clicks “Enable content”. Nothing on screen changes, at first.', 'أحدهم ينقر «تمكين المحتوى». لا يتغيّر شيء على الشاشة… في البداية.');
+        await wait(900);
+        for (let n = 1; n <= 12; n += 1) {
+          if (mine !== run) return;
+          setLocked(n);
+          await wait(n < 4 ? 380 : 160);
+        }
+        if (mine !== run) return;
+        note.hidden = false;
+        return;
+      }
+      const st = STAGES[s - 2];
+      $$('button', stages).forEach((b, n) => b.classList.toggle('now', n === s - 2));
+      setLocked(st.locked);
+      tip.innerHTML = B(st.tip[0], st.tip[1]);
+      msg.innerHTML = B('The same attack, step by step. Three of the five steps could be stopped by one person.', 'الهجوم نفسه خطوة بخطوة. ثلاث من الخطوات الخمس كان يمكن لشخص واحد إيقافها.');
+    });
+  };
+
+  /* 10 · strong passwords: Next types four examples */
+  sims.pass = (slide) => {
+    const input = $('#pw');
+    const gates = $('.gates', slide);
+    const time = $('#pwTime');
+    const findings = $('.pass-findings', slide);
+    const SAMPLES = ['Sharjah2026', 'P@ssw0rd!', 'Museum@123', 'falcon-coffee-lantern-tide'];
+    let run = 0;
+    input.readOnly = true;
+    input.tabIndex = -1;
+    gates.innerHTML = Array.from({ length: 5 }, () => api.archSvg(58, 88)).join('');
+    const chipBox = $('.pass-presets', slide);
+    chipBox.innerHTML = SAMPLES.map((p) => `<span class="chip">${p}</span>`).join('');
+    const rate = (pw) => {
+      if (!pw) { time.textContent = '—'; findings.innerHTML = ''; $$('svg', gates).forEach((g) => g.classList.remove('lit')); return; }
+      const r = crackTime(pw);
+      time.innerHTML = B(r.label[0], r.label[1]);
+      gates.style.setProperty('--gate', r.gates <= 1 ? '#A32A2A' : r.gates <= 3 ? '#9A5F33' : '#2E6B45');
+      $$('svg', gates).forEach((g, k) => g.classList.toggle('lit', k < Math.max(r.gates, 1)));
+      findings.innerHTML = r.notes.map((n) => `<li>${icon(r.gates >= 4 ? 'circle-check' : 'circle-alert')}<span>${n}</span></li>`).join('');
+    };
+    steps(slide, SAMPLES.length, async (s) => {
+      run += 1;
+      const mine = run;
+      $$('.chip', chipBox).forEach((c, k) => c.classList.toggle('on', k === s - 1));
+      input.value = '';
+      rate('');
+      if (s === 0) return;
+      const pw = SAMPLES[s - 1];
+      for (let k = 1; k <= pw.length; k += 1) {
+        if (mine !== run) return;
+        input.value = pw.slice(0, k);
+        await wait(45);
+      }
+      if (mine === run) rate(pw);
+    });
+  };
+
+  /* 11 · multi-factor authentication: three unexpected requests, then the right response */
+  sims.mfa = (slide) => {
+    const pushes = $('.pushes', slide);
+    const replies = $('.replies', slide);
+    const out = $('.playbook-out', slide);
+    const factor = $('[data-mfa]', slide);
+    const push = (kind, title, text, fresh) => `<div class="push ${kind === 'chat' ? 'chat-push' : ''} ${fresh ? '' : 'old'}"${fresh ? '' : ' style="animation:none"'}>
+      <span class="app">${icon(kind === 'chat' ? 'message-circle' : 'shield-check')}</span><div><b>${B(title[0], title[1])}</b><span>${B(text[0], text[1])}</span></div></div>`;
+    const signIn = (n, fresh) => push('auth', ['Approve sign-in?', 'الموافقة على تسجيل الدخول؟'],
+      [`SMA account · new device · location unknown · request ${n}`, `حساب الهيئة · جهاز جديد · موقع غير معروف · الطلب ${n}`], fresh);
+    const itMsg = (fresh) => push('chat', ['IT Support', 'الدعم الفني'], ['We are fixing a sync error on your account. Please approve the next request.', 'نعالج خطأ مزامنة في حسابكم. يرجى الموافقة على الطلب القادم.'], fresh);
+    steps(slide, 3, (s) => {
+      const done = s === 3;
+      $('.lock-time', slide).textContent = `03:1${Math.min(s, 2) + 2}`;
+      pushes.innerHTML = [signIn(1, s === 0), s >= 1 ? signIn(2, s === 1) : '', s >= 2 ? itMsg(false) + signIn(3, s === 2) : ''].join('');
+      while (pushes.children.length > 3) pushes.firstChild.remove();
+      factor.className = done ? 'blocked' : 'wait';
+      $('use', factor).setAttribute('href', `#i-${done ? 'lock' : 'hourglass'}`);
+      $('.mfa-state', slide).innerHTML = done
+        ? B('Denied and reported. The password was changed. Locked out for good.', 'تم الرفض والإبلاغ وتغيير كلمة المرور. أُغلق الباب نهائياً.')
+        : B('Waiting for you to approve…', 'بانتظار موافقتكم…');
+      out.innerHTML = done ? B('The same rule covers UAE PASS requests and one-time codes: if you did not start it, reject it and tell someone.', 'القاعدة نفسها تنطبق على طلبات الهوية الرقمية UAE PASS ورموز التحقق: إن لم تبدؤوا الطلب فارفضوه وأبلغوا.') : '';
+      replies.innerHTML = done
+        ? `<div class="outcome"><b>${B('Deny. Report. Change the password.', 'ارفضوا. أبلغوا. غيّروا كلمة المرور.')}</b>${B('A request you did not start is an attack in progress. Approving it “so that it stops” lets the intruder in.', 'كل طلب لم تبدؤوه هو هجوم جارٍ. والموافقة عليه «كي يتوقف» تُدخل المتسلّل.')}</div>`
+        : '';
+    });
+  };
+
+  /* 12 · AI deepfakes: the call plays, then Next exposes it */
+  sims.fake = (slide) => {
+    const call = $('.call', slide);
+    const caption = $('.call-caption', slide);
+    const replies = $('.replies', slide);
+    const clock = $('.call-clock', slide);
+    let run = 0;
+    let ticker = null;
+    $('.call-wave', slide).innerHTML = Array.from({ length: 16 }, (_, k) => `<i style="animation-duration:${(0.5 + (k * 37 % 9) / 12).toFixed(2)}s;animation-delay:-${(k * 53 % 10) / 10}s"></i>`).join('');
+    const LINES = [
+      ['“Hi, I am between flights so I will be quick. We are closing a contract and the deposit must go out within thirty minutes.”', '«مرحباً، أنا بين رحلتين فسأختصر. نحن بصدد إبرام عقد ويجب تحويل الدفعة المقدّمة خلال ثلاثين دقيقة.»'],
+      ['“I have emailed you the account details. Please process it now, and keep it quiet until the announcement.”', '«أرسلت لكم بيانات الحساب بالبريد. نفّذوا التحويل الآن، وأبقوا الأمر طيّ الكتمان حتى الإعلان.»'],
+    ];
+    const say = async (line, mine) => {
+      const en = line[0].split(' ');
+      const ar = line[1].split(' ');
+      for (let k = 1; k <= Math.max(en.length, ar.length); k += 1) {
+        if (mine !== run) return;
+        caption.innerHTML = B(en.slice(0, k).join(' '), ar.slice(0, k).join(' '));
+        await wait(95);
+      }
+    };
+    steps(slide, 1, (s) => {
+      const exposed = s >= 1;
+      call.classList.toggle('exposed', exposed);
+      $('.call-stamp', slide).hidden = !exposed;
+      $('.fake-tells', slide).hidden = !exposed;
+      replies.innerHTML = exposed
+        ? `<div class="outcome"><b>${B('Hang up. Call back on a number you know.', 'أنهوا المكالمة وعاودوا الاتصال برقم تعرفونه.')}</b>${B('A real colleague will understand. A fake one pushes back, and that is your answer.', 'الزميل الحقيقي سيتفهّم. أما المحتال فسيعترض، وذلك هو الجواب.')}</div>`
+        : '';
+    });
+    on(slide, 'enter', () => {
+      run += 1;
+      const mine = run;
+      let sec = 0;
+      clearInterval(ticker);
+      clock.textContent = '00:00';
+      ticker = setInterval(() => { sec += 1; clock.textContent = `00:${String(sec % 60).padStart(2, '0')}`; }, 1000);
+      (async () => { await wait(700); await say(LINES[0], mine); await wait(1300); await say(LINES[1], mine); })();
+    });
+    on(slide, 'leave', () => { run += 1; clearInterval(ticker); });
+  };
+
+  /* 15 · recognise and report: the list of things worth reporting is simply shown */
+  sims.report = (slide) => {
+    $('.signals', slide).classList.add('checked');
+    $('.signal-chips', slide).innerHTML = SIGNALS.map((s) => `<span class="signal">${icon('flag')}<span>${B(s[0], s[1])}</span></span>`).join('');
+    $('.signal-out', slide).innerHTML = B('If it feels wrong, it is worth a two-minute call.', 'ما دام الأمر مريباً فهو يستحق اتصالاً من دقيقتين.');
+    const contact = $('#contact');
+    contact.textContent = api.store.get('contact') || '';
+    on(contact, 'input', () => api.store.set('contact', contact.textContent.trim()));
+    on(contact, 'blur', () => { if (!contact.textContent.trim()) contact.textContent = ''; });
+  };
+
+  /* 16 · quick quiz: each question, then its answer */
+  sims.quiz = (slide) => {
+    const body = $('.quiz-body', slide);
+    const meter = $('.quiz-meter', slide);
+    let shown = -1;
+    meter.innerHTML = QUIZ.map(() => api.archSvg(40, 60)).join('');
+    const pips = $$('svg', meter);
+    steps(slide, QUIZ.length * 2 - 1, (s) => {
+      const i = s >> 1;
+      const answer = (s & 1) === 1;
+      const q = QUIZ[i];
+      if (i !== shown) {
+        shown = i;
+        body.innerHTML = `<h3 class="quiz-q">${B(q.q[0], q.q[1])}</h3>
+          <div class="opts quiz-opts locked">${q.a.map((a, k) => `<div class="opt" style="--i:${k}">${icon(k === q.ok ? 'circle-check' : 'circle-x')}<span>${B(a[0], a[1])}</span></div>`).join('')}</div>
+          <div class="quiz-why"><span>${B(q.why[0], q.why[1])}</span></div>`;
+      }
+      $$('.opt', body)[q.ok].classList.toggle('good', answer);
+      $('.quiz-opts', body).classList.toggle('answered', answer);
+      $('.quiz-why', body).hidden = !answer;
+      pips.forEach((p, k) => p.setAttribute('class', k < i || (k === i && answer) ? 'ok' : (k === i ? 'now' : '')));
+    });
+  };
+
+  /* 17 · pause, verify, report: Next fills the arch */
+  sims.pledge = (slide) => {
+    const arch = $('.pledge-arch', slide);
+    steps(slide, 1, (s) => {
+      arch.style.setProperty('--p', s >= 1 ? 1 : 0);
+      arch.classList.toggle('signed', s >= 1);
     });
   };
 
