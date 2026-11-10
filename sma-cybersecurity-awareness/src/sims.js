@@ -992,14 +992,15 @@
      the next point with an animation, and nothing needs to be clicked or typed.
      These definitions replace the click-through versions above.
      ========================================================================== */
-  const steps = (slide, n, paint) => {
+  const steps = (slide, n, paint, pace) => {
     slide.dataset.steps = n;
+    if (typeof pace === 'function') slide.pace = pace; else slide.dataset.pace = pace || 1600;
     on(slide, 'step', (e) => paint(e.detail));
   };
 
   /* 4 · look closely at the address: Next shows which one is genuine */
   sims.loupe = (slide) => {
-    steps(slide, 1, (s) => $('.specimens', slide).classList.toggle('revealed', s >= 1));
+    steps(slide, 1, (s) => $('.specimens', slide).classList.toggle('revealed', s >= 1), 3200);
   };
 
   /* 5 · warning signs: Next marks them one by one, then the advice appears */
@@ -1014,7 +1015,7 @@
       $('.inspect-count', slide).hidden = s === TOTAL;
       $('.inspect-verdict', slide).hidden = s !== TOTAL;
       $('.mail-status', slide).textContent = s >= 4 ? $('.mail-cta', slide).dataset.url : '';
-    });
+    }, 1700);
   };
 
   /* 6 · genuine or fake: each message, then its verdict */
@@ -1073,7 +1074,7 @@
       const done = s === SCRIPT.length - 1;
       out.innerHTML = done ? B(end.out[0], end.out[1]) : '';
       replies.innerHTML = done ? `<div class="outcome"><b>${B(end.title[0], end.title[1])}</b>${B(end.text[0], end.text[1])}</div>` : '';
-    });
+    }, 2600);
   };
 
   /* 8 · workplace scenarios: one situation per Next, with the right response marked */
@@ -1092,7 +1093,7 @@
       scene.innerHTML = `<h3>${B(d.title[0], d.title[1])}</h3><p>${B(d.text[0], d.text[1])}</p>
         <div class="opts locked">${d.opts.map((o) => `<div class="opt ${o.ok ? 'good' : ''}">${icon(o.ok ? 'circle-check' : 'circle-x')}<span>${B(o.t[0], o.t[1])}</span></div>`).join('')}</div>
         <p class="why"><b>${B('The right response.', 'التصرف الصحيح.')}</b>${B(good.why[0], good.why[1])}</p>`;
-    });
+    }, 6500);
   };
 
   /* 9 · ransomware: Next runs the attack, then walks back through its five stages */
@@ -1143,7 +1144,7 @@
       setLocked(st.locked);
       tip.innerHTML = B(st.tip[0], st.tip[1]);
       msg.innerHTML = B('The same attack, step by step. Three of the five steps could be stopped by one person.', 'الهجوم نفسه خطوة بخطوة. ثلاث من الخطوات الخمس كان يمكن لشخص واحد إيقافها.');
-    });
+    }, (k) => (k === 0 ? 1500 : k === 1 ? 6500 : 3200));
   };
 
   /* 10 · strong passwords: Next types four examples */
@@ -1181,7 +1182,7 @@
         await wait(45);
       }
       if (mine === run) rate(pw);
-    });
+    }, 3600);
   };
 
   /* 11 · multi-factor authentication: three unexpected requests, then the right response */
@@ -1209,7 +1210,7 @@
       replies.innerHTML = done
         ? `<div class="outcome"><b>${B('Deny. Report. Change the password.', 'ارفضوا. أبلغوا. غيّروا كلمة المرور.')}</b>${B('A request you did not start is an attack in progress. Approving it “so that it stops” lets the intruder in.', 'كل طلب لم تبدؤوه هو هجوم جارٍ. والموافقة عليه «كي يتوقف» تُدخل المتسلّل.')}</div>`
         : '';
-    });
+    }, 2600);
   };
 
   /* 12 · AI deepfakes: the call plays, then Next exposes it */
@@ -1242,7 +1243,7 @@
       replies.innerHTML = exposed
         ? `<div class="outcome"><b>${B('Hang up. Call back on a number you know.', 'أنهوا المكالمة وعاودوا الاتصال برقم تعرفونه.')}</b>${B('A real colleague will understand. A fake one pushes back, and that is your answer.', 'الزميل الحقيقي سيتفهّم. أما المحتال فسيعترض، وذلك هو الجواب.')}</div>`
         : '';
-    });
+    }, 13000);
     on(slide, 'enter', () => {
       run += 1;
       const mine = run;
@@ -1296,7 +1297,7 @@
     steps(slide, 1, (s) => {
       arch.style.setProperty('--p', s >= 1 ? 1 : 0);
       arch.classList.toggle('signed', s >= 1);
-    });
+    }, 1200);
   };
 
   boot();

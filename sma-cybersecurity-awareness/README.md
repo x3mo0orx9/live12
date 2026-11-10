@@ -1,9 +1,8 @@
 # SMA · Cybersecurity Awareness
 
 A bilingual (Arabic / English) awareness presentation for non-IT staff at
-Sharjah Museums Authority. It is presenter-led: every slide is driven by the
-**Next** key alone, and each press reveals the next point with an animation.
-Nothing on a slide needs to be clicked or typed.
+Sharjah Museums Authority. It is presenter-led: one press of **Next** per slide. Each slide
+plays its own animation, so nothing needs to be clicked or typed.
 
 ## Open it
 
@@ -29,7 +28,7 @@ Use a current version of Chrome or Edge, and press **F** for full screen.
 The **Next** button fills with colour while the current slide still has
 something to reveal. The timer highlights when you are behind the plan.
 
-## Running order (about 23 minutes)
+## Running order (about 20 minutes)
 
 | # | Gallery | Slide | Exhibit | Min |
 | --- | --- | --- | --- | --- |
@@ -38,21 +37,20 @@ something to reveal. The timer highlights when you are behind the plan.
 | 3 | Common threats | Six common cyber threats | Six threats, one placard each | 1.5 |
 | 4 | Phishing | Look closely at the address | Magnifier over four look-alike addresses | 1 |
 | 5 | Phishing | Find the six warning signs | Find six red flags in an email | 2 |
-| 6 | Phishing | Genuine or fake? | Six-message triage game | 1.5 |
-| 7 | Social engineering | The urgent request | Chat simulation with the attacker's playbook | 2 |
-| 8 | Social engineering | Workplace scenarios | Five decisions on a floor plan | 2 |
-| 9 | Malware and ransomware | Ransomware: one click | Ransomware demo with rewind | 2 |
-| 10 | Passwords | Strong passwords | Password and passphrase lab | 1.5 |
-| 11 | Passwords | Multi-factor authentication | MFA prompt-bombing simulation | 1 |
-| 12 | AI-powered threats | AI deepfakes | Deepfake video-call decision | 1.5 |
-| 13 | AI-powered threats | AI changed the rules | Four old instincts, four new rules | 1 |
-| 14 | Good habits | Seven safe habits | Seven habits | 1 |
-| 15 | Recognise and report | I clicked. Now what? | First five minutes, what to report, who to call | 1 |
-| 16 | Quiz and close | Quick quiz | Six-question quiz | 2 |
-| 17 | Quiz and close | Pause. Verify. Report. | Press-and-hold pledge | 0.5 |
-| 18 | Quiz and close | Thank you | Official references | 0.5 |
+| 6 | Social engineering | The urgent request | Chat simulation with the attacker's playbook | 2 |
+| 7 | Social engineering | Workplace scenarios | Five decisions on a floor plan | 2 |
+| 8 | Malware and ransomware | Ransomware: one click | Ransomware demo with rewind | 2 |
+| 9 | Passwords | Strong passwords | Password and passphrase lab | 1.5 |
+| 10 | Passwords | Multi-factor authentication | MFA prompt-bombing simulation | 1 |
+| 11 | AI-powered threats | AI deepfakes | Deepfake video-call decision | 1.5 |
+| 12 | AI-powered threats | AI changed the rules | Four old instincts, four new rules | 1 |
+| 13 | Good habits | Seven safe habits | Seven habits | 1 |
+| 14 | Recognise and report | I clicked. Now what? | First five minutes, what to report, who to call | 1 |
+| 15 | Quiz and close | Pause. Verify. Report. | Press-and-hold pledge | 0.5 |
+| 16 | Quiz and close | Thank you | Official references | 0.5 |
 
-**For a 20-minute session** skip slides 6 and 8 (use the slide list, `G`).
+Press **Next** as soon as you are ready to move on; you do not have to wait
+for a slide to finish playing. Going back shows the slide fully revealed.
 
 ## Before the first session
 

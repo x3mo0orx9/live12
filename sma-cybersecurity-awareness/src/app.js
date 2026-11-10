@@ -35,7 +35,7 @@
     ['AI-powered threats', 'تهديدات الذكاء الاصطناعي'],
     ['Good habits', 'العادات الآمنة'],
     ['Recognise and report', 'الرصد والإبلاغ'],
-    ['Quiz and close', 'الاختبار والختام'],
+    ['Close', 'الختام'],
   ];
 
   const GALLERY_ICONS = ['landmark', 'eye', 'fishing-hook', 'drama', 'file-lock', 'key-round', 'scan-face', 'shield-check', 'megaphone', 'award'];
@@ -86,7 +86,6 @@
   function applyStep(slide, step, silent) {
     slide.dataset.step = step;
     $$('[data-at]', slide).forEach((el) => el.classList.toggle('on', +el.dataset.at <= step));
-    nextBtn.classList.toggle('more', step < (+slide.dataset.steps || 0));
     if (!silent) slide.dispatchEvent(new CustomEvent('step', { detail: step }));
   }
   function setStep(n) {
@@ -112,6 +111,7 @@
       to.classList.add('is-current');
       applyStep(to, state.step);
       to.dispatchEvent(new CustomEvent('enter'));
+      autoplay();
       chrome();
       if (!opts.keepHash) { try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) { /* embedded preview */ } }
     };
@@ -178,23 +178,32 @@
     }
   }
 
-  function next() {
-    if (state.busy) return;
+  /** Each slide plays its reveals by itself, at the pace the slide sets. */
+  let auto = null;
+  function autoplay() {
+    clearTimeout(auto);
     const slide = slides[state.i];
-    if (state.step < (+slide.dataset.steps || 0)) {
+    if (state.step >= (+slide.dataset.steps || 0)) return;
+    const pace = typeof slide.pace === 'function' ? slide.pace(state.step) : (+slide.dataset.pace || 1600);
+    auto = setTimeout(() => {
       state.step += 1;
       applyStep(slide, state.step);
-      return;
-    }
+      autoplay();
+    }, pace + (state.step === 0 ? 700 : 0));
+  }
+  /** Jump straight to the finished state of the current slide. */
+  function finish() {
+    clearTimeout(auto);
+    const slide = slides[state.i];
+    state.step = +slide.dataset.steps || 0;
+    applyStep(slide, state.step);
+  }
+  function next() {
+    if (state.busy) return;
     if (state.i < slides.length - 1) go(state.i + 1, 0);
   }
   function prev() {
     if (state.busy) return;
-    if (state.step > 0) {
-      state.step -= 1;
-      applyStep(slides[state.i], state.step);
-      return;
-    }
     if (state.i > 0) go(state.i - 1, 'end');
   }
 
@@ -355,7 +364,7 @@
   });
 
   /* ---- boot ------------------------------------------------------------- */
-  const api = { $, $$, B, icon, pair, ARCH, archSvg, state, store, go, next, prev, setStep, setWall, stageXY, applyArches, reduced };
+  const api = { $, $$, B, icon, pair, ARCH, archSvg, state, store, go, next, prev, finish, setStep, setWall, stageXY, applyArches, reduced };
   const sims = {};
 
   function boot() {
