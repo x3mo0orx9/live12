@@ -4,6 +4,16 @@ A bilingual (Arabic / English) awareness presentation for non-IT staff at
 Sharjah Museums Authority. It is presenter-led: one press of **Next** per slide. Each slide
 plays its own animation, so nothing needs to be clicked or typed.
 
+## Two decks in this folder
+
+- **`SMA-Cybersecurity-Awareness.html`** is the 36-slide training deck (five
+  parts, four attacks, UAE figures and the IT Service Desk contact), restyled
+  with the new SMA wordmark and the light off-white / black / copper look.
+  One press per slide; `L` switches language, `G` opens the slide list.
+- **`index.html`** is the shorter 16-slide deck described below.
+
+Both are single self-contained files that open offline.
+
 ## Open it
 
 Double-click **`index.html`**. It is a single self-contained file: fonts,
