@@ -6,7 +6,7 @@ plays its own animation, so nothing needs to be clicked or typed.
 
 ## Two decks in this folder
 
-- **`SMA-Cybersecurity-Awareness.html`** is the 38-slide training deck (five
+- **`SMA-Cybersecurity-Awareness.html`** is the 34-slide training deck (five
   parts, four attacks, UAE figures and the IT Service Desk contact), restyled
   with the new SMA wordmark and the light off-white / black / copper look.
   One press per slide; `L` switches language, `G` opens the slide list.
