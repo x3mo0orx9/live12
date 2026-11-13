@@ -12,6 +12,8 @@ plays its own animation, so nothing needs to be clicked or typed.
   general slide (stop, check, report) that applies to any attack. Restyled
   with the new SMA wordmark and the light off-white / black / copper look.
   One press per slide; `L` switches language, `G` opens the slide list.
+- **`SPEAKER-SCRIPT-AR.md`** is the presenter's script for the 31-slide deck, in
+  plain Emirati Arabic, one section per slide with a suggested time.
 - **`index.html`** is the shorter 16-slide deck described below.
 
 Both are single self-contained files that open offline.
