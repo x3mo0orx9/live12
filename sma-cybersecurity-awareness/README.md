@@ -8,8 +8,8 @@ plays its own animation, so nothing needs to be clicked or typed.
 
 - **`SMA-Cybersecurity-Awareness.html`** is the 31-slide training deck (five
   parts, four attacks, UAE figures and the IT Service Desk contact). Each
-  attack ends on its warning signs; what to do about all four is one table at
-  the start of part 5, followed by how to report. Restyled
+  attack ends on its warning signs; part 5 opens with one general slide
+  (stop, check, report) that applies to any attack, followed by how to report. Restyled
   with the new SMA wordmark and the light off-white / black / copper look.
   One press per slide; `L` switches language, `G` opens the slide list.
 - **`index.html`** is the shorter 16-slide deck described below.
