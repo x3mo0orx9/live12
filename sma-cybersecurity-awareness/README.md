@@ -13,7 +13,7 @@ plays its own animation, so nothing needs to be clicked or typed.
   with the new SMA wordmark and the light off-white / black / copper look.
   One press per slide; `L` switches language, `G` opens the slide list.
 - **`نص-العرض-SMA.docx`** (Word) and **`نص-العرض-SMA.txt`** (Notepad) are the
-  presenter's script for the 31-slide deck, in plain Emirati Arabic, one section
+  presenter's script for the 31-slide deck, in plain Modern Standard Arabic, one section
   per slide with a suggested time.
 - **`index.html`** is the shorter 16-slide deck described below.
 
