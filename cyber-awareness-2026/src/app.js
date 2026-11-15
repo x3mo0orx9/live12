@@ -1,4 +1,4 @@
-/* SMA · Cyber awareness 2026 — navigation, language, presenter tools.
+/* SMA · Cyber awareness 2026 — navigation, language, motion, presenter tools.
    No dependencies and no network: everything runs from this one file. */
 (function () {
   'use strict';
@@ -9,6 +9,7 @@
   var toc = doc.getElementById('toc'), sheet = doc.getElementById('sheet');
   var np = doc.getElementById('np'), npText = doc.getElementById('np-text');
   var contact = doc.getElementById('contact');
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   root.classList.add('js');
 
@@ -31,8 +32,39 @@
   function titleOf(s, lang) {
     var t = s.getAttribute('data-title-' + lang);
     if (t) return t;
-    var el = s.querySelector('.title [lang=' + lang + ']');
+    var el = s.querySelector('.title [lang=' + lang + '], h2 [lang=' + lang + ']');
     return el ? el.textContent : '';
+  }
+
+  /* ---- numbers that count up when their slide opens ---------------------- */
+  function fmt(v, dec) {
+    var s = v.toFixed(dec), p = s.split('.');
+    p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return p.join('.');
+  }
+  var timers = [];
+  function stopCounts() { timers.forEach(function (t) { clearTimeout(t); cancelAnimationFrame(t); }); timers = []; }
+  function runCounts(s, instant) {
+    stopCounts();
+    [].forEach.call(s.querySelectorAll('[data-count]'), function (el) {
+      var to = parseFloat(el.getAttribute('data-count'));
+      var from = parseFloat(el.getAttribute('data-from') || '0');
+      var dec = (el.getAttribute('data-count').split('.')[1] || '').length;
+      var wait = parseFloat(el.getAttribute('data-wait') || '0') * 1000;
+      var dur = parseFloat(el.getAttribute('data-dur') || '1.4') * 1000;
+      if (instant || calm) { el.textContent = fmt(to, dec); return; }
+      el.textContent = fmt(from, dec);
+      timers.push(setTimeout(function () {
+        var t0 = null;
+        function step(now) {
+          if (t0 === null) t0 = now;
+          var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+          el.textContent = fmt(from + (to - from) * e, dec);
+          if (k < 1) timers.push(requestAnimationFrame(step));
+        }
+        timers.push(requestAnimationFrame(step));
+      }, wait));
+    });
   }
 
   function refresh() {
@@ -52,18 +84,30 @@
     try { window.history.replaceState(null, '', '#' + (cur + 1)); } catch (e) { /* file previews may refuse */ }
   }
 
+  var underTimer;
   function go(n, instant) {
     n = Math.max(0, Math.min(total - 1, n));
+    var old = slides[cur], next = slides[n];
+    var wipe = !instant && !calm && n !== cur && old.classList.contains('dark') !== next.classList.contains('dark');
     root.classList.toggle('instant', !!instant);
-    slides.forEach(function (s, i) {
-      s.classList.toggle('active', i === n);
-      s.setAttribute('aria-hidden', i === n ? 'false' : 'true');
-    });
+    clearTimeout(underTimer);
+    slides.forEach(function (s) { s.classList.remove('active', 'under', 'wipe'); s.setAttribute('aria-hidden', 'true'); });
+    if (wipe) {
+      /* keep the old wall underneath while the new one wipes across it */
+      old.classList.add('under');
+      next.classList.add('wipe');
+      underTimer = setTimeout(function () { old.classList.remove('under'); }, 900);
+    }
+    void next.offsetWidth;            /* restart the slide's animations from the top */
+    next.classList.add('active');
+    next.setAttribute('aria-hidden', 'false');
     cur = n;
+    runCounts(next, instant);
     refresh();
   }
   function next() { if (cur < total - 1) go(cur + 1); }
   function prev() { if (cur > 0) go(cur - 1, true); }
+  function replay() { go(cur); }
 
   function setLang(l) {
     root.lang = l;
@@ -72,7 +116,7 @@
     if (contact) contact.setAttribute('data-ph', contact.getAttribute('data-ph-' + l));
     refresh();
   }
-  function toggleLang() { setLang(root.lang === 'ar' ? 'en' : 'ar'); }
+  function toggleLang() { root.classList.add('instant'); setLang(root.lang === 'ar' ? 'en' : 'ar'); }
 
   function toggleSheet(open) {
     var on = open === undefined ? !sheet.classList.contains('open') : open;
@@ -98,6 +142,7 @@
     if (pg) pg.textContent = (i < 9 ? '0' : '') + (i + 1) + ' / ' + total;
     var b = doc.createElement('button');
     b.type = 'button';
+    if (s.classList.contains('divider')) b.className = 'part';
     var n = doc.createElement('span');
     n.className = 'n';
     n.textContent = i + 1;
@@ -110,6 +155,7 @@
   /* controls */
   doc.getElementById('b-prev').addEventListener('click', prev);
   doc.getElementById('b-next').addEventListener('click', next);
+  doc.getElementById('b-replay').addEventListener('click', replay);
   doc.getElementById('b-lang').addEventListener('click', toggleLang);
   doc.getElementById('b-list').addEventListener('click', function () { toggleSheet(); });
   doc.getElementById('b-notes').addEventListener('click', toggleNotes);
@@ -133,6 +179,7 @@
     else if (k === 'g' || k === 'G' || k === 'ل') toggleSheet();
     else if (k === 'n' || k === 'N' || k === 'ى') toggleNotes();
     else if (k === 'f' || k === 'F' || k === 'ب') toggleFull();
+    else if (k === 'r' || k === 'R' || k === 'ق') replay();
   });
 
   /* touch: swipe towards the reading direction to go on */

@@ -14,138 +14,258 @@
 </style>
 </head>
 <body>
+
+<!-- one icon set, drawn on a 24 grid with a single stroke -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-devices" viewBox="0 0 24 24"><rect x="2" y="5" width="13" height="9" rx="1"/><path d="M1 17h14"/><rect x="17" y="8" width="6" height="12" rx="1.5"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M13.5 9.5l2 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/></symbol>
+  <symbol id="i-app" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3z"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-3-5.4 3 1.1-6L3.2 9.4l6.1-.8z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+</svg>
+
 <main class="stage" id="stage">
 
 <!-- 1 ─ COVER ─────────────────────────────────────────────────────────── -->
 <section class="slide dark cover active" data-title-en="Pause. Check. Report." data-title-ar="تمهّل. تحقّق. بلّغ.">
-  <div class="cover-top r" style="--i:0">
-    <img src="[[LOGO_WHITE]]" alt="Sharjah Museums Authority · هيئة الشارقة للمتاحف">
-    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="cover-top">
+    <span class="logo-w a-fade" style="--t:.1" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span>
+    <span class="bars" aria-hidden="true"><i class="a-grow" style="--t:.5"></i><i class="a-grow" style="--t:1.0"></i><i class="a-grow" style="--t:1.5"></i></span>
   </div>
   <div class="duo">
     <div lang="en" class="keep">
-      <h1 class="refrain r" style="--i:1"><span>Pause.</span><span>Check.</span><span>Report.</span></h1>
-      <p class="lead r" style="--i:4">Three small habits that keep our work and our people safe online.</p>
+      <h1 class="refrain"><span class="a-line" style="--t:.5">Pause.</span><span class="a-line" style="--t:1.0">Check.</span><span class="a-line" style="--t:1.5">Report.</span></h1>
+      <p class="lead r" style="--t:2.2">Three small habits that keep our work and our people safe online.</p>
     </div>
     <div lang="ar" class="keep">
-      <h1 class="refrain r" style="--i:2"><span>تمهّل.</span><span>تحقّق.</span><span>بلّغ.</span></h1>
-      <p class="lead r" style="--i:4">ثلاث عادات بسيطة تحمي عملنا وموظفينا في العالم الرقمي.</p>
+      <h1 class="refrain"><span class="a-line" style="--t:.5">تمهّل.</span><span class="a-line" style="--t:1.0">تحقّق.</span><span class="a-line" style="--t:1.5">بلّغ.</span></h1>
+      <p class="lead r" style="--t:2.2">ثلاث عادات بسيطة تحمي عملنا وموظفينا في العالم الرقمي.</p>
     </div>
   </div>
-  <div class="duo cover-bot r" style="--i:5">
+  <div class="duo cover-bot a-fade" style="--t:2.6">
     <p lang="en" class="keep kick">Cybersecurity awareness · Staff session 2026</p>
     <p lang="ar" class="keep kick">التوعية بالأمن السيبراني · جلسة الموظفين 2026</p>
   </div>
-  <aside class="notes">{{Welcome everyone. This session is short and practical, and nobody needs a technical background. The three words on the screen are the whole message: pause, check, report. We will come back to them several times. Press L at any time to switch between Arabic and English.||رحّب بالحضور. هذه الجلسة قصيرة وعملية ولا تحتاج إلى أي خلفية تقنية. الكلمات الثلاث على الشاشة هي خلاصة الجلسة: تمهّل، تحقّق، بلّغ، وسنعود إليها أكثر من مرة. اضغط حرف L في أي وقت للتبديل بين العربية والإنجليزية.}}</aside>
+  <aside class="notes">{{Welcome everyone. This session is practical, and nobody needs a technical background. The three words on the screen are the whole message: pause, check, report. We will come back to them at the end. Press L at any time to switch between Arabic and English, and R to replay a slide's animation.||رحّب بالحضور. هذه الجلسة عملية ولا تحتاج إلى أي خلفية تقنية. الكلمات الثلاث على الشاشة هي خلاصة الجلسة: تمهّل، تحقّق، بلّغ، وسنعود إليها في النهاية. اضغط حرف L في أي وقت للتبديل بين العربية والإنجليزية، وحرف R لإعادة حركة الشريحة.}}</aside>
 </section>
 
-<!-- 2 ─ AGENDA ────────────────────────────────────────────────────────── -->
+<!-- 2 ─ THE FOUR PARTS ────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Today||اليوم@@
+  @@HEAD:0:Today||اليوم@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Four questions for today||أربعة أسئلة نجيب عنها اليوم}}</h2>
-    <p class="echo r" style="--i:0">{{Four questions for today||أربعة أسئلة نجيب عنها اليوم}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Our session in four parts||جلستنا في أربعة أجزاء}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Our session in four parts||جلستنا في أربعة أجزاء}}</p>
     <div class="fill">
-      <ol class="agenda">
-        <li class="r" style="--i:1"><span class="num">01</span>{{Why does this concern me?||لماذا يعنيني هذا الأمر؟}}</li>
-        <li class="r" style="--i:2"><span class="num">02</span>{{What should I watch for?||ما الذي يجب أن أنتبه له؟}}</li>
-        <li class="r" style="--i:3"><span class="num">03</span>{{How do I protect myself?||كيف أحمي نفسي؟}}</li>
-        <li class="r" style="--i:4"><span class="num">04</span>{{Who do I tell?||من أُبلغ؟}}</li>
+      <ol class="road light">
+        <li style="--t:.5"><span class="n r" style="--t:.6">1</span><h3 class="r" style="--t:.7">{{What is cybersecurity?||ما هو الأمن السيبراني؟}}</h3><p class="r" style="--t:.8">{{And why it concerns every one of us.||ولماذا يعني كل واحد منا.}}</p></li>
+        <li style="--t:.9"><span class="n r" style="--t:1.0">2</span><h3 class="r" style="--t:1.1">{{Types of attacks||أنواع الهجمات}}</h3><p class="r" style="--t:1.2">{{Six ways attackers reach us, with examples.||ست طرق يصل بها المهاجم إلينا، مع أمثلة.}}</p></li>
+        <li style="--t:1.3"><span class="n r" style="--t:1.4">3</span><h3 class="r" style="--t:1.5">{{How we protect ourselves||كيف نحمي أنفسنا}}</h3><p class="r" style="--t:1.6">{{Simple habits for every day.||عادات بسيطة لكل يوم.}}</p></li>
+        <li style="--t:1.7"><span class="n r" style="--t:1.8">4</span><h3 class="r" style="--t:1.9">{{What to do and who to tell||ماذا نفعل ومن نُبلغ}}</h3><p class="r" style="--t:2.0">{{If something goes wrong.||إذا حدث خطأ.}}</p></li>
       </ol>
-      <p class="promise r" style="--i:5">{{Every figure and piece of advice shows its official source and date at the bottom of the slide.||كل رقم وكل نصيحة يظهر مصدرها الرسمي وتاريخها أسفل الشريحة.}}</p>
+      <p class="promise r" style="--t:2.6">{{Every figure and piece of advice shows its official source and date at the bottom of the slide.||كل رقم وكل نصيحة يظهر مصدرها الرسمي وتاريخها أسفل الشريحة.}}</p>
     </div>
   </div>
   <<FOOT:UAE Cyber Security Council and Sharjah Cyber Security Center. The full list is on the last slide.||مجلس الأمن السيبراني لحكومة دولة الإمارات ومركز الشارقة للأمن السيبراني. القائمة الكاملة في الشريحة الأخيرة.>>
-  <aside class="notes">{{Four simple questions. Point out that nothing here is opinion: each slide carries the official source and its date at the bottom, so anyone can check it later.||أربعة أسئلة بسيطة. وضّح أن ما سيُعرض ليس رأياً شخصياً، فكل شريحة تحمل في أسفلها المصدر الرسمي وتاريخه، ويمكن لأي شخص الرجوع إليه لاحقاً.}}</aside>
+  <aside class="notes">{{Four parts: what cybersecurity is, the types of attacks, how we protect ourselves, and what to do when something goes wrong. Point out that nothing here is opinion: each slide carries its official source and date at the bottom.||أربعة أجزاء: ما هو الأمن السيبراني، ثم أنواع الهجمات، ثم كيف نحمي أنفسنا، ثم ماذا نفعل إذا حدث خطأ. وضّح أن ما سيُعرض ليس رأياً شخصياً، فكل شريحة تحمل في أسفلها المصدر الرسمي وتاريخه.}}</aside>
 </section>
 
-<!-- 3 ─ WHY: THE NUMBERS ──────────────────────────────────────────────── -->
+<!-- 3 ─ PART 1 ────────────────────────────────────────────────────────── -->
+<section class="slide dark divider">
+  <div class="cover-top"><span class="logo-w" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span></div>
+  <div class="div-mid">
+    <span class="div-n a-line" style="--t:.45">1</span>
+    <div class="div-t">
+      <h2 class="a-line" style="--t:.6">{{What is cybersecurity?||ما هو الأمن السيبراني؟}}</h2>
+      <p class="echo a-fade" style="--t:1.1">{{What is cybersecurity?||ما هو الأمن السيبراني؟}}</p>
+      <p class="sub r" style="--t:1.2">{{A simple meaning, and why it concerns every one of us.||معنى بسيط، ولماذا يعني كل واحد منا.}}</p>
+    </div>
+  </div>
+  @@ROAD:1@@
+  <aside class="notes">{{Part one. Before we talk about attacks, let us agree on what the word means, in everyday language.||الجزء الأول. قبل الحديث عن الهجمات، لنتفق على معنى الكلمة بلغة بسيطة.}}</aside>
+</section>
+
+<!-- 4 ─ WHAT IT IS ────────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Why it matters||لماذا يهمّنا@@
+  @@HEAD:1@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{The UAE is targeted every day||دولة الإمارات مستهدفة كل يوم}}</h2>
-    <p class="echo r" style="--i:0">{{The UAE is targeted every day||دولة الإمارات مستهدفة كل يوم}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Cybersecurity is protecting our digital life||الأمن السيبراني هو حماية حياتنا الرقمية}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Cybersecurity is protecting our digital life||الأمن السيبراني هو حماية حياتنا الرقمية}}</p>
+    <p class="lead r" style="--t:.6">{{It keeps three things we use every day safe from theft, damage and misuse.||يحمي ثلاثة أشياء نستخدمها كل يوم من السرقة والتلف وسوء الاستخدام.}}</p>
     <div class="fill">
-      <div class="r" style="--i:1">
-        <p class="fig"><bdi>90,000–200,000</bdi></p>
-        <p class="cap" style="max-width:1300px">{{breach attempts strike UAE infrastructure every single day. All are stopped, with no effect on services or data.||محاولة اختراق تستهدف البنية التحتية في دولة الإمارات كل يوم، ويتم إحباطها جميعاً دون تأثير في الخدمات أو البيانات.}}</p>
+      <ul class="guard">
+        <li class="r" style="--t:1.0"><svg class="ic"><use href="#i-doc"/></svg><h3>{{Information||المعلومات}}</h3><p>{{Emails, files, and personal and financial details.||الرسائل والملفات والبيانات الشخصية والمالية.}}</p></li>
+        <li class="r" style="--t:1.3"><svg class="ic"><use href="#i-devices"/></svg><h3>{{Devices||الأجهزة}}</h3><p>{{Phones, computers, and the networks they connect to.||الهواتف والحواسيب والشبكات التي تتصل بها.}}</p></li>
+        <li class="r" style="--t:1.6"><svg class="ic"><use href="#i-key"/></svg><h3>{{Accounts||الحسابات}}</h3><p>{{The usernames and passwords that open everything else.||أسماء المستخدمين وكلمات المرور التي تفتح كل شيء آخر.}}</p></li>
+        <li class="ring" aria-hidden="true" style="--t:2.2"></li>
+        <li class="tag a-pop" style="--t:3.5"><svg class="ic"><use href="#i-lock"/></svg>{{Protected||محميّة}}</li>
+      </ul>
+    </div>
+  </div>
+  <<FOOT:Plain-language explanation prepared for this session. The national campaign builds awareness of “the threats emanating from an open cyberspace and the various ways to protect against cyberattacks”: UAE Cybersecurity Council, WAM, 4 March 2024.||شرح مبسّط أُعدّ لهذه الجلسة. تهدف الحملة الوطنية إلى التوعية بتهديدات الفضاء السيبراني المفتوح وطرق الحماية من الهجمات السيبرانية: مجلس الأمن السيبراني، «وام»، 4 مارس 2024.>>
+  <aside class="notes">{{Keep it simple. Cybersecurity is not a product or a department. It is how we keep three everyday things safe: our information, our devices and our accounts. When the line closes around the three, say: this is what the rest of the session is about.||اجعل الشرح بسيطاً. الأمن السيبراني ليس منتجاً ولا إدارة، بل هو الطريقة التي نحمي بها ثلاثة أشياء نستخدمها يومياً: معلوماتنا وأجهزتنا وحساباتنا. وعندما يكتمل الإطار حول الثلاثة، قل: هذا ما سنتحدث عنه في بقية الجلسة.}}</aside>
+</section>
+
+<!-- 5 ─ WHAT "SECURE" MEANS ───────────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:1@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{What “secure” really means||ماذا تعني كلمة «آمن»؟}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{What “secure” really means||ماذا تعني كلمة «آمن»؟}}</p>
+    <div class="fill">
+      <ul class="cia">
+        <li class="r" style="--t:.7">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><rect x="24" y="54" width="72" height="52" rx="8"/><path class="shackle" style="--t:1.2" d="M40 54V42a20 20 0 0140 0v12"/><path class="c" d="M60 74v12"/></svg>
+          <h3>{{Confidential||سرّية}}</h3><p class="term">{{Confidentiality||السرية}}</p>
+          <p class="d">{{Only the right people can see it.||لا يطّلع عليها إلا من يحق له.}}</p>
+        </li>
+        <li class="r" style="--t:1.4">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M30 12h44l18 18v78H30z"/><path d="M74 12v18h18"/><path class="c a-draw" style="--t:2.0" pathLength="1" d="M44 68l12 12 22-26"/></svg>
+          <h3>{{Correct||صحيحة}}</h3><p class="term">{{Integrity||النزاهة}}</p>
+          <p class="d">{{Nobody changes it without permission.||لا يغيّرها أحد دون إذن.}}</p>
+        </li>
+        <li class="r" style="--t:2.1">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="46" stroke="#DEDAD3"/><circle class="c a-draw" style="--t:2.7" pathLength="1" cx="60" cy="60" r="46"/><path d="M60 34v26l17 10"/></svg>
+          <h3>{{Available||متاحة}}</h3><p class="term">{{Availability||التوافر}}</p>
+          <p class="d">{{It is there whenever we need it.||نجدها متى احتجنا إليها.}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <<FOOT:Sharjah Cyber Security Center: information is handled “following the confidentiality, integrity, and availability” principles. <bdi>scsc.shj.ae</bdi>, viewed 15 November 2026. The one-line explanations are ours.||مركز الشارقة للأمن السيبراني: التعامل مع المعلومات «باتباع مبادئ السرية والنزاهة والتوافر». <bdi>scsc.shj.ae</bdi>، تاريخ الاطلاع 15 نوفمبر 2026. الشرح المختصر من إعدادنا.>>
+  <aside class="notes">{{These are the three principles the Sharjah Cyber Security Center names. Give one everyday example of each: a salary slip only its owner should see; a bank account number nobody should be able to change; a booking system that must work when visitors arrive.||هذه هي المبادئ الثلاثة التي يذكرها مركز الشارقة للأمن السيبراني. اذكر مثالاً يومياً لكل مبدأ: كشف راتب لا يراه إلا صاحبه، ورقم حساب مصرفي لا يستطيع أحد تغييره، ونظام حجز يجب أن يعمل عند وصول الزوار.}}</aside>
+</section>
+
+<!-- 6 ─ WHY NOW: THE NUMBERS ──────────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:1@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{The UAE is targeted every day||دولة الإمارات مستهدفة كل يوم}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{The UAE is targeted every day||دولة الإمارات مستهدفة كل يوم}}</p>
+    <div class="fill">
+      <div>
+        <p class="fig r" style="--t:.5;font-size:140px"><bdi><span data-count="90000" data-wait=".6" data-dur="1.3">90,000</span>–<span data-count="200000" data-wait=".6" data-dur="1.9">200,000</span></bdi></p>
+        <p class="cap r" style="--t:.9;max-width:1400px;margin-top:10px">{{breach attempts strike UAE infrastructure every single day. All are stopped, with no effect on services or data.||محاولة اختراق تستهدف البنية التحتية في دولة الإمارات كل يوم، ويتم إحباطها جميعاً دون تأثير في الخدمات أو البيانات.}}</p>
       </div>
-      <ul class="pair">
-        <li class="r" style="--i:3">
-          <p class="fig fig-m"><bdi>128</bdi></p>
+      <div class="scale a-fade" style="--t:1.6" role="img" aria-label="February 2025: more than 50,000 a day. February 2026: 90,000 to 200,000 a day.">
+        <p class="lab l1 a-fade" style="--t:2.0">{{<b>February 2025</b>more than 50,000 attacks a day on key sectors||<b>فبراير 2025</b>أكثر من 50,000 هجمة يومياً على القطاعات الحيوية}}</p>
+        <p class="lab l2 a-fade" style="--t:2.6">{{<b>February 2026</b>90,000 to 200,000 breach attempts a day||<b>فبراير 2026</b>من 90,000 إلى 200,000 محاولة اختراق يومياً}}</p>
+        <div class="track"><span class="band a-grow" style="--t:2.5"></span><span class="dot a-pop" style="--t:1.9"></span></div>
+        <div class="ticks"><span style="inset-inline-start:0"><bdi>0</bdi></span><span style="inset-inline-start:25%"><bdi>50,000</bdi></span><span style="inset-inline-start:50%"><bdi>100,000</bdi></span><span style="inset-inline-start:75%"><bdi>150,000</bdi></span><span style="inset-inline-start:100%"><bdi>200,000</bdi></span></div>
+      </div>
+      <ul class="pair" style="margin-top:22px;padding-top:22px">
+        <li class="r" style="--t:3.2">
+          <p class="fig fig-m" style="font-size:96px"><bdi data-count="128" data-wait="3.3" data-dur="1.1">128</bdi></p>
           <p class="cap">{{confirmed cyber threat incidents targeted UAE entities between the start of 2026 and 18 February.||حادثة تهديد سيبراني مؤكدة استهدفت جهات في الدولة منذ بداية عام 2026 وحتى 18 فبراير.}}</p>
         </li>
-        <li class="r" style="--i:4">
-          <p class="fig fig-m"><bdi>9.4%</bdi></p>
+        <li class="r" style="--t:3.5">
+          <p class="fig fig-m" style="font-size:96px"><bdi><span data-count="9.4" data-wait="3.6" data-dur="1.1">9.4</span>%</bdi></p>
           <p class="cap">{{Government administration ranked first among the most targeted sectors.||قطاع الإدارة الحكومية جاء في المرتبة الأولى بين القطاعات الأكثر استهدافاً.}}</p>
         </li>
       </ul>
     </div>
   </div>
-  <<FOOT:Dr. Mohamed Hamad Al Kuwaiti, Head of the UAE Government Cybersecurity Council, to the Emirates News Agency (WAM), 18 February 2026.||الدكتور محمد حمد الكويتي، رئيس مجلس الأمن السيبراني لحكومة دولة الإمارات، في تصريح لوكالة أنباء الإمارات (وام)، 18 فبراير 2026.>>
-  <aside class="notes">{{These are the Council's own figures from February 2026. The good news is that the attempts are stopped. The point for us: government bodies are the most targeted sector, and we are a government entity. Attackers do not need to break the technology if a person opens the door for them.||هذه أرقام المجلس نفسه في فبراير 2026. الخبر الجيد أن هذه المحاولات يتم إحباطها. وما يهمّنا أن الجهات الحكومية هي القطاع الأكثر استهدافاً، ونحن جهة حكومية. المهاجم لا يحتاج إلى اختراق التقنية إذا فتح له أحدنا الباب.}}</aside>
+  <<FOOT:Dr. Mohamed Hamad Al Kuwaiti, Head of the UAE Government Cybersecurity Council, to WAM: 18 February 2026 (breach attempts, incidents, sectors) and 17 February 2025 (attacks on key sectors).||الدكتور محمد حمد الكويتي، رئيس مجلس الأمن السيبراني لحكومة دولة الإمارات، في تصريحين لوكالة «وام»: 18 فبراير 2026 (محاولات الاختراق والحوادث والقطاعات) و17 فبراير 2025 (الهجمات على القطاعات الحيوية).>>
+  <aside class="notes">{{These are the Council's own figures, one year apart. The two statements count slightly different things, so read each with its own wording. The good news is that the attempts are stopped. The point for us: government bodies are the most targeted sector, and we are a government entity.||هذه أرقام المجلس نفسه، وبين التصريحين عام واحد. التصريحان لا يقيسان الشيء نفسه تماماً، لذلك اقرأ كل رقم بصيغته. الخبر الجيد أن هذه المحاولات يتم إحباطها. وما يهمّنا أن الجهات الحكومية هي القطاع الأكثر استهدافاً، ونحن جهة حكومية.}}</aside>
 </section>
 
-<!-- 4 ─ WHY: PEOPLE ───────────────────────────────────────────────────── -->
+<!-- 7 ─ EVERYONE'S JOB ────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Why it matters||لماذا يهمّنا@@
+  @@HEAD:1@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Technology alone is not enough||التقنية وحدها لا تكفي}}</h2>
-    <p class="echo r" style="--i:0">{{Technology alone is not enough||التقنية وحدها لا تكفي}}</p>
+    <h2 class="title a-line" style="--t:.1">{{It is everyone's job, not only IT's||مسؤولية الجميع، لا فريق تقنية المعلومات وحده}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{It is everyone's job, not only IT's||مسؤولية الجميع، لا فريق تقنية المعلومات وحده}}</p>
     <div class="fill">
-      <blockquote class="say r" style="--i:1">
+      <blockquote class="say r" style="--t:.7">
         <p>{{Digital security begins with awareness and individual responsibility, before relying on technical solutions.||الأمن الرقمي يبدأ بالوعي والمسؤولية الفردية قبل الاعتماد على الحلول التقنية.}}</p>
         <cite>{{UAE Cybersecurity Council, statement to WAM, 28 June 2026||مجلس الأمن السيبراني لحكومة دولة الإمارات، تصريح لوكالة «وام»، 28 يونيو 2026}}</cite>
       </blockquote>
-      <blockquote class="say sm r" style="--i:3">
-        <p>{{“…a culture in which cyber security is a shared responsibility.”||«…ثقافة يكون فيها الأمن السيبراني مسؤولية مشتركة.»}}</p>
+      <blockquote class="say sm r" style="--t:1.6">
+        <p>{{…a culture in which cyber security is a shared responsibility.||…ثقافة يكون فيها الأمن السيبراني مسؤولية مشتركة.}}</p>
         <cite>{{Sheikh Saud bin Sultan Al Qasimi, Director-General of Sharjah Digital Department, WAM, 26 August 2026||الشيخ سعود بن سلطان القاسمي، مدير عام دائرة الشارقة الرقمية، «وام»، 26 أغسطس 2026}}</cite>
       </blockquote>
+      <p class="note r" style="--t:2.5;margin-top:44px"><span>{{Cyber threats are not limited to large institutions. They can affect individuals and their families too. <cite>UAE Cybersecurity Council, WAM, 4 March 2024</cite>||التهديدات السيبرانية لا تقتصر على المؤسسات الكبيرة، بل قد تطال الأفراد وأسرهم أيضاً. <cite>مجلس الأمن السيبراني، «وام»، 4 مارس 2024</cite>}}</span></p>
     </div>
   </div>
-  <<FOOT:UAE Cybersecurity Council, WAM, 28 June 2026. Sharjah Digital Department, WAM, 26 August 2026.||مجلس الأمن السيبراني، «وام»، 28 يونيو 2026. دائرة الشارقة الرقمية، «وام»، 26 أغسطس 2026.>>
-  <aside class="notes">{{Both the national Council and Sharjah's own leadership say the same thing: security is not only the IT team's job. Each of us uses email, a phone and shared files every day. That is why this session is for everyone.||مجلس الأمن السيبراني على مستوى الدولة وقيادة العمل الرقمي في الشارقة يقولان الشيء نفسه: الأمن ليس مسؤولية فريق تقنية المعلومات وحده. كل واحد منا يستخدم البريد الإلكتروني والهاتف والملفات المشتركة يومياً، ولهذا فالجلسة موجّهة للجميع.}}</aside>
+  <<FOOT:UAE Cybersecurity Council, WAM, 28 June 2026 and 4 March 2024. Sharjah Digital Department, WAM, 26 August 2026.||مجلس الأمن السيبراني، «وام»، 28 يونيو 2026 و4 مارس 2024. دائرة الشارقة الرقمية، «وام»، 26 أغسطس 2026.>>
+  <aside class="notes">{{The national Council and Sharjah's own leadership say the same thing: security is not only the IT team's job. Each of us uses email, a phone and shared files every day, at work and at home. That is why this session is for everyone.||مجلس الأمن السيبراني على مستوى الدولة وقيادة العمل الرقمي في الشارقة يقولان الشيء نفسه: الأمن ليس مسؤولية فريق تقنية المعلومات وحده. كل واحد منا يستخدم البريد الإلكتروني والهاتف والملفات المشتركة يومياً، في العمل وفي البيت، ولهذا فالجلسة موجّهة للجميع.}}</aside>
 </section>
 
-<!-- 5 ─ THE HABIT ─────────────────────────────────────────────────────── -->
+<!-- 8 ─ PART 2 ────────────────────────────────────────────────────────── -->
+<section class="slide dark divider">
+  <div class="cover-top"><span class="logo-w" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span></div>
+  <div class="div-mid">
+    <span class="div-n a-line" style="--t:.45">2</span>
+    <div class="div-t">
+      <h2 class="a-line" style="--t:.6">{{Types of attacks||أنواع الهجمات}}</h2>
+      <p class="echo a-fade" style="--t:1.1">{{Types of attacks||أنواع الهجمات}}</p>
+      <p class="sub r" style="--t:1.2">{{Six ways attackers reach us, and how each one looks.||ست طرق يصل بها المهاجم إلينا، وكيف تبدو كل واحدة.}}</p>
+    </div>
+  </div>
+  @@ROAD:2@@
+  <aside class="notes">{{Part two, the longest part. We will look at six types of attack. For each one: what it is, what it looks like, and the signs to notice.||الجزء الثاني، وهو الأطول. سنتعرّف على ستة أنواع من الهجمات، ولكل نوع: ما هو، وكيف يبدو، وما العلامات التي ننتبه لها.}}</aside>
+</section>
+
+<!-- 9 ─ SIX WAYS IN ───────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:The habit||العادة@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{One habit to remember||عادة واحدة نتذكّرها دائماً}}</h2>
-    <p class="echo r" style="--i:0">{{One habit to remember||عادة واحدة نتذكّرها دائماً}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Six ways attackers reach us||ست طرق يصل بها المهاجم إلينا}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Six ways attackers reach us||ست طرق يصل بها المهاجم إلينا}}</p>
     <div class="fill">
-      <ol class="steps">
-        <li class="r" style="--i:1"><span class="num">01</span><h3>{{Pause||تمهّل}}</h3><p>{{Do not click, reply or pay straight away.||لا تنقر ولا تردّ ولا تدفع فوراً.}}</p></li>
-        <li class="r" style="--i:3"><span class="num">02</span><h3>{{Check||تحقّق}}</h3><p>{{Confirm who really sent the message before you act.||تأكّد من المصدر الحقيقي للرسالة قبل أي تصرّف.}}</p></li>
-        <li class="r" style="--i:5"><span class="num">03</span><h3>{{Report||بلّغ}}</h3><p>{{Tell the IT team at work. Report scams to the police, with details and evidence.||أبلغ فريق تقنية المعلومات في العمل، وبلّغ الشرطة عن الاحتيال مع التفاصيل والأدلة.}}</p></li>
-      </ol>
+      <div class="hub">
+        <svg class="wires" viewBox="0 0 1696 560" aria-hidden="true">
+          <path class="w-l1" pathLength="1" d="M604 93L745 201"/><path class="w-l2" pathLength="1" d="M604 280H718"/><path class="w-l3" pathLength="1" d="M604 467L745 359"/>
+          <path class="w-r1" pathLength="1" d="M1092 93L951 201"/><path class="w-r2" pathLength="1" d="M1092 280H978"/><path class="w-r3" pathLength="1" d="M1092 467L951 359"/>
+          <circle class="tip w-l1" cx="745" cy="201" r="8"/><circle class="tip w-l2" cx="718" cy="280" r="8"/><circle class="tip w-l3" cx="745" cy="359" r="8"/>
+          <circle class="tip w-r1" cx="951" cy="201" r="8"/><circle class="tip w-r2" cx="978" cy="280" r="8"/><circle class="tip w-r3" cx="951" cy="359" r="8"/>
+          <circle class="halo" style="--t:3.4" cx="848" cy="280" r="118"/>
+        </svg>
+        <div class="way r" style="--t:.6"><span class="ring"><svg class="ic"><use href="#i-msg"/></svg></span><div><h3>{{Phishing||التصيّد الاحتيالي}}</h3><p>{{through a message||عبر رسالة}}</p></div></div>
+        <div class="way r" style="--t:1.0"><span class="ring"><svg class="ic"><use href="#i-app"/></svg></span><div><h3>{{Fake apps||التطبيقات المزيفة}}</h3><p>{{through an app you install||عبر تطبيق تنزّله}}</p></div></div>
+        <div class="way r" style="--t:1.4"><span class="ring"><svg class="ic"><use href="#i-key"/></svg></span><div><h3>{{Account theft||سرقة الحسابات}}</h3><p>{{through your password||عبر كلمة مرورك}}</p></div></div>
+        <div class="way r" style="--t:1.8"><span class="ring"><svg class="ic"><use href="#i-file"/></svg></span><div><h3>{{Malware and ransomware||البرمجيات الخبيثة وبرامج الفدية}}</h3><p>{{through a file, a link or an old device||عبر ملف أو رابط أو جهاز قديم}}</p></div></div>
+        <div class="way r" style="--t:2.2"><span class="ring"><svg class="ic"><use href="#i-video"/></svg></span><div><h3>{{Deepfakes||التزييف العميق}}</h3><p>{{through a video or a voice||عبر مقطع مرئي أو صوتي}}</p></div></div>
+        <div class="way r" style="--t:2.6"><span class="ring"><svg class="ic"><use href="#i-globe"/></svg></span><div><h3>{{Attacks on organisations||الهجمات على المؤسسات}}</h3><p>{{through websites and systems||عبر المواقع والأنظمة}}</p></div></div>
+        <div class="me a-pop" style="--t:.3"><svg class="ic"><use href="#i-user"/></svg>{{You||أنت}}</div>
+      </div>
     </div>
   </div>
-  <<FOOT:Our three-word summary of advice from the UAE Cyber Security Council, with Emirates Post Group and the DARB platform, WAM, 30 January 2026.||تلخيصنا في ثلاث كلمات لإرشادات مجلس الأمن السيبراني بالتعاون مع مجموعة بريد الإمارات ومنصة «درب»، «وام»، 30 يناير 2026.>>
-  <aside class="notes">{{If people remember one slide, it should be this one. Pause: scams depend on speed. Check: confirm the real source. Report: early reporting protects everyone else. The three words are our own summary; the advice behind them is the Council's.||إذا تذكّر الحضور شريحة واحدة فلتكن هذه. تمهّل: الاحتيال يعتمد على استعجالك. تحقّق: تأكّد من المصدر الحقيقي. بلّغ: الإبلاغ المبكر يحمي بقية الزملاء. الكلمات الثلاث تلخيص من عندنا، أما الإرشادات نفسها فهي من المجلس.}}</aside>
+  <<FOOT:Our grouping, for this session, of the threats named by the UAE Cyber Security Council in statements to WAM between 4 March 2024 and 28 June 2026.||تصنيف من إعدادنا لهذه الجلسة، يجمع التهديدات التي ذكرها مجلس الأمن السيبراني في تصريحاته لوكالة «وام» بين 4 مارس 2024 و28 يونيو 2026.>>
+  <aside class="notes">{{This is the map for part two. Attackers do not break in through the wall; they come through things we use every day. Read the six names once, slowly. The next slides take them one at a time.||هذه خريطة الجزء الثاني. المهاجم لا يقتحم الجدار، بل يدخل عبر أشياء نستخدمها كل يوم. اقرأ الأسماء الستة مرة واحدة بهدوء، والشرائح التالية تتناولها واحداً واحداً.}}</aside>
 </section>
 
-<!-- 6 ─ WATCH FOR: FAKE MESSAGES ──────────────────────────────────────── -->
+<!-- 10 ─ 1. PHISHING ──────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Watch for||انتبه@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Fake messages||الرسائل المزيفة}}</h2>
-    <p class="echo r" style="--i:0">{{Fake messages||الرسائل المزيفة}}</p>
-    <p class="lead r" style="--i:1">{{They arrive by SMS, WhatsApp and email.||تصل عبر الرسائل النصية وواتساب والبريد الإلكتروني.}}</p>
+    <h2 class="title a-line" style="--t:.1">{{1. Phishing: fake messages||1. التصيّد الاحتيالي: الرسائل المزيفة}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{1. Phishing: fake messages||1. التصيّد الاحتيالي: الرسائل المزيفة}}</p>
+    <p class="lead r" style="--t:.5">{{A message that uses technology to trick you into giving away personal information and data.||رسالة تستخدم التقنية لخداعك حتى تقدّم معلوماتك وبياناتك الشخصية.}}</p>
     <div class="fill">
       <div class="two">
-        <figure class="msg r" style="--i:2">
-          <div class="msg-h"><span>{{Text message||رسالة نصية}}</span><b>{{Example only||مثال توضيحي}}</b></div>
-          <p class="bubble">{{Your parcel could not be delivered. <mark>Open parcel-release.example/confirm</mark><span class="pin">1</span> and <mark>enter your card details</mark><span class="pin">2</span> to release it. <mark>Pay today for a special discount.</mark><span class="pin">3</span>||تعذّر تسليم شحنتك. <mark>افتح الرابط <bdi>parcel-release.example/confirm</bdi></mark><span class="pin">1</span> ثم <mark>أدخل بيانات بطاقتك</mark><span class="pin">2</span> لاستلامها. <mark>ادفع اليوم واحصل على خصم خاص.</mark><span class="pin">3</span>}}</p>
+        <figure class="msg a-fade" style="--t:.3">
+          <div class="msg-h"><span>{{SMS · WhatsApp · Email||رسالة نصية · واتساب · بريد إلكتروني}}</span><b class="eg">{{Example only||مثال توضيحي}}</b></div>
+          <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="bubble a-pop" style="--t:1.2">{{Your parcel could not be delivered. <mark style="--t:2.0">Open parcel-release.example/confirm</mark><span class="pin a-pop" style="--t:2.5">1</span> and <mark style="--t:2.9">enter your card details</mark><span class="pin a-pop" style="--t:3.4">2</span> to release it. <mark style="--t:3.8">Pay today for a special discount.</mark><span class="pin a-pop" style="--t:4.3">3</span>||تعذّر تسليم شحنتك. <mark style="--t:2.0">افتح الرابط <bdi>parcel-release.example/confirm</bdi></mark><span class="pin a-pop" style="--t:2.5">1</span> ثم <mark style="--t:2.9">أدخل بيانات بطاقتك</mark><span class="pin a-pop" style="--t:3.4">2</span> لاستلامها. <mark style="--t:3.8">ادفع اليوم واحصل على خصم خاص.</mark><span class="pin a-pop" style="--t:4.3">3</span>}}</p>
         </figure>
         <div>
           <ol class="signs">
-            <li class="r" style="--i:3"><span class="pin">1</span>{{A link it wants you to open||رابط يطلب منك فتحه}}</li>
-            <li class="r" style="--i:4"><span class="pin">2</span>{{A request for card or personal details||طلب بيانات البطاقة أو البيانات الشخصية}}</li>
-            <li class="r" style="--i:5"><span class="pin">3</span>{{A discount or offer you never asked for||خصم أو عرض لم تطلبه}}</li>
+            <li class="r" style="--t:2.4"><span class="pin">1</span>{{A link it wants you to open||رابط يطلب منك فتحه}}</li>
+            <li class="r" style="--t:3.3"><span class="pin">2</span>{{A request for card or personal details||طلب بيانات البطاقة أو البيانات الشخصية}}</li>
+            <li class="r" style="--t:4.2"><span class="pin">3</span>{{A discount or offer you never asked for||خصم أو عرض لم تطلبه}}</li>
           </ol>
-          <div class="todo r" style="--i:7">
-            <h4>{{What to do||ماذا تفعل}}</h4>
+          <div class="todo r" style="--t:5.0">
+            <h3>{{What to do||ماذا تفعل}}</h3>
             <ul class="chips">
               <li>{{Do not click or reply||لا تنقر ولا تردّ}}</li>
               <li>{{Verify the sender||تحقّق من المرسِل}}</li>
@@ -157,135 +277,287 @@
       </div>
     </div>
   </div>
-  <<FOOT:UAE Cyber Security Council, with Emirates Post Group and the DARB platform, WAM, 30 January 2026. The message shown is an invented example.||مجلس الأمن السيبراني بالتعاون مع مجموعة بريد الإمارات ومنصة «درب»، «وام»، 30 يناير 2026. الرسالة المعروضة مثال غير حقيقي.>>
-  <aside class="notes">{{The Council issued this warning together with Emirates Post Group and the DARB platform. Walk through the three numbered signs on the example. Ask the room: who has received something like this? Then read the four actions.||أصدر المجلس هذا التحذير بالتعاون مع مجموعة بريد الإمارات ومنصة «درب». اشرح العلامات الثلاث المرقّمة في المثال، واسأل الحضور: من وصلته رسالة مشابهة؟ ثم اقرأ الخطوات الأربع.}}</aside>
+  <<FOOT:Meaning: UAE Cybersecurity Council, WAM, 4 March 2024. Signs and advice: the Council with Emirates Post Group and the DARB platform, WAM, 30 January 2026. The message is an invented example.||المعنى: مجلس الأمن السيبراني، «وام»، 4 مارس 2024. العلامات والإرشادات: المجلس بالتعاون مع مجموعة بريد الإمارات ومنصة «درب»، «وام»، 30 يناير 2026. الرسالة مثال غير حقيقي.>>
+  <aside class="notes">{{Phishing is the most familiar attack: a message that pretends to be from someone you trust. Let the animation play, then walk through the three numbered signs. Ask the room: who has received something like this? Then read the four actions.||التصيّد الاحتيالي أكثر الهجمات شيوعاً في حياتنا: رسالة تدّعي أنها من جهة تثق بها. دع الحركة تكتمل، ثم اشرح العلامات الثلاث المرقّمة، واسأل الحضور: من وصلته رسالة مشابهة؟ ثم اقرأ الخطوات الأربع.}}</aside>
 </section>
 
-<!-- 7 ─ WATCH FOR: FAKE APPS, THE NUMBERS ─────────────────────────────── -->
+<!-- 11 ─ 2. FAKE APPS: THE NUMBERS ────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Watch for||انتبه@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Fake apps look real||التطبيقات المزيفة تبدو حقيقية}}</h2>
-    <p class="echo r" style="--i:0">{{Fake apps look real||التطبيقات المزيفة تبدو حقيقية}}</p>
+    <h2 class="title a-line" style="--t:.1">{{2. Fake apps look real||2. التطبيقات المزيفة تبدو حقيقية}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{2. Fake apps look real||2. التطبيقات المزيفة تبدو حقيقية}}</p>
+    <p class="lead r" style="--t:.5">{{An app that copies a real one to steal data, commit fraud or blackmail the user.||تطبيق يقلّد تطبيقاً حقيقياً لسرقة البيانات أو الاحتيال أو ابتزاز المستخدم.}}</p>
     <div class="fill">
       <ul class="trio">
-        <li class="r" style="--i:1">
-          <p class="over">{{More than||أكثر من}}</p>
-          <p class="fig"><bdi>85%</bdi></p>
-          <p class="cap">{{of fake apps copy the name and look of well-known apps, according to estimates.||من التطبيقات المزيفة تنتحل اسم تطبيقات معروفة وشكلها، بحسب التقديرات.}}</p>
+        <li style="--t:.8">
+          <p class="fig r" style="--t:.9"><span class="q">{{More than||أكثر من}}</span><bdi><span data-count="85" data-wait="1.0">85</span>%</bdi></p>
+          <p class="cap r" style="--t:1.1">{{of fake apps copy the name and look of well-known apps, according to estimates.||من التطبيقات المزيفة تنتحل اسم تطبيقات معروفة وشكلها، بحسب التقديرات.}}</p>
         </li>
-        <li class="r" style="--i:3">
-          <p class="over">{{More than||أكثر من}}</p>
-          <p class="fig">{{<bdi>40</bdi> <span class="w">million</span>||<bdi>40</bdi> <span class="w">مليون</span>}}</p>
-          <p class="cap">{{downloads of over 200 fake apps from the Google Play Store in a single year, before they were found and removed.||عملية تنزيل لأكثر من 200 تطبيق مزيف من متجر «غوغل بلاي» خلال عام واحد، قبل اكتشافها وحذفها.}}</p>
+        <li style="--t:1.5">
+          <p class="fig r" style="--t:1.6"><span class="q">{{More than||أكثر من}}</span>{{<bdi data-count="40" data-wait="1.7">40</bdi> <span class="w">million</span>||<bdi data-count="40" data-wait="1.7">40</bdi> <span class="w">مليون</span>}}</p>
+          <p class="cap r" style="--t:1.8">{{downloads of over 200 fake apps from the Google Play Store in a single year, before they were found and removed.||عملية تنزيل لأكثر من 200 تطبيق مزيف من متجر «غوغل بلاي» خلال عام واحد، قبل اكتشافها وحذفها.}}</p>
         </li>
-        <li class="r" style="--i:5">
-          <p class="over">{{About||نحو}}</p>
-          <p class="fig"><bdi>73%</bdi></p>
-          <p class="cap">{{of institutions faced cyber fraud in 2025 that involved fake apps or other malicious digital tools.||من المؤسسات تعرّضت في عام 2025 لاحتيال سيبراني عبر تطبيقات مزيفة أو أدوات رقمية خبيثة أخرى.}}</p>
+        <li style="--t:2.2">
+          <p class="fig r" style="--t:2.3"><span class="q">{{About||نحو}}</span><bdi><span data-count="73" data-wait="2.4">73</span>%</bdi></p>
+          <p class="cap r" style="--t:2.5">{{of institutions faced cyber fraud in 2025 that involved fake apps or other malicious digital tools.||من المؤسسات تعرّضت في عام 2025 لاحتيال سيبراني عبر تطبيقات مزيفة أو أدوات رقمية خبيثة أخرى.}}</p>
         </li>
       </ul>
     </div>
   </div>
   <<FOOT:UAE Cyber Security Council, weekly “Cyber Pulse” awareness message, WAM, 14 March 2026.||مجلس الأمن السيبراني، الرسالة التوعوية الأسبوعية لحملة «النبض السيبراني»، «وام»، 14 مارس 2026.>>
-  <aside class="notes">{{Cyber Pulse is the Council's weekly awareness campaign, now in its second year. Its March 2026 message was about fake apps. They copy a real app's name and logo so well that even careful people are fooled. The next slide shows how to tell the difference.||«النبض السيبراني» حملة التوعية الأسبوعية للمجلس، وهي في عامها الثاني. رسالتها في مارس 2026 كانت عن التطبيقات المزيفة التي تقلّد اسم التطبيق الأصلي وشعاره بإتقان يخدع حتى المستخدم الحذر. الشريحة التالية توضّح كيف نفرّق بينهما.}}</aside>
+  <aside class="notes">{{Cyber Pulse is the Council's weekly awareness campaign, now in its second year. Its March 2026 message was about fake apps. They copy a real app's name and logo so well that even experienced users are fooled. The next slide shows how to tell the difference.||«النبض السيبراني» حملة التوعية الأسبوعية للمجلس، وهي في عامها الثاني. رسالتها في مارس 2026 كانت عن التطبيقات المزيفة التي تقلّد اسم التطبيق الأصلي وشعاره بإتقان يخدع حتى المستخدم الخبير. الشريحة التالية توضّح كيف نفرّق بينهما.}}</aside>
 </section>
 
-<!-- 8 ─ WATCH FOR: FIVE CHECKS ────────────────────────────────────────── -->
+<!-- 12 ─ 2. FAKE APPS: FIVE CHECKS ────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Watch for||انتبه@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Five checks before you install||خمسة أمور نتحقق منها قبل التنزيل}}</h2>
-    <p class="echo r" style="--i:0">{{Five checks before you install||خمسة أمور نتحقق منها قبل التنزيل}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Five checks before you install||خمسة أمور نتحقق منها قبل التنزيل}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Five checks before you install||خمسة أمور نتحقق منها قبل التنزيل}}</p>
     <div class="fill">
-      <ol class="rows">
-        <li class="r" style="--i:1"><span class="num">01</span><h3>{{Developer||المطوّر}}</h3><p>{{Is it a recognised company or a verified developer?||هل هو شركة معروفة أو مطوّر موثّق؟}}</p></li>
-        <li class="r" style="--i:2"><span class="num">02</span><h3>{{Logo||الشعار}}</h3><p>{{Look closely for small differences in colour, sharpness or design.||دقّق في الفروق الصغيرة في اللون أو الوضوح أو التصميم.}}</p></li>
-        <li class="r" style="--i:3"><span class="num">03</span><h3>{{Reviews||التقييمات}}</h3><p>{{Be wary of exaggerated ratings and repeated comments.||احذر التقييمات المبالغ فيها والتعليقات المتكررة.}}</p></li>
-        <li class="r" style="--i:4"><span class="num">04</span><h3>{{Permissions||الأذونات}}</h3><p>{{A simple app has no need for your photos, camera, location or contacts.||التطبيق البسيط لا يحتاج إلى صورك أو الكاميرا أو موقعك أو جهات اتصالك.}}</p></li>
-        <li class="r" style="--i:5"><span class="num">05</span><h3>{{Updates||التحديثات}}</h3><p>{{Genuine apps are updated regularly. Fake ones often are not.||التطبيقات الأصلية تُحدَّث بانتظام، أما المزيفة فغالباً لا تُحدَّث.}}</p></li>
-      </ol>
-      <p class="note r" style="--i:7">{{Download apps from official app stores only.||نزّل التطبيقات من المتاجر الرسمية فقط.}}</p>
+      <div class="two">
+        <figure class="listing r" style="--t:.5">
+          <b class="eg">{{Example only||مثال توضيحي}}</b>
+          <div class="top">
+            <span class="tile"><svg class="ic"><use href="#i-box"/></svg><span class="pin a-pop" style="--t:2.0">2</span></span>
+            <div><h3><bdi>Parcel Track</bdi></h3><p><mark style="--t:1.2"><bdi>Parce1 Track Ltd</bdi></mark><span class="pin a-pop" style="--t:1.5">1</span></p></div>
+          </div>
+          <p class="row"><span class="k">{{Reviews||التقييمات}}</span><span><span class="stars" aria-hidden="true"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span><mark style="--t:2.5">{{“Best app!” “Best app!” “Best app!”||«أفضل تطبيق!» «أفضل تطبيق!» «أفضل تطبيق!»}}</mark><span class="pin a-pop" style="--t:2.9">3</span></span></p>
+          <p class="row"><span class="k">{{Asks to use||يطلب استخدام}}</span><span><mark style="--t:3.3">{{Photos · Camera · Location · Contacts||الصور · الكاميرا · الموقع · جهات الاتصال}}</mark><span class="pin a-pop" style="--t:3.7">4</span></span></p>
+          <p class="row"><span class="k">{{Last updated||آخر تحديث}}</span><span><mark style="--t:4.1">{{No update history||لا يوجد سجل تحديثات}}</mark><span class="pin a-pop" style="--t:4.5">5</span></span></p>
+        </figure>
+        <div>
+          <ol class="signs tight">
+            <li class="r" style="--t:1.4"><span class="pin">1</span><span>{{Developer||المطوّر}}<small>{{An unfamiliar name, or a small change to a known brand.||اسم غير معروف، أو تغيير بسيط في اسم علامة معروفة.}}</small></span></li>
+            <li class="r" style="--t:1.9"><span class="pin">2</span><span>{{Logo||الشعار}}<small>{{Small differences in colour, sharpness or design.||فروق صغيرة في اللون أو الوضوح أو التصميم.}}</small></span></li>
+            <li class="r" style="--t:2.8"><span class="pin">3</span><span>{{Reviews||التقييمات}}<small>{{Exaggerated ratings and repeated comments.||تقييمات مبالغ فيها وتعليقات متكررة.}}</small></span></li>
+            <li class="r" style="--t:3.6"><span class="pin">4</span><span>{{Permissions||الأذونات}}<small>{{A simple app has no need for your photos, camera, location or contacts.||التطبيق البسيط لا يحتاج إلى صورك أو الكاميرا أو موقعك أو جهات اتصالك.}}</small></span></li>
+            <li class="r" style="--t:4.4"><span class="pin">5</span><span>{{Updates||التحديثات}}<small>{{Genuine apps are updated regularly. Fake ones often are not.||التطبيقات الأصلية تُحدَّث بانتظام، أما المزيفة فغالباً لا تُحدَّث.}}</small></span></li>
+          </ol>
+          <p class="note r" style="--t:5.2;margin-top:22px">{{Download apps from official app stores only.||نزّل التطبيقات من المتاجر الرسمية فقط.}}</p>
+        </div>
+      </div>
     </div>
   </div>
-  <<FOOT:UAE Cyber Security Council, “Cyber Pulse”, WAM, 14 March 2026. Official app stores: WAM, 28 June 2026.||مجلس الأمن السيبراني، «النبض السيبراني»، «وام»، 14 مارس 2026. المتاجر الرسمية: «وام»، 28 يونيو 2026.>>
-  <aside class="notes">{{These five checks are the Council's own list. The one most people skip is permissions: a torch or calculator app that asks for your contacts and camera is telling you something. On work devices, ask IT before installing anything.||هذه الأمور الخمسة هي قائمة المجلس نفسه. وأكثر ما يتجاهله الناس هو الأذونات: تطبيق مصباح أو آلة حاسبة يطلب جهات الاتصال والكاميرا أمر يدعو إلى الشك. وعلى أجهزة العمل، استشر فريق تقنية المعلومات قبل تنزيل أي تطبيق.}}</aside>
+  <<FOOT:UAE Cyber Security Council, “Cyber Pulse”, WAM, 14 March 2026. Official app stores: WAM, 28 June 2026. The app shown is an invented example.||مجلس الأمن السيبراني، «النبض السيبراني»، «وام»، 14 مارس 2026. المتاجر الرسمية: «وام»، 28 يونيو 2026. التطبيق المعروض مثال غير حقيقي.>>
+  <aside class="notes">{{These five checks are the Council's own list. The numbers appear on the example one by one: follow them. The one most people skip is permissions: a simple parcel app that asks for your photos, camera and contacts is telling you something. On work devices, ask IT before installing anything.||هذه الأمور الخمسة هي قائمة المجلس نفسه. الأرقام تظهر على المثال واحداً بعد الآخر، فتتبّعها مع الحضور. وأكثر ما يتجاهله الناس هو الأذونات: تطبيق بسيط لتتبّع الشحنات يطلب الصور والكاميرا وجهات الاتصال أمر يدعو إلى الشك. وعلى أجهزة العمل، استشر فريق تقنية المعلومات قبل تنزيل أي تطبيق.}}</aside>
 </section>
 
-<!-- 9 ─ WATCH FOR: DEEPFAKES ──────────────────────────────────────────── -->
+<!-- 13 ─ 3. ACCOUNT THEFT ─────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Watch for||انتبه@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Seeing is no longer proof||ما نراه لم يعد دليلاً كافياً}}</h2>
-    <p class="echo r" style="--i:0">{{Seeing is no longer proof||ما نراه لم يعد دليلاً كافياً}}</p>
-    <p class="lead r" style="--i:1">{{A deepfake is video or audio made with artificial intelligence to look and sound real.||التزييف العميق مقطع مرئي أو صوتي يُصنع بالذكاء الاصطناعي ليبدو حقيقياً.}}</p>
+    <h2 class="title a-line" style="--t:.1">{{3. Account theft||3. سرقة الحسابات}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{3. Account theft||3. سرقة الحسابات}}</p>
+    <p class="lead r" style="--t:.5">{{Your accounts are your digital identity. Attackers exploit any weakness to impersonate you, commit fraud or sell your data.||حساباتك هي هويتك الرقمية. يستغل المهاجمون أي ثغرة لانتحال شخصيتك أو الاحتيال أو بيع بياناتك.}}</p>
     <div class="fill">
-      <ul class="claims">
-        <li class="r" style="--i:2">
-          <p>{{Fraudsters use fabricated video and audio recordings to make a scam look credible.||يستخدم المحتالون مقاطع مرئية وتسجيلات صوتية مفبركة ليبدو الاحتيال موثوقاً.}}</p>
-          <cite>{{UAE Cyber Security Council, “Cyber Pulse”, WAM, 14 March 2026||مجلس الأمن السيبراني، «النبض السيبراني»، «وام»، 14 مارس 2026}}</cite>
-        </li>
-        <li class="r" style="--i:3">
-          <p>{{Fabricated videos show public figures promoting fraudulent schemes or announcing false decisions.||مقاطع مفبركة تُظهر شخصيات عامة تروّج لمشاريع احتيالية أو تعلن قرارات غير صحيحة.}}</p>
-          <cite>{{Dr. Mohamed Hamad Al Kuwaiti, WAM, 18 February 2026||الدكتور محمد حمد الكويتي، «وام»، 18 فبراير 2026}}</cite>
-        </li>
-      </ul>
-      <p class="action r" style="--i:5"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>{{Verify the source before you act.||تحقّق من المصدر قبل أن تتصرّف.}}</p>
+      <div class="two">
+        <figure class="login r" style="--t:.6">
+          <h3>{{Sign in||تسجيل الدخول}}</h3>
+          <div class="field"><small>{{Email||البريد الإلكتروني}}</small><span><bdi>name@example.com</bdi></span></div>
+          <div class="field"><small>{{Password||كلمة المرور}}</small><span class="dots" style="--t:1.3" aria-hidden="true">•••••••••</span></div>
+          <span class="btn" style="--t:2.8">{{Sign in||دخول}}</span>
+          <p class="verdict a-pop" style="--t:3.4"><svg class="ic"><use href="#i-x"/></svg><span>{{Signed in as you. <small>But it was not you.</small>||تم الدخول باسمك. <small>لكن الداخل ليس أنت.</small>}}</span></p>
+        </figure>
+        <div>
+          <div class="todo" style="margin-top:0"><h3 class="r" style="--t:3.8">{{What a stolen account can lead to||ما قد تؤدي إليه سرقة الحساب}}</h3></div>
+          <ul class="harm">
+            <li class="r" style="--t:4.0">{{Identity theft||انتحال الشخصية}}</li>
+            <li class="r" style="--t:4.3">{{Fraud||الاحتيال}}</li>
+            <li class="r" style="--t:4.6">{{Financial losses||خسائر مالية}}</li>
+            <li class="r" style="--t:4.9">{{Harm to personal and professional reputation||ضرر بالسمعة الشخصية والمهنية}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <<FOOT:UAE Cyber Security Council, WAM, 30 January, 18 February and 14 March 2026.||مجلس الأمن السيبراني، «وام»، 30 يناير و18 فبراير و14 مارس 2026.>>
+  <<FOOT:UAE Cyber Security Council, statement to WAM, 26 April 2026. The sign-in screen is an invented example.||مجلس الأمن السيبراني لحكومة دولة الإمارات، تصريح لوكالة «وام»، 26 أبريل 2026. شاشة الدخول مثال غير حقيقي.>>
+  <aside class="notes">{{Watch the password being typed: the system cannot tell who is typing it. Whoever has the password is treated as you. The Council lists four consequences. Hold the solution for part three: a second step that a stolen password cannot pass.||راقب كتابة كلمة المرور: النظام لا يعرف من الذي يكتبها، ومن يملك كلمة المرور يُعامَل على أنه أنت. يذكر المجلس أربع نتائج محتملة. واترك الحل للجزء الثالث: خطوة ثانية لا تتجاوزها كلمة مرور مسروقة.}}</aside>
+</section>
+
+<!-- 14 ─ 4. MALWARE AND RANSOMWARE ────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:2@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{4. Malware and ransomware||4. البرمجيات الخبيثة وبرامج الفدية}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{4. Malware and ransomware||4. البرمجيات الخبيثة وبرامج الفدية}}</p>
+    <p class="lead r" style="--t:.5">{{Malware is harmful software that gets onto a device. Ransomware is one kind: it locks your files and demands money.||البرمجيات الخبيثة برامج ضارة تدخل إلى الجهاز. وبرامج الفدية نوع منها: تقفل ملفاتك وتطلب المال.}}</p>
+    <div class="fill">
+      <div class="two">
+        <figure class="files r" style="--t:.6">
+          <div class="files-h"><span>{{My files||ملفاتي}}</span><b class="eg">{{Example only||مثال توضيحي}}</b></div>
+          <ul>
+            <li><svg class="ic"><use href="#i-doc"/></svg><span class="nm" style="--t:1.4">{{Annual report||التقرير السنوي}}</span><svg class="ic lk" style="--t:1.4"><use href="#i-lock"/></svg></li>
+            <li><svg class="ic"><use href="#i-doc"/></svg><span class="nm" style="--t:1.8">{{Budget||الميزانية}}</span><svg class="ic lk" style="--t:1.8"><use href="#i-lock"/></svg></li>
+            <li><svg class="ic"><use href="#i-doc"/></svg><span class="nm" style="--t:2.2">{{Contracts||العقود}}</span><svg class="ic lk" style="--t:2.2"><use href="#i-lock"/></svg></li>
+            <li><svg class="ic"><use href="#i-doc"/></svg><span class="nm" style="--t:2.6">{{Staff records||سجلات الموظفين}}</span><svg class="ic lk" style="--t:2.6"><use href="#i-lock"/></svg></li>
+          </ul>
+          <p class="ransom r" style="--t:3.3"><span>{{Your files are locked. Pay to get them back.||ملفاتك مقفلة. ادفع لاستعادتها.}}</span><span class="stamp" style="--t:4.3">{{Do not pay||لا تدفع}}</span></p>
+        </figure>
+        <ul class="facts">
+          <li class="r" style="--t:3.6">{{Outdated systems are <b>an ideal target</b> for malware, data theft and network breaches.||الأنظمة غير المحدَّثة <b>هدف مثالي</b> للبرمجيات الخبيثة وسرقة البيانات واختراق الشبكات.}}<cite>{{UAE Cybersecurity Council, WAM, 31 August 2025||مجلس الأمن السيبراني، «وام»، 31 أغسطس 2025}}</cite></li>
+          <li class="r" style="--t:4.0">{{Ransomware made up <b><bdi>7.8%</bdi></b> of the confirmed incidents in the UAE in early 2026.||شكّلت برامج الفدية <b><bdi>7.8%</bdi></b> من الحوادث المؤكدة في الدولة مطلع عام 2026.}}<cite>{{Dr. Mohamed Hamad Al Kuwaiti, WAM, 18 February 2026||الدكتور محمد حمد الكويتي، «وام»، 18 فبراير 2026}}</cite></li>
+          <li class="r" style="--t:4.4">{{<b>Refuse to pay</b> extortion demands. Paying does not guarantee safety and may bring more demands.||<b>ارفض دفع</b> أي مبالغ للمبتزّين. الدفع لا يضمن سلامتك وقد يشجّع على مطالب أخرى.}}<cite>{{UAE Cyber Security Council, “Cyber Pulse”, WAM, 14 March 2026||مجلس الأمن السيبراني، «النبض السيبراني»، «وام»، 14 مارس 2026}}</cite></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <<FOOT:UAE Cyber Security Council statements to WAM, 31 August 2025, 18 February 2026 and 14 March 2026. The opening definition is a plain-language explanation; the screen is an invented example.||تصريحات مجلس الأمن السيبراني لوكالة «وام»، 31 أغسطس 2025 و18 فبراير 2026 و14 مارس 2026. التعريف في أعلى الشريحة شرح مبسّط، والشاشة مثال غير حقيقي.>>
+  <aside class="notes">{{Watch the files lock one after another. This is what ransomware does to an office. It usually gets in through a link, an attachment or a device that was not updated. The Council's advice on extortion is clear: do not pay. At work, the right move is to tell IT immediately.||راقب الملفات وهي تُقفل واحداً بعد الآخر. هذا ما تفعله برامج الفدية بأي مكتب. تدخل غالباً عبر رابط أو مرفق أو جهاز لم يُحدَّث. ونصيحة المجلس في حالات الابتزاز واضحة: لا تدفع. وفي العمل، التصرف الصحيح هو إبلاغ فريق تقنية المعلومات فوراً.}}</aside>
+</section>
+
+<!-- 15 ─ 5. DEEPFAKES ─────────────────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:2@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{5. Deepfakes: seeing is no longer proof||5. التزييف العميق: ما نراه لم يعد دليلاً}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{5. Deepfakes: seeing is no longer proof||5. التزييف العميق: ما نراه لم يعد دليلاً}}</p>
+    <p class="lead r" style="--t:.5">{{Video or audio made with artificial intelligence to look and sound like a real person.||مقطع مرئي أو صوتي يُصنع بالذكاء الاصطناعي ليبدو كأنه لشخص حقيقي.}}</p>
+    <div class="fill">
+      <div class="two">
+        <figure class="call a-fade" style="--t:.5">
+          <svg class="ic face" aria-hidden="true"><use href="#i-user"/></svg>
+          <p class="says a-pop" style="--t:1.1">{{“Invest today. Profit is guaranteed.”||«استثمر اليوم، والربح مضمون.»}}</p>
+          <p class="who"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>{{A public figure||شخصية عامة}}</p>
+          <span class="scan" style="--t:3.2" aria-hidden="true"></span>
+          <b class="eg">{{Example only||مثال توضيحي}}</b>
+          <p class="tagrow"><span class="t-real">{{Looks real||يبدو حقيقياً}}</span><span class="t-ai a-pop" style="--t:4.1">{{Made with AI||مصنوع بالذكاء الاصطناعي}}</span></p>
+        </figure>
+        <div>
+          <ul class="claims">
+            <li class="r" style="--t:1.6">
+              <p>{{Fraudsters use fabricated video and audio recordings to make a scam look credible.||يستخدم المحتالون مقاطع مرئية وتسجيلات صوتية مفبركة ليبدو الاحتيال موثوقاً.}}</p>
+              <cite>{{UAE Cyber Security Council, “Cyber Pulse”, WAM, 14 March 2026||مجلس الأمن السيبراني، «النبض السيبراني»، «وام»، 14 مارس 2026}}</cite>
+            </li>
+            <li class="r" style="--t:2.2">
+              <p>{{Fabricated videos show public figures promoting fraudulent schemes or announcing false decisions.||مقاطع مفبركة تُظهر شخصيات عامة تروّج لمشاريع احتيالية أو تعلن قرارات غير صحيحة.}}</p>
+              <cite>{{Dr. Mohamed Hamad Al Kuwaiti, WAM, 18 February 2026||الدكتور محمد حمد الكويتي، «وام»، 18 فبراير 2026}}</cite>
+            </li>
+          </ul>
+          <p class="action a-pop" style="--t:4.6"><svg class="ic"><use href="#i-check"/></svg>{{Verify the source before you act.||تحقّق من المصدر قبل أن تتصرّف.}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <<FOOT:UAE Cyber Security Council, WAM, 30 January, 18 February and 14 March 2026. The call shown is an invented example.||مجلس الأمن السيبراني، «وام»، 30 يناير و18 فبراير و14 مارس 2026. المكالمة المعروضة مثال غير حقيقي.>>
   <aside class="notes">{{Keep this one calm. The message is not that everything is fake. It is that a convincing voice or video is no longer enough on its own. The same habit applies: pause, then check the source through a route you already trust.||قدّم هذه الشريحة بهدوء. الرسالة ليست أن كل شيء مزيف، بل أن الصوت المقنع أو المقطع المقنع لم يعد كافياً وحده. والعادة نفسها تنطبق هنا: تمهّل، ثم تحقّق من المصدر عبر قناة تثق بها مسبقاً.}}</aside>
 </section>
 
-<!-- 10 ─ PROTECT: ACCOUNTS ────────────────────────────────────────────── -->
+<!-- 16 ─ 6. ATTACKS ON ORGANISATIONS ──────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Protect||احمِ نفسك@@
+  @@HEAD:2@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Add a second step to your accounts||أضف خطوة ثانية إلى حساباتك}}</h2>
-    <p class="echo r" style="--i:0">{{Add a second step to your accounts||أضف خطوة ثانية إلى حساباتك}}</p>
+    <h2 class="title a-line" style="--t:.1">{{6. Attacks on organisations||6. الهجمات على المؤسسات}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{6. Attacks on organisations||6. الهجمات على المؤسسات}}</p>
+    <p class="lead r" style="--t:.5">{{What the confirmed incidents in the UAE looked like in early 2026, by share of all incidents.||أنواع الحوادث المؤكدة في الدولة مطلع عام 2026، بحسب نسبتها من إجمالي الحوادث.}}</p>
     <div class="fill">
-      <div class="split even">
-        <div class="r" style="--i:1">
-          <p class="over">{{More than||أكثر من}}</p>
-          <p class="fig fig-xl"><bdi>99%</bdi></p>
-          <p class="cap">{{of identity-related attacks can be prevented by multi-factor authentication: a second step after your password, such as a code or an approval on your phone.||من الهجمات المرتبطة بالهوية الرقمية يمكن منعها بالمصادقة متعددة العوامل، أي خطوة ثانية بعد كلمة المرور، مثل رمز أو موافقة على هاتفك.}}</p>
+      <ol class="bars-chart">
+        <li class="r" style="--t:.8"><div><h3>{{Website defacement||تشويه المواقع الإلكترونية}}</h3><p>{{The attacker changes what a website shows.||يغيّر المهاجم ما يعرضه الموقع.}}</p></div><span class="trk"><i class="a-grow" style="--v:38.3;--t:1.0"></i><span class="val"><bdi><span data-count="38.3" data-wait="1.0" data-dur="1">38.3</span>%</bdi></span></span></li>
+        <li class="r" style="--t:1.1"><div><h3>{{Data leaks||تسريب البيانات}}</h3><p>{{Private information is published.||نشر معلومات خاصة.}}</p></div><span class="trk"><i class="a-grow" style="--v:25.8;--t:1.3"></i><span class="val"><bdi><span data-count="25.8" data-wait="1.3" data-dur="1">25.8</span>%</bdi></span></span></li>
+        <li class="r" style="--t:1.4"><div><h3>{{Data breaches||اختراق البيانات}}</h3><p>{{Someone gets into data without permission.||وصول إلى البيانات دون إذن.}}</p></div><span class="trk"><i class="a-grow" style="--v:13.3;--t:1.6"></i><span class="val"><bdi><span data-count="13.3" data-wait="1.6" data-dur="1">13.3</span>%</bdi></span></span></li>
+        <li class="r" style="--t:1.7"><div><h3>{{Initial access||الوصول الأولي}}</h3><p>{{A first way into the systems is opened.||فتح أول مدخل إلى الأنظمة.}}</p></div><span class="trk"><i class="a-grow" style="--v:10.2;--t:1.9"></i><span class="val"><bdi><span data-count="10.2" data-wait="1.9" data-dur="1">10.2</span>%</bdi></span></span></li>
+        <li class="r" style="--t:2.0"><div><h3>{{Ransomware||برامج الفدية}}</h3><p>{{Files are locked until money is paid.||قفل الملفات والمطالبة بالمال.}}</p></div><span class="trk"><i class="a-grow" style="--v:7.8;--t:2.2"></i><span class="val"><bdi><span data-count="7.8" data-wait="2.2" data-dur="1">7.8</span>%</bdi></span></span></li>
+        <li class="r" style="--t:2.3"><div><h3>{{Denial of service||حجب الخدمة}}</h3><p>{{A service is flooded until it stops working.||إغراق الخدمة بالطلبات حتى تتوقف.}}</p></div><span class="trk"><i class="a-grow" style="--v:4.7;--t:2.5"></i><span class="val"><bdi><span data-count="4.7" data-wait="2.5" data-dur="1">4.7</span>%</bdi></span></span></li>
+      </ol>
+    </div>
+  </div>
+  <<FOOT:Dr. Mohamed Hamad Al Kuwaiti, Head of the UAE Government Cybersecurity Council, to WAM, 18 February 2026. The one-line explanations are ours.||الدكتور محمد حمد الكويتي، رئيس مجلس الأمن السيبراني لحكومة دولة الإمارات، في تصريح لوكالة «وام»، 18 فبراير 2026. الشرح المختصر من إعدادنا.>>
+  <aside class="notes">{{This last type is aimed at organisations rather than individuals, and our IT team deals with it. Staff do not need the technical names. What matters is the picture: websites changed, information published or stolen, files locked, services stopped. Our everyday habits help keep the first door closed.||هذا النوع الأخير يستهدف المؤسسات لا الأفراد، ويتعامل معه فريق تقنية المعلومات. لا يحتاج الموظف إلى حفظ الأسماء التقنية، والمهم هو الصورة العامة: مواقع يتغيّر محتواها، ومعلومات تُنشر أو تُسرق، وملفات تُقفل، وخدمات تتوقف. وعاداتنا اليومية تساعد على إبقاء المدخل الأول مغلقاً.}}</aside>
+</section>
+
+<!-- 17 ─ PART 3 ───────────────────────────────────────────────────────── -->
+<section class="slide dark divider">
+  <div class="cover-top"><span class="logo-w" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span></div>
+  <div class="div-mid">
+    <span class="div-n a-line" style="--t:.45">3</span>
+    <div class="div-t">
+      <h2 class="a-line" style="--t:.6">{{How we protect ourselves||كيف نحمي أنفسنا}}</h2>
+      <p class="echo a-fade" style="--t:1.1">{{How we protect ourselves||كيف نحمي أنفسنا}}</p>
+      <p class="sub r" style="--t:1.2">{{One habit to remember, and three simple protections.||عادة واحدة نتذكّرها، وثلاث وسائل حماية بسيطة.}}</p>
+    </div>
+  </div>
+  @@ROAD:3@@
+  <aside class="notes">{{Part three. Now the good news: protecting ourselves does not need technical skill. It needs a few habits.||الجزء الثالث. والآن الخبر الجيد: حماية أنفسنا لا تحتاج إلى مهارة تقنية، بل إلى عادات قليلة.}}</aside>
+</section>
+
+<!-- 18 ─ THE HABIT ────────────────────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:3@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{One habit to remember||عادة واحدة نتذكّرها دائماً}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{One habit to remember||عادة واحدة نتذكّرها دائماً}}</p>
+    <div class="fill">
+      <ol class="path3">
+        <span class="run" aria-hidden="true"></span>
+        <li style="--t:.5"><h3 class="a-line" style="--t:.6">{{Pause||تمهّل}}</h3><p class="r" style="--t:.9">{{Do not click, reply or pay straight away.||لا تنقر ولا تردّ ولا تدفع فوراً.}}</p></li>
+        <li style="--t:1.4"><h3 class="a-line" style="--t:1.5">{{Check||تحقّق}}</h3><p class="r" style="--t:1.8">{{Confirm who really sent the message before you act.||تأكّد من المصدر الحقيقي للرسالة قبل أي تصرّف.}}</p></li>
+        <li style="--t:2.3"><h3 class="a-line" style="--t:2.4">{{Report||بلّغ}}</h3><p class="r" style="--t:2.7">{{Tell the IT team at work. Report scams to the police, with details and evidence.||أبلغ فريق تقنية المعلومات في العمل، وبلّغ الشرطة عن الاحتيال مع التفاصيل والأدلة.}}</p></li>
+      </ol>
+    </div>
+  </div>
+  <<FOOT:Our three-word summary of advice from the UAE Cyber Security Council, with Emirates Post Group and the DARB platform, WAM, 30 January 2026.||تلخيصنا في ثلاث كلمات لإرشادات مجلس الأمن السيبراني بالتعاون مع مجموعة بريد الإمارات ومنصة «درب»، «وام»، 30 يناير 2026.>>
+  <aside class="notes">{{If people remember one slide, it should be this one. It works against every type of attack we just saw. Pause: scams depend on speed. Check: confirm the real source. Report: early reporting protects everyone else. The three words are our own summary; the advice behind them is the Council's.||إذا تذكّر الحضور شريحة واحدة فلتكن هذه، فهي تنفع مع كل أنواع الهجمات التي رأيناها. تمهّل: الاحتيال يعتمد على استعجالك. تحقّق: تأكّد من المصدر الحقيقي. بلّغ: الإبلاغ المبكر يحمي بقية الزملاء. الكلمات الثلاث تلخيص من عندنا، أما الإرشادات نفسها فهي من المجلس.}}</aside>
+</section>
+
+<!-- 19 ─ SECOND STEP ──────────────────────────────────────────────────── -->
+<section class="slide">
+  @@HEAD:3@@
+  <div class="bd">
+    <h2 class="title a-line" style="--t:.1">{{Add a second step to your accounts||أضف خطوة ثانية إلى حساباتك}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Add a second step to your accounts||أضف خطوة ثانية إلى حساباتك}}</p>
+    <div class="fill">
+      <div class="split">
+        <div>
+          <p class="fig fig-xl r" style="--t:.6"><span class="q">{{More than||أكثر من}}</span><bdi><span data-count="99" data-wait=".7" data-dur="1.6">99</span>%</bdi></p>
+          <p class="cap r" style="--t:1.0">{{of identity-related attacks can be prevented by multi-factor authentication: a second step after your password, such as a code or an approval on your phone.||من الهجمات المرتبطة بالهوية الرقمية يمكن منعها بالمصادقة متعددة العوامل، أي خطوة ثانية بعد كلمة المرور، مثل رمز أو موافقة على هاتفك.}}</p>
+          <p class="flow" style="margin-top:30px">
+            <span class="a-pop" style="--t:2.2"><svg class="ic"><use href="#i-key"/></svg>{{Stolen password||كلمة مرور مسروقة}}</span><i class="a-grow" style="--t:2.6"></i>
+            <span class="a-pop" style="--t:3.0"><svg class="ic"><use href="#i-phone"/></svg>{{Code on your phone||رمز على هاتفك}}</span><i class="a-grow" style="--t:3.4"></i>
+            <span class="end a-pop" style="--t:3.8"><svg class="ic"><use href="#i-lock"/></svg>{{Blocked||تم المنع}}</span>
+          </p>
         </div>
         <div class="side">
           <ul class="ticks">
-            <li class="r" style="--i:3">{{Turn on multi-factor authentication.||فعّل المصادقة متعددة العوامل.}}</li>
-            <li class="r" style="--i:4">{{Choose strong, complex passwords.||اختر كلمات مرور قوية ومعقدة.}}</li>
-            <li class="r" style="--i:5">{{Do not reuse weak passwords.||لا تكرّر استخدام كلمات مرور ضعيفة.}}</li>
-            <li class="r" style="--i:6">{{Do not share sensitive personal information.||لا تشارك معلوماتك الشخصية الحساسة.}}</li>
+            <li class="r" style="--t:2.0">{{Turn on multi-factor authentication.||فعّل المصادقة متعددة العوامل.}}</li>
+            <li class="r" style="--t:2.3">{{Choose strong, complex passwords.||اختر كلمات مرور قوية ومعقدة.}}</li>
+            <li class="r" style="--t:2.6">{{Do not reuse weak passwords.||لا تكرّر استخدام كلمات مرور ضعيفة.}}</li>
+            <li class="r" style="--t:2.9">{{Do not share sensitive personal information.||لا تشارك معلوماتك الشخصية الحساسة.}}</li>
           </ul>
-          <p class="cap-s r" style="--i:7">{{Start with email, social media and online banking.||ابدأ بالبريد الإلكتروني ووسائل التواصل الاجتماعي والخدمات المصرفية الإلكترونية.}}</p>
+          <p class="cap-s r" style="--t:3.4;margin-top:0">{{Start with email, social media and online banking.||ابدأ بالبريد الإلكتروني ووسائل التواصل الاجتماعي والخدمات المصرفية الإلكترونية.}}</p>
         </div>
       </div>
     </div>
   </div>
   <<FOOT:UAE Cyber Security Council, WAM, 26 April 2026. Email, social media and banking: WAM, 28 June 2026.||مجلس الأمن السيبراني، «وام»، 26 أبريل 2026. البريد ووسائل التواصل والخدمات المصرفية: «وام»، 28 يونيو 2026.>>
-  <aside class="notes">{{Explain multi-factor authentication in plain words: even if someone learns your password, they still cannot get in without the second step on your phone. The Council calls these four measures the first line of defence. If you approve a sign-in you did not start, tell IT.||اشرح المصادقة متعددة العوامل بكلمات بسيطة: حتى لو عرف أحدهم كلمة مرورك فلن يستطيع الدخول دون الخطوة الثانية على هاتفك. ويصف المجلس هذه الإجراءات الأربعة بأنها خط الدفاع الأول. وإذا وصلك طلب موافقة على دخول لم تبدأه أنت، أبلغ فريق تقنية المعلومات.}}</aside>
+  <aside class="notes">{{This answers the account theft we saw earlier. Even if someone learns your password, they cannot get in without the second step on your phone. The Council calls these four measures the first line of defence. If you get a sign-in request that you did not start, do not approve it, and tell IT.||هذه إجابة عن سرقة الحسابات التي رأيناها قبل قليل. حتى لو عرف أحدهم كلمة مرورك فلن يستطيع الدخول دون الخطوة الثانية على هاتفك. ويصف المجلس هذه الإجراءات الأربعة بأنها خط الدفاع الأول. وإذا وصلك طلب موافقة على دخول لم تبدأه أنت، فلا توافق، وأبلغ فريق تقنية المعلومات.}}</aside>
 </section>
 
-<!-- 11 ─ PROTECT: DIGITAL FOOTPRINT ───────────────────────────────────── -->
+<!-- 20 ─ DIGITAL FOOTPRINT ────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Protect||احمِ نفسك@@
+  @@HEAD:3@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{What you post leaves a trace||ما تنشره يترك أثراً}}</h2>
-    <p class="echo r" style="--i:0">{{What you post leaves a trace||ما تنشره يترك أثراً}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Think before you share||فكّر قبل أن تنشر}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Think before you share||فكّر قبل أن تنشر}}</p>
     <div class="fill">
-      <div class="split even">
-        <div class="r" style="--i:1">
-          <p class="over">{{More than||أكثر من}}</p>
-          <p class="fig fig-xl">{{<bdi>1.4</bdi> <span class="w">billion</span>||<bdi>1.4</bdi> <span class="w">مليار</span>}}</p>
-          <p class="cap">{{accounts are compromised around the world every month.||حساب يتعرض للاختراق حول العالم كل شهر.}}</p>
-          <p class="cap-s">{{Every login, post, photo and comment leaves a trace that can be tracked and misused.||كل تسجيل دخول ومنشور وصورة وتعليق يترك أثراً يمكن تتبّعه واستغلاله.}}</p>
+      <div class="split">
+        <div>
+          <p class="fig fig-xl r" style="--t:.6"><span class="q">{{More than||أكثر من}}</span>{{<bdi data-count="1.4" data-wait=".7" data-dur="1.6">1.4</bdi> <span class="w">billion</span>||<bdi data-count="1.4" data-wait=".7" data-dur="1.6">1.4</bdi> <span class="w">مليار</span>}}</p>
+          <p class="cap r" style="--t:1.0">{{accounts are compromised around the world every month.||حساب يتعرض للاختراق حول العالم كل شهر.}}</p>
+          <ul class="trace">
+            <li style="--t:1.1">{{Login||تسجيل دخول}}</li>
+            <li style="--t:1.6">{{Post||منشور}}</li>
+            <li style="--t:2.1">{{Photo||صورة}}</li>
+            <li style="--t:2.6">{{Comment||تعليق}}</li>
+          </ul>
+          <p class="cap-s r" style="--t:2.9">{{Each one leaves a trace that can be tracked and misused.||كل واحد منها يترك أثراً يمكن تتبّعه واستغلاله.}}</p>
         </div>
         <div class="side">
           <ul class="ticks">
-            <li class="r" style="--i:3">{{Think before you share your location or personal details.||فكّر قبل مشاركة موقعك أو معلوماتك الشخصية.}}</li>
-            <li class="r" style="--i:4">{{Do not accept friend requests from people you do not know.||لا تقبل طلبات الصداقة من أشخاص لا تعرفهم.}}</li>
-            <li class="r" style="--i:5">{{Review your list of followers regularly.||راجع قائمة متابعيك بانتظام.}}</li>
-            <li class="r" style="--i:6">{{Check what an app asks for before you allow it.||راجع الأذونات التي يطلبها التطبيق قبل الموافقة.}}</li>
+            <li class="r" style="--t:2.0">{{Think before you share your location or personal details.||فكّر قبل مشاركة موقعك أو معلوماتك الشخصية.}}</li>
+            <li class="r" style="--t:2.3">{{Do not accept friend requests from people you do not know.||لا تقبل طلبات الصداقة من أشخاص لا تعرفهم.}}</li>
+            <li class="r" style="--t:2.6">{{Review your list of followers regularly.||راجع قائمة متابعيك بانتظام.}}</li>
+            <li class="r" style="--t:2.9">{{Check what an app asks for before you allow it.||راجع الأذونات التي يطلبها التطبيق قبل الموافقة.}}</li>
           </ul>
         </div>
       </div>
@@ -295,76 +567,88 @@
   <aside class="notes">{{This is a worldwide figure quoted by the Council. What we share publicly, such as where we work and where we are today, can be used to make a fake message more convincing. Sharing a little less makes that harder.||هذا رقم عالمي أورده المجلس. ما ننشره علناً، مثل مكان عملنا ومكان وجودنا اليوم، قد يُستخدم لجعل الرسالة المزيفة أكثر إقناعاً. وقليل من الحذر في المشاركة يصعّب ذلك.}}</aside>
 </section>
 
-<!-- 12 ─ PROTECT: UPDATES ─────────────────────────────────────────────── -->
+<!-- 21 ─ UPDATES ──────────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Protect||احمِ نفسك@@
+  @@HEAD:3@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Keep your devices updated||حدّث أجهزتك باستمرار}}</h2>
-    <p class="echo r" style="--i:0">{{Keep your devices updated||حدّث أجهزتك باستمرار}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Keep your devices updated||حدّث أجهزتك باستمرار}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Keep your devices updated||حدّث أجهزتك باستمرار}}</p>
     <div class="fill">
-      <blockquote class="say r" style="--i:1">
-        <p>{{“Updates are not just technical improvements, but digital shields that safeguard systems from evolving threats.”||«التحديثات ليست مجرد تحسينات تقنية، بل دروع رقمية تحمي الأنظمة من التهديدات المتطورة.»}}</p>
+      <blockquote class="say r" style="--t:.6">
+        <p>{{Updates are not just technical improvements, but digital shields that safeguard systems from evolving threats.||التحديثات ليست مجرد تحسينات تقنية، بل دروع رقمية تحمي الأنظمة من التهديدات المتطورة.}}</p>
         <cite>{{UAE Cybersecurity Council, statement to WAM, 31 August 2025||مجلس الأمن السيبراني لحكومة دولة الإمارات، تصريح لوكالة «وام»، 31 أغسطس 2025}}</cite>
       </blockquote>
-      <p class="note r" style="--i:3;margin-top:44px">{{Most attacks use known weaknesses that a timely update would have closed.||معظم الهجمات تستغل ثغرات معروفة كان يمكن سدّها بتحديث في وقته.}}</p>
-      <div class="todo r" style="--i:5;margin-top:40px">
-        <h4>{{Turn on automatic updates for||فعّل التحديث التلقائي في}}</h4>
+      <p class="note r" style="--t:1.5;margin-top:40px">{{Most attacks use known weaknesses that a timely update would have closed.||معظم الهجمات تستغل ثغرات معروفة كان يمكن سدّها بتحديث في وقته.}}</p>
+      <div class="todo r" style="--t:2.0;margin-top:36px">
+        <h3>{{Turn on automatic updates for||فعّل التحديث التلقائي في}}</h3>
         <ul class="chips">
-          <li>{{Smartphone||الهاتف الذكي}}</li>
-          <li>{{Laptop||الحاسوب المحمول}}</li>
-          <li>{{Web browser||متصفح الإنترنت}}</li>
-          <li>{{Internet router||موجّه الإنترنت (الراوتر)}}</li>
-          <li>{{Smart home devices||الأجهزة المنزلية الذكية}}</li>
+          <li class="a-pop" style="--t:2.3"><svg class="ic" style="--t:2.6"><use href="#i-check"/></svg>{{Smartphone||الهاتف الذكي}}</li>
+          <li class="a-pop" style="--t:2.6"><svg class="ic" style="--t:2.9"><use href="#i-check"/></svg>{{Laptop||الحاسوب المحمول}}</li>
+          <li class="a-pop" style="--t:2.9"><svg class="ic" style="--t:3.2"><use href="#i-check"/></svg>{{Web browser||متصفح الإنترنت}}</li>
+          <li class="a-pop" style="--t:3.2"><svg class="ic" style="--t:3.5"><use href="#i-check"/></svg>{{Internet router||موجّه الإنترنت (الراوتر)}}</li>
+          <li class="a-pop" style="--t:3.5"><svg class="ic" style="--t:3.8"><use href="#i-check"/></svg>{{Smart home devices||الأجهزة المنزلية الذكية}}</li>
         </ul>
       </div>
     </div>
   </div>
   <<FOOT:UAE Cybersecurity Council, statement to WAM, 31 August 2025.||مجلس الأمن السيبراني لحكومة دولة الإمارات، تصريح لوكالة «وام»، 31 أغسطس 2025.>>
-  <aside class="notes">{{An update is the fix for a weakness that attackers already know about. Putting it off leaves the door open. At home, turn on automatic updates on these five kinds of device. At work, let updates finish when your computer asks.||التحديث إصلاح لثغرة يعرفها المهاجمون فعلاً، وتأجيله يترك الباب مفتوحاً. في المنزل، فعّل التحديث التلقائي في هذه الأنواع الخمسة من الأجهزة. وفي العمل، دع التحديث يكتمل عندما يطلب حاسوبك ذلك.}}</aside>
+  <aside class="notes">{{This answers the malware we saw earlier. An update is the fix for a weakness that attackers already know about. Putting it off leaves the door open. At home, turn on automatic updates on these five kinds of device. At work, let updates finish when your computer asks.||هذه إجابة عن البرمجيات الخبيثة التي رأيناها. التحديث إصلاح لثغرة يعرفها المهاجمون فعلاً، وتأجيله يترك الباب مفتوحاً. في المنزل، فعّل التحديث التلقائي في هذه الأنواع الخمسة من الأجهزة. وفي العمل، دع التحديث يكتمل عندما يطلب حاسوبك ذلك.}}</aside>
 </section>
 
-<!-- 13 ─ REPORT ───────────────────────────────────────────────────────── -->
+<!-- 22 ─ PART 4 ───────────────────────────────────────────────────────── -->
+<section class="slide dark divider">
+  <div class="cover-top"><span class="logo-w" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span></div>
+  <div class="div-mid">
+    <span class="div-n a-line" style="--t:.45">4</span>
+    <div class="div-t">
+      <h2 class="a-line" style="--t:.6">{{What to do and who to tell||ماذا نفعل ومن نُبلغ}}</h2>
+      <p class="echo a-fade" style="--t:1.1">{{What to do and who to tell||ماذا نفعل ومن نُبلغ}}</p>
+      <p class="sub r" style="--t:1.2">{{If something goes wrong, speed matters more than blame.||إذا حدث خطأ، فالسرعة أهم من اللوم.}}</p>
+    </div>
+  </div>
+  @@ROAD:4@@
+  <aside class="notes">{{Part four, the shortest and the most important for behaviour. Anyone can click on something by mistake. What matters is what we do in the next few minutes.||الجزء الرابع، وهو الأقصر والأهم من ناحية السلوك. أي شخص قد ينقر على شيء بالخطأ، والمهم هو ما نفعله في الدقائق التالية.}}</aside>
+</section>
+
+<!-- 23 ─ REPORT ───────────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Report||بلّغ@@
+  @@HEAD:4@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{If something goes wrong, report it early||إذا حدث خطأ، بلّغ فوراً}}</h2>
-    <p class="echo r" style="--i:0">{{If something goes wrong, report it early||إذا حدث خطأ، بلّغ فوراً}}</p>
+    <h2 class="title a-line" style="--t:.1">{{If something goes wrong, report it early||إذا حدث خطأ، بلّغ فوراً}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{If something goes wrong, report it early||إذا حدث خطأ، بلّغ فوراً}}</p>
     <div class="fill">
-      <ul class="rows cases">
-        <li class="r" style="--i:1"><h3>{{At work||في العمل}}</h3><p>{{Tell the IT team straight away.||أبلغ فريق تقنية المعلومات فوراً.}} <span class="contact" id="contact" contenteditable="true" spellcheck="false" data-ph="" data-ph-en="Click to add the IT Service Desk number or email" data-ph-ar="انقر لإضافة رقم أو بريد مكتب خدمة تقنية المعلومات"></span></p></li>
-        <li class="r" style="--i:2"><h3>{{A scam attempt||محاولة احتيال}}</h3><p>{{Report it to the police immediately, with all the details and evidence you have.||بلّغ الشرطة فوراً، مع كل ما لديك من تفاصيل وأدلة.}}</p></li>
-        <li class="r" style="--i:3"><h3>{{A demand for money||ابتزاز أو مطالبة بالمال}}</h3><p>{{Do not pay. Paying does not guarantee safety and may bring more demands. Send no further information, images or documents.||لا تدفع. الدفع لا يضمن سلامتك وقد يشجّع على مطالب أخرى. ولا ترسل أي معلومات أو صور أو مستندات إضافية.}}</p></li>
-        <li class="r" style="--i:4"><h3>{{A serious incident||حادثة أمنية كبيرة}}</h3><p>{{Government of Sharjah entities can report a security incident to the Sharjah Cyber Security Center for immediate support.||يمكن للجهات الحكومية في الشارقة إبلاغ مركز الشارقة للأمن السيبراني بالحادثة للحصول على دعم فوري.}}</p></li>
+      <ul class="rows">
+        <li class="r" style="--t:.7"><h3>{{At work||في العمل}}</h3><p>{{Tell the IT team straight away.||أبلغ فريق تقنية المعلومات فوراً.}} <span class="contact" id="contact" contenteditable="true" spellcheck="false" data-ph="" data-ph-en="Click to add the IT Service Desk number or email" data-ph-ar="انقر لإضافة رقم أو بريد مكتب خدمة تقنية المعلومات"></span></p></li>
+        <li class="r" style="--t:1.1"><h3>{{A scam attempt||محاولة احتيال}}</h3><p>{{Report it to the police immediately, with all the details and evidence you have.||بلّغ الشرطة فوراً، مع كل ما لديك من تفاصيل وأدلة.}}</p></li>
+        <li class="r" style="--t:1.5"><h3>{{A demand for money||ابتزاز أو مطالبة بالمال}}</h3><p>{{Do not pay. Paying does not guarantee safety and may bring more demands. Send no further information, images or documents.||لا تدفع. الدفع لا يضمن سلامتك وقد يشجّع على مطالب أخرى. ولا ترسل أي معلومات أو صور أو مستندات إضافية.}}</p></li>
+        <li class="r" style="--t:1.9"><h3>{{A serious incident||حادثة أمنية كبيرة}}</h3><p>{{Government of Sharjah entities can report a security incident to the Sharjah Cyber Security Center for immediate support.||يمكن للجهات الحكومية في الشارقة إبلاغ مركز الشارقة للأمن السيبراني بالحادثة للحصول على دعم فوري.}}</p></li>
       </ul>
     </div>
   </div>
   <<FOOT:UAE Cyber Security Council, WAM, 30 January and 14 March 2026. Sharjah Cyber Security Center, <bdi>scsc.shj.ae</bdi>, viewed 15 November 2026.||مجلس الأمن السيبراني، «وام»، 30 يناير و14 مارس 2026. مركز الشارقة للأمن السيبراني، <bdi>scsc.shj.ae</bdi>، تاريخ الاطلاع 15 نوفمبر 2026.>>
-  <aside class="notes">{{This is the most important slide for behaviour. Clicking on something by mistake can happen to anyone; staying silent is what causes the damage. Say clearly how to reach the IT team. Before the session, click the dashed line on this slide and type the IT Service Desk number or email. It is saved on this computer.||هذه أهم شريحة من ناحية السلوك. النقر بالخطأ قد يحدث لأي شخص، أما السكوت فهو ما يسبب الضرر. وضّح للحضور طريقة التواصل مع فريق تقنية المعلومات. قبل الجلسة، انقر على السطر المنقّط في هذه الشريحة واكتب رقم مكتب خدمة تقنية المعلومات أو بريده، وسيُحفظ على هذا الحاسوب.}}</aside>
+  <aside class="notes">{{Clicking on something by mistake can happen to anyone; staying silent is what causes the damage. Say clearly how to reach the IT team. Before the session, click the dashed line on this slide and type the IT Service Desk number or email. It is saved on this computer.||النقر بالخطأ قد يحدث لأي شخص، أما السكوت فهو ما يسبب الضرر. وضّح للحضور طريقة التواصل مع فريق تقنية المعلومات. قبل الجلسة، انقر على السطر المنقّط في هذه الشريحة واكتب رقم مكتب خدمة تقنية المعلومات أو بريده، وسيُحفظ على هذا الحاسوب.}}</aside>
 </section>
 
-<!-- 14 ─ SHARJAH CYBER SECURITY CENTER ────────────────────────────────── -->
+<!-- 24 ─ SHARJAH CYBER SECURITY CENTER ────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Sharjah||الشارقة@@
+  @@HEAD:4@@
   <div class="bd">
-    <h2 class="title sm r" style="--i:0">{{“Smile, you are in a cyber secured Sharjah”||«ابتسم، أنت في أمان سيبراني في الشارقة»}}</h2>
-    <p class="echo r" style="--i:0">{{“Smile, you are in a cyber secured Sharjah”||«ابتسم، أنت في أمان سيبراني في الشارقة»}}</p>
-    <p class="lead r" style="--i:1">{{The message of the Sharjah Cyber Security Center, part of Sharjah Digital Department.||رسالة مركز الشارقة للأمن السيبراني التابع لدائرة الشارقة الرقمية.}}</p>
+    <h2 class="title sm a-line" style="--t:.1">{{“Smile, you are in a cyber secured Sharjah”||«ابتسم، أنت في أمان سيبراني في الشارقة»}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{“Smile, you are in a cyber secured Sharjah”||«ابتسم، أنت في أمان سيبراني في الشارقة»}}</p>
+    <p class="lead r" style="--t:.6">{{The message of the Sharjah Cyber Security Center, part of Sharjah Digital Department.||رسالة مركز الشارقة للأمن السيبراني التابع لدائرة الشارقة الرقمية.}}</p>
     <div class="fill">
       <ul class="trio">
-        <li class="r" style="--i:2">
-          <p class="over">{{Strategy||الاستراتيجية}}</p>
-          <p class="fig"><bdi>2026–2031</bdi></p>
-          <p class="cap">{{The Sharjah Cyber Security Strategy was launched in August 2026 with the vision “A Cyber-Secure Emirate”. The Center leads it.||أُطلقت استراتيجية الشارقة للأمن السيبراني في أغسطس 2026 برؤية «إمارة آمنة سيبرانياً»، ويقود المركز تنفيذها.}}</p>
+        <li style="--t:.9">
+          <p class="fig r" style="--t:1.0"><span class="q">{{Strategy||الاستراتيجية}}</span><bdi>2026–2031</bdi></p>
+          <p class="cap r" style="--t:1.2">{{The Sharjah Cyber Security Strategy was launched in August 2026 with the vision “A Cyber-Secure Emirate”. The Center leads it.||أُطلقت استراتيجية الشارقة للأمن السيبراني في أغسطس 2026 برؤية «إمارة آمنة سيبرانياً»، ويقود المركز تنفيذها.}}</p>
         </li>
-        <li class="r" style="--i:4">
-          <p class="over">{{More than||أكثر من}}</p>
-          <p class="fig"><bdi>20</bdi></p>
-          <p class="cap">{{technical workshops delivered by the Center, benefiting more than 175 government employees across Sharjah.||ورشة عمل فنية نفّذها المركز، واستفاد منها أكثر من 175 موظفاً حكومياً في الشارقة.}}</p>
+        <li style="--t:1.5">
+          <p class="fig r" style="--t:1.6"><span class="q">{{More than||أكثر من}}</span><bdi data-count="20" data-wait="1.7">20</bdi></p>
+          <p class="cap r" style="--t:1.8">{{technical workshops delivered by the Center, benefiting more than 175 government employees across Sharjah.||ورشة عمل فنية نفّذها المركز، واستفاد منها أكثر من 175 موظفاً حكومياً في الشارقة.}}</p>
         </li>
-        <li class="r" style="--i:6">
-          <p class="over">{{Newsletter||النشرة}}</p>
-          <p class="fig">{{Monthly||شهرية}}</p>
-          <p class="cap">{{Government of Sharjah employees can register with their work email at <bdi>scsc.shj.ae</bdi> for news and best practices.||يمكن لموظفي حكومة الشارقة التسجيل ببريدهم الوظيفي عبر <bdi>scsc.shj.ae</bdi> لمتابعة الأخبار وأفضل الممارسات.}}</p>
+        <li style="--t:2.1">
+          <p class="fig r" style="--t:2.2"><span class="q">{{Newsletter||النشرة}}</span>{{Monthly||شهرية}}</p>
+          <p class="cap r" style="--t:2.4">{{Government of Sharjah employees can register with their work email at <bdi>scsc.shj.ae</bdi> for news and best practices.||يمكن لموظفي حكومة الشارقة التسجيل ببريدهم الوظيفي عبر <bdi>scsc.shj.ae</bdi> لمتابعة الأخبار وأفضل الممارسات.}}</p>
         </li>
       </ul>
     </div>
@@ -373,56 +657,58 @@
   <aside class="notes">{{We are not doing this alone. Sharjah has its own cyber security centre and, since August 2026, its first dedicated strategy. Encourage everyone to register for the Center's monthly newsletter with their work email. It is a simple way to stay up to date after today.||لسنا وحدنا في هذا. للشارقة مركزها المتخصص في الأمن السيبراني، ولها منذ أغسطس 2026 أول استراتيجية مخصصة لهذا المجال. شجّع الجميع على التسجيل في النشرة الشهرية للمركز بالبريد الوظيفي، فهي طريقة سهلة للبقاء على اطلاع بعد هذه الجلسة.}}</aside>
 </section>
 
-<!-- 15 ─ REMEMBER ─────────────────────────────────────────────────────── -->
+<!-- 25 ─ REMEMBER ─────────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Remember||تذكّر@@
+  @@HEAD:0:Remember||تذكّر@@
   <div class="bd">
-    <h2 class="title r" style="--i:0">{{Five habits for every day||خمس عادات لكل يوم}}</h2>
-    <p class="echo r" style="--i:0">{{Five habits for every day||خمس عادات لكل يوم}}</p>
+    <h2 class="title a-line" style="--t:.1">{{Five habits for every day||خمس عادات لكل يوم}}</h2>
+    <p class="echo a-fade" style="--t:.5">{{Five habits for every day||خمس عادات لكل يوم}}</p>
     <div class="fill">
-      <ol class="rows wide">
-        <li class="r" style="--i:1"><span class="num">01</span><p>{{Pause before you click, reply or pay.||تمهّل قبل أن تنقر أو تردّ أو تدفع.}}</p></li>
-        <li class="r" style="--i:2"><span class="num">02</span><p>{{Check who really sent it.||تحقّق من المصدر الحقيقي للرسالة.}}</p></li>
-        <li class="r" style="--i:3"><span class="num">03</span><p>{{Use strong passwords, never reuse them, and add the second step.||استخدم كلمات مرور قوية ولا تكرّرها، وأضف الخطوة الثانية.}}</p></li>
-        <li class="r" style="--i:4"><span class="num">04</span><p>{{Install apps from official stores only, and keep updates automatic.||نزّل التطبيقات من المتاجر الرسمية فقط، واجعل التحديث تلقائياً.}}</p></li>
-        <li class="r" style="--i:5"><span class="num">05</span><p>{{Report early: the IT team at work, the police for scams.||بلّغ مبكراً: فريق تقنية المعلومات في العمل، والشرطة في حالات الاحتيال.}}</p></li>
-      </ol>
+      <ul class="habits">
+        <li class="r" style="--t:.6"><svg class="ic" style="--t:.6"><use href="#i-check"/></svg>{{Pause before you click, reply or pay.||تمهّل قبل أن تنقر أو تردّ أو تدفع.}}</li>
+        <li class="r" style="--t:1.1"><svg class="ic" style="--t:1.1"><use href="#i-check"/></svg>{{Check who really sent it.||تحقّق من المصدر الحقيقي للرسالة.}}</li>
+        <li class="r" style="--t:1.6"><svg class="ic" style="--t:1.6"><use href="#i-check"/></svg>{{Use strong passwords, never reuse them, and add the second step.||استخدم كلمات مرور قوية ولا تكرّرها، وأضف الخطوة الثانية.}}</li>
+        <li class="r" style="--t:2.1"><svg class="ic" style="--t:2.1"><use href="#i-check"/></svg>{{Install apps from official stores only, and keep updates automatic.||نزّل التطبيقات من المتاجر الرسمية فقط، واجعل التحديث تلقائياً.}}</li>
+        <li class="r" style="--t:2.6"><svg class="ic" style="--t:2.6"><use href="#i-check"/></svg>{{Report early: the IT team at work, the police for scams.||بلّغ مبكراً: فريق تقنية المعلومات في العمل، والشرطة في حالات الاحتيال.}}</li>
+      </ul>
     </div>
   </div>
   <<FOOT:UAE Cyber Security Council statements published by WAM between 31 August 2025 and 28 June 2026. The full list is on the last slide.||تصريحات مجلس الأمن السيبراني المنشورة في «وام» بين 31 أغسطس 2025 و28 يونيو 2026. القائمة الكاملة في الشريحة الأخيرة.>>
-  <aside class="notes">{{Read the five lines aloud, slowly. Nothing here is new: it is the session on one page. If the deck is shared afterwards, this is the slide to print and keep near the desk.||اقرأ السطور الخمسة بصوت واضح وبهدوء. لا جديد هنا، فهذه خلاصة الجلسة في صفحة واحدة. وإذا أُرسل العرض بعد الجلسة، فهذه هي الشريحة التي تستحق الطباعة ووضعها قرب المكتب.}}</aside>
+  <aside class="notes">{{Read the five lines aloud as each tick appears. Nothing here is new: it is the session on one page. If the deck is shared afterwards, this is the slide to print and keep near the desk.||اقرأ السطور الخمسة بصوت واضح مع ظهور كل علامة. لا جديد هنا، فهذه خلاصة الجلسة في صفحة واحدة. وإذا أُرسل العرض بعد الجلسة، فهذه هي الشريحة التي تستحق الطباعة ووضعها قرب المكتب.}}</aside>
 </section>
 
-<!-- 16 ─ CLOSE ────────────────────────────────────────────────────────── -->
+<!-- 26 ─ CLOSE ────────────────────────────────────────────────────────── -->
 <section class="slide dark cover" data-title-en="Thank you" data-title-ar="شكراً لكم">
-  <div class="cover-top r" style="--i:0">
-    <img src="[[LOGO_WHITE]]" alt="Sharjah Museums Authority · هيئة الشارقة للمتاحف">
-    <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="cover-top">
+    <span class="logo-w a-fade" style="--t:.1" role="img" aria-label="Sharjah Museums Authority · هيئة الشارقة للمتاحف"></span>
+    <span class="bars" aria-hidden="true"><i class="a-grow" style="--t:.5"></i><i class="a-grow" style="--t:.9"></i><i class="a-grow" style="--t:1.3"></i></span>
   </div>
   <div class="duo">
     <div lang="en" class="keep">
-      <h2 class="refrain r" style="--i:1"><span>Pause.</span><span>Check.</span><span>Report.</span></h2>
-      <p class="thanks r" style="--i:3">Thank you. Any questions?</p>
+      <h2 class="refrain"><span class="a-line" style="--t:.5">Pause.</span><span class="a-line" style="--t:.9">Check.</span><span class="a-line" style="--t:1.3">Report.</span></h2>
+      <p class="thanks r" style="--t:2.0">Thank you. Any questions?</p>
     </div>
     <div lang="ar" class="keep">
-      <h2 class="refrain r" style="--i:2"><span>تمهّل.</span><span>تحقّق.</span><span>بلّغ.</span></h2>
-      <p class="thanks r" style="--i:3">شكراً لكم. هل من أسئلة؟</p>
+      <h2 class="refrain"><span class="a-line" style="--t:.5">تمهّل.</span><span class="a-line" style="--t:.9">تحقّق.</span><span class="a-line" style="--t:1.3">بلّغ.</span></h2>
+      <p class="thanks r" style="--t:2.0">شكراً لكم. هل من أسئلة؟</p>
     </div>
   </div>
-  <div class="duo cover-bot r" style="--i:4">
+  <div class="duo cover-bot a-fade" style="--t:2.4">
     <p lang="en" class="keep kick">Security is a shared responsibility</p>
     <p lang="ar" class="keep kick">الأمن السيبراني مسؤولية مشتركة</p>
   </div>
   <aside class="notes">{{Close on the three words. Invite questions, and remind everyone how to reach the IT team. The next slide lists every source with its date, for anyone who wants to read more.||اختم بالكلمات الثلاث. افتح المجال للأسئلة، وذكّر الحضور بطريقة التواصل مع فريق تقنية المعلومات. الشريحة التالية تعرض جميع المصادر وتواريخها لمن يرغب في القراءة أكثر.}}</aside>
 </section>
 
-<!-- 17 ─ SOURCES ──────────────────────────────────────────────────────── -->
+<!-- 27 ─ SOURCES ──────────────────────────────────────────────────────── -->
 <section class="slide">
-  @@HEAD:Sources||المصادر@@
-  <div class="bd">
-    <h2 class="title sm r" style="--i:0">{{Official sources and dates||المصادر الرسمية وتواريخها}}</h2>
-    <div class="fill" style="justify-content:flex-start;padding-top:30px">
-      <ol class="refs r" style="--i:1">
+  @@HEAD:0:Sources||المصادر@@
+  <div class="bd" style="padding-top:40px">
+    <h2 class="title sm a-line" style="--t:.1">{{Official sources and dates||المصادر الرسمية وتواريخها}}</h2>
+    <div class="fill" style="justify-content:flex-start;padding-top:22px">
+      <ol class="refs a-fade" style="--t:.5">
+        <li><time>{{4 Mar 2024||4 مارس 2024}}</time><b>UAE Cyber Security Council launches ‘National Campaign for Cybersecurity’</b><span class="url">wam.ae/en/article/b1z3i3d-uae-cyber-security-council-launches-national</span></li>
+        <li><time>{{17 Feb 2025||17 فبراير 2025}}</time><b>50,000 electronic attacks countered daily by UAE Cybersecurity Council</b><span class="url">wam.ae/en/article/bi8y16d-50000-electronic-attacks-countered-daily-uae</span></li>
         <li><time>{{31 Aug 2025||31 أغسطس 2025}}</time><b>UAE Cybersecurity Council stresses importance of regular device updates</b><span class="url">wam.ae/en/article/blh1jwf-uae-cybersecurity-council-stresses-importance</span></li>
         <li><time>{{30 Jan 2026||30 يناير 2026}}</time><b>Cyber Security Council, Emirates Post Group, DARB warn about fake, fraudulent messages</b><span class="url">wam.ae/en/article/byhlpk8-cyber-security-council-emirates-post-group-darb</span></li>
         <li><time>{{18 Feb 2026||18 فبراير 2026}}</time><b>71.4% of cyber threats targeting UAE state-sponsored: Cybersecurity Council</b><span class="url">wam.ae/en/article/byswxn8-714-cyber-threats-targeting-uae-state-sponsored</span></li>
@@ -430,13 +716,13 @@
         <li><time>{{26 Apr 2026||26 أبريل 2026}}</time><b>Cyber Security Council stresses importance of protecting digital identity</b><span class="url">wam.ae/en/article/176vp0y-cyber-security-council-stresses-importance</span></li>
         <li><time>{{28 Jun 2026||28 يونيو 2026}}</time><b>UAE Cybersecurity Council warns of rising digital footprint risks</b><span class="url">wam.ae/en/article/17amq4w-uae-cybersecurity-council-warns-rising-digital</span></li>
         <li><time>{{26 Aug 2026||26 أغسطس 2026}}</time><b>Sharjah Digital Department launches Sharjah Cyber Security Strategy 2026–2031</b><span class="url">wam.ae/en/article/c1xfv8i-sharjah-digital-department-launches-sharjah-cyber</span></li>
-        <li><time>{{Viewed 15 Nov 2026||اطُّلع عليه 15 نوفمبر 2026}}</time><b>Sharjah Cyber Security Center: official website</b><span class="url">scsc.shj.ae · scsc.shj.ae/stay-connected · scsc.shj.ae/publication</span></li>
+        <li><time>{{Viewed 15 Nov 2026||اطُّلع عليه 15 نوفمبر 2026}}</time><b>Sharjah Cyber Security Center: official website</b><span class="url">scsc.shj.ae · scsc.shj.ae/about-us · scsc.shj.ae/stay-connected</span></li>
       </ol>
-      <p class="fine r" style="--i:2">{{The first seven items are statements by the UAE Cyber Security Council and Sharjah Digital Department, as published by the Emirates News Agency (WAM), the UAE's official news agency. Figures are shown as published on the dates above. The Arabic text of this presentation is a translation of the English originals.||البنود السبعة الأولى تصريحات لمجلس الأمن السيبراني لحكومة دولة الإمارات ودائرة الشارقة الرقمية، كما نشرتها وكالة أنباء الإمارات (وام)، وكالة الأنباء الرسمية للدولة. الأرقام معروضة كما نُشرت في التواريخ المذكورة. النص العربي في هذا العرض ترجمة للنصوص الإنجليزية الأصلية.}}</p>
+      <p class="fine a-fade" style="--t:.9">{{The first nine items are statements by the UAE Cyber Security Council and Sharjah Digital Department, as published by the Emirates News Agency (WAM), the UAE's official news agency. Figures are shown as published on the dates above. Plain-language explanations and invented examples are labelled on their slides. The Arabic text of this presentation is a translation of the English originals.||البنود التسعة الأولى تصريحات لمجلس الأمن السيبراني لحكومة دولة الإمارات ودائرة الشارقة الرقمية، كما نشرتها وكالة أنباء الإمارات (وام)، وكالة الأنباء الرسمية للدولة. الأرقام معروضة كما نُشرت في التواريخ المذكورة. الشروح المبسّطة والأمثلة غير الحقيقية مُشار إليها في شرائحها. النص العربي في هذا العرض ترجمة للنصوص الإنجليزية الأصلية.}}</p>
     </div>
   </div>
   <<FOOT:All sources were read in full on 15 November 2026.||تمت قراءة جميع المصادر كاملة بتاريخ 15 نوفمبر 2026.>>
-  <aside class="notes">{{Leave this slide up during questions. Everything shown today can be traced to one of these eight official sources.||اترك هذه الشريحة معروضة أثناء الأسئلة. كل ما عُرض اليوم يمكن الرجوع فيه إلى واحد من هذه المصادر الرسمية الثمانية.}}</aside>
+  <aside class="notes">{{Leave this slide up during questions. Everything shown today can be traced to one of these ten official sources.||اترك هذه الشريحة معروضة أثناء الأسئلة. كل ما عُرض اليوم يمكن الرجوع فيه إلى واحد من هذه المصادر الرسمية العشرة.}}</aside>
 </section>
 
 </main>
@@ -445,8 +731,9 @@
 
 <nav class="bar" id="bar" aria-label="Presentation controls">
   <button type="button" id="b-prev" title="Back (←)" aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <span class="count" id="count">1 / 17</span>
+  <span class="count" id="count">1 / 27</span>
   <button type="button" id="b-next" title="Next (→ or Space)" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button type="button" id="b-replay" title="Replay this slide (R)" aria-label="Replay"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 108-8H7M10 1L7 4l3 3"/></svg></button>
   <span class="sep"></span>
   <button type="button" id="b-lang" class="lang-b" title="Language (L)"><span lang="ar" dir="ltr">English</span><span lang="en" dir="rtl">العربية</span></button>
   <button type="button" id="b-list" title="Slide list (G)" aria-pressed="false">{{Slides||الشرائح}}</button>
@@ -461,6 +748,7 @@
     <p class="keys">
       <span><kbd>→</kbd><kbd>Space</kbd>{{Next||التالي}}</span>
       <span><kbd>←</kbd>{{Back||السابق}}</span>
+      <span><kbd>R</kbd>{{Replay the animation||إعادة الحركة}}</span>
       <span><kbd>L</kbd>{{Arabic / English||العربية / الإنجليزية}}</span>
       <span><kbd>G</kbd>{{Slide list||قائمة الشرائح}}</span>
       <span><kbd>N</kbd>{{Presenter notes||ملاحظات المقدّم}}</span>
