@@ -35,13 +35,14 @@ Use a current version of Chrome or Edge, and press **F** for full screen.
 | `←` `↑` `Page Up` | Back |
 | `L` | Switch Arabic / English at any point, without losing your place |
 | `G` | Slide list: jump to any slide |
-| `N` | Presenter notes for the current slide |
-| `T` | Pause or resume the timer (double-click the timer to reset) |
+| `R` | Replay the current slide's animation |
 | `F` | Full screen |
+| `H` | Turn the toolbar off or on while presenting (remembered) |
 | `Home` / `End` | First / last slide |
 
-The **Next** button fills with colour while the current slide still has
-something to reveal. The timer highlights when you are behind the plan.
+The toolbar hides two seconds after you stop using it, and clicks and
+clicker keys do not bring it back. Move the mouse to the bottom edge of the
+screen to show it. The mouse cursor hides too.
 
 ## Running order (about 20 minutes)
 

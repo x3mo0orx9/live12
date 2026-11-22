@@ -936,6 +936,9 @@ html[lang] .lab{color:var(--ink);font-size:30px}
 ::selection{background:var(--lime);color:#111}
 .mob .rlist .ritem{flex:none;font-size:24px;padding:12px 18px}
 .mob .hs small{font-size:26px}
+
+/* the cursor hides with the toolbar while presenting */
+html.nocur,html.nocur *{cursor:none!important}
 </style>
 </head>
 <body>
@@ -1494,10 +1497,17 @@ addEventListener('hashchange',()=>{const m=location.hash.match(/^#(ar|en)?\/?(\d
   const n=m[2]?Math.max(0,Math.min(SL.length-1,+m[2]-1)):cur;
   if(m[1]&&m[1]!==lang){lang=m[1];cur=n;build()}else go(n)});
 /* controls float over the slide and fade out when idle */
-const bar=$('#bar');let idle=0;
-function wake(){bar.classList.remove('hide');clearTimeout(idle);idle=setTimeout(()=>{if(!ovOpen&&!bar.matches(':hover')&&!bar.matches(':focus-within'))bar.classList.add('hide')},3000)}
-['mousemove','mousedown','touchstart','focusin'].forEach(ev=>document.addEventListener(ev,wake,{passive:true}));
-document.addEventListener('keydown',e=>{if(e.key==='Tab')wake()});
+const bar=$('#bar');let idle=0,cIdle=0,barOff=false;
+try{barOff=localStorage.getItem('smaBar')==='off'}catch(e){}
+function nap(){if(!ovOpen&&!bar.matches(':hover')&&!bar.matches(':focus-within'))bar.classList.add('hide')}
+function wake(){if(barOff&&!ovOpen){bar.classList.add('hide');return}bar.classList.remove('hide');clearTimeout(idle);idle=setTimeout(nap,2000)}
+function rest(){clearTimeout(idle);if(!bar.contains(document.activeElement))nap()}
+document.addEventListener('mousemove',e=>{document.documentElement.classList.remove('nocur');clearTimeout(cIdle);cIdle=setTimeout(()=>document.documentElement.classList.add('nocur'),2000);if(innerHeight-e.clientY<120||bar.matches(':hover'))wake()},{passive:true});
+document.addEventListener('touchstart',e=>{if(innerHeight-e.touches[0].clientY<160)wake()},{passive:true});
+document.addEventListener('mousedown',e=>{if(!bar.contains(e.target))rest()},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='Tab'){wake();return}
+  if((e.key==='h'||e.key==='H')&&!e.ctrlKey&&!e.metaKey&&!e.altKey){barOff=!barOff;try{localStorage.setItem('smaBar',barOff?'off':'on')}catch(x){}if(barOff){clearTimeout(idle);bar.classList.add('hide')}else wake();return}
+  if(!bar.contains(document.activeElement))rest()});
 bar.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&e.detail>0)b.blur();wake()});
 wake();
 addEventListener('resize',fit);
