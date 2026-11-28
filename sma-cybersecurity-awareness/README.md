@@ -6,14 +6,14 @@ plays its own animation, so nothing needs to be clicked or typed.
 
 ## Two decks in this folder
 
-- **`SMA-Cybersecurity-Awareness.html`** is the 31-slide training deck (five
+- **`SMA-Cybersecurity-Awareness.html`** is the 30-slide training deck (four
   parts, four attacks, UAE figures and the IT Service Desk contact). Each
   attack ends on its warning signs, and the attacks section closes with one
   general slide (stop, check, report) that applies to any attack. Restyled
   with the new SMA wordmark and the light off-white / black / copper look.
   One press per slide; `L` switches language, `G` opens the slide list.
 - **`نص-العرض-SMA.docx`** (Word) and **`نص-العرض-SMA.txt`** (Notepad) are the
-  presenter's script for the 31-slide deck, in plain Modern Standard Arabic, one section
+  presenter's script for the 30-slide deck, in plain Modern Standard Arabic, one section
   per slide with a suggested time.
 - **`نص-العرض-SMA-إماراتي.docx`** and **`.txt`** are the same script in Emirati
   dialect: a short list of points to explain for each slide, with its time.
