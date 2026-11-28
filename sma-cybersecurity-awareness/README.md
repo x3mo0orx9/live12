@@ -16,7 +16,9 @@ plays its own animation, so nothing needs to be clicked or typed.
   presenter's script for the 31-slide deck, in plain Modern Standard Arabic, one section
   per slide with a suggested time.
 - **`نص-العرض-SMA-إماراتي.docx`** and **`.txt`** are the same script in Emirati
-  dialect, with a time plan up front and a one-line key idea for each slide.
+  dialect, written to be spoken: each part on its own page, each slide in a
+  boxed header with its time and key idea, one breath per line, and stage
+  directions in grey.
 - **`index.html`** is the shorter 16-slide deck described below.
 
 Both are single self-contained files that open offline.
